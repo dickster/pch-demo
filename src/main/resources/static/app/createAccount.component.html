@@ -1,0 +1,28 @@
+<form class="form-horizontal" [formGroup]="form" (submit)="handleSubmit($event)">
+
+
+    <section class="col-md-4 col-md-offset-4">
+        <div class="page-header create">
+            <i class="fa fa-id-badge" aria-hidden="true"></i>
+            <span>Create</span>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" >User Name</label>
+            <input formControlName="username" type="text" class="form-control">
+            <small class="hint error" *ngIf="form.controls.username.touched && !form.controls.username.valid">You need an user name!</small>
+        </div>
+        <div class="form-group" >
+            <label class="control-label" >Email</label>
+            <input formControlName="email" (blur)="checkUniqueEmail($event.target)" type="text" class="form-control">
+            <!--TODO : change this to display error message name.-->
+            <small class="hint error" *ngIf="!form.controls.email.valid && form.controls.email.errors?.msg">{{form.controls.email.errors.msg}}</small>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-raised btn-primary btn-lg" [disabled]="!form.valid" role="button">Create</button>
+        </div>
+
+    </section>
+
+</form>

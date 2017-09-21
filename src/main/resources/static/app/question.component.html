@@ -1,0 +1,86 @@
+<div [formGroup]="form">
+    <div [ngSwitch]="question.type">
+        <div [class]="question.css">
+
+            <div *ngSwitchCase="'text'">
+                <div *ngIf="isVisible(form.value)">
+                    <label *ngIf="question.label" [attr.for]="question.key">{{question.label}}</label>
+                    <input [formControlName]="question.key"
+                           [id]="question.key" [type]="question.type" [placeholder]="question.placeholder"
+                           class="form-control">
+                </div>
+            </div>
+
+            <div *ngSwitchCase="'dropdown'">
+                <div *ngIf="isVisible(form.value)">
+                    <label *ngIf="question.label" [attr.for]="question.key">{{question.label}}</label>
+                    <select [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key"
+                            class="form-control"
+                            value="{{form.controls[question.key].value}}">
+                        <option *ngFor="let choice of question.choices" [value]="choice.key">{{choice.value|mixedCase}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div *ngSwitchCase="'panel'">
+                <div *ngIf="isVisible(form.value)">
+                    <question-panel [questions]="question.children"></question-panel>
+                </div>
+            </div>
+
+            <div *ngSwitchCase="value">
+                <span *ngIf="isVisible(form.value)">
+                    hello value! : {{form.controls[question.key].value}}
+                </span>
+            </div>
+
+            <div *ngSwitchCase="'checkbox'" class="checkbox">
+                <label *ngIf="isVisible(form.value)">
+                    <input [formControlName]="question.key"
+                           [id]="question.key" type="checkbox" class="">
+                    {{question.label}}
+                </label>
+            </div>
+
+            <div *ngSwitchCase="'textarea'">
+                <div *ngIf="isVisible(form.value)">
+                    <label *ngIf="question.label" [attr.for]="question.key">{{question.label}}</label>
+                    <textarea [formControlName]="question.key" [id]="question.key"
+                              [rows]="question.rows" [cols]="question.cols"
+                              [placeholder]="question.placeholder" class="form-control"></textarea>
+                </div>
+            </div>
+
+            <div *ngSwitchCase="'autocomplete'">
+                <label [attr.for]="question.key">{{question.label}}</label>
+                <ng2-completer autoMatch matchClass="match" [placeholder]="question.placeholder" [formControlName]="question.key"
+                               [dataService]="dataService"
+                               [minSearchLength]="question.minSearchLength">
+                </ng2-completer>
+            </div>
+
+            <div *ngSwitchCase="'yesno'">
+                <div *ngIf="isVisible(form.value)">
+                    <div>
+                        <label [attr.for]="question.key">{{question.label}}</label>
+
+                        <div class="btn-group pull-right" data-toggle="buttons" >
+                            <label class="btn btn-raised btn-primary" [class.active]="isActiveYesNo(question.key)">
+                                <input [formControlName]="question.key" checked value="yes" type="radio">Yes
+                            </label>
+                            <label class="btn btn-raised btn-primary" [class.active]="!isActiveYesNo(question.key)">
+                                <input [formControlName]="question.key" value="no" type="radio">No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hint error" *ngIf="isVisible(form.value) && !isValid && isTouched">{{question.label}} is required</div>
+        </div>
+        <!--<div *ngIf="isVisible(form.value)" class="col-md-12">-->
+        <!--<p>showing this field.</p>-->
+        <!--</div>-->
+    </div>
+
+</div>

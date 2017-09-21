@@ -1,0 +1,18 @@
+<form class="form-horizontal" [formGroup]="form" (submit)="handleSubmit($event)">
+
+    <section>
+        <div class="page-header ai">
+            <i class="fa fa-comments" aria-hidden="true"></i>
+            <span>More AI</span>
+        </div>
+
+        <question-panel [questions]="questions"></question-panel>
+    </section>
+
+    <footer>
+        <div class="form-group">
+            <button type="submit" class="btn btn-raised btn-primary btn-lg" role="button">Next</button>
+        </div>
+    </footer>
+
+</form>

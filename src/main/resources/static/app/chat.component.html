@@ -1,0 +1,40 @@
+<div id="main-content" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="from">From</label>
+                    <input #from type="text" id="from" class="form-control" placeholder="" (change)="fromChanged(from.value)">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6" [hidden]="!isConnected()">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="to">To</label>
+                    <input #to type="text" id="to" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="msg">Message</label>
+                    <input #msg type="text" id="msg" class="form-control" placeholder="enter your message here...">
+                </div>
+                <button id="send" (click)="send(from.value, to.value, msg.value)"  class="btn btn-default" type="submit" [disabled]="!isConnected()">Send</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <hr>
+        <div class="col-md-12">
+            <span class="btn btn-raised btn-warning" type="button">
+                Messages <span class="badge">{{msgs.length}}</span>
+            </span>
+            <ul>
+                <li *ngFor="let msg of msgs; let i = index">
+                {{i+1}} : {{msg.from}} says "{{msg.text}}"
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

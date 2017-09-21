@@ -1,0 +1,1 @@
+{"version":3,"file":"question-panel.config.js","sourceRoot":"","sources":["question-panel.config.ts"],"names":[],"mappings":";AAAA,mCAAgC,oBAAoB,CAAC,CAAA;AAErD,kCAAyC,kCAAe;IAIpD,YAAY,OAAO,GAAO,EAAE;QACxB,MAAM,OAAO,CAAC,CAAC;QAJnB,SAAI,GAAG,OAAO,CAAC;QAKX,IAAI,CAAC,QAAQ,GAAG,OAAO,CAAC,UAAU,CAAC,IAAI,EAAE,CAAC;IAC9C,CAAC;AACL,CAAC;AARY,2BAAmB,sBAQ/B,CAAA"}
