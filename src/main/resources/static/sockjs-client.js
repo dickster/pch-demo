@@ -149,7 +149,7 @@
                                 }
                                 var d = h[0], p = h[1], v = h[2], m = h[3];
                                 if (d !== t.version)throw new Error('Incompatible SockJS! Main site uses: "' + d + '", the iframe: "' + t.version + '".');
-                                if (!n.isOriginEqual(v, u.href) || !n.isOriginEqual(m, u.href))throw new Error("Can't connect to different domain from within an iframe. (" + u.href + ", " + v + ", " + m + ")");
+                                if (!n.isOriginEqual(v, u.href) || !n.isOriginEqual(m, u.href))throw new Error("Can't connect to different model from within an iframe. (" + u.href + ", " + v + ", " + m + ")");
                                 e = new o(new l[p](v, m));
                                 break;
                             case"m":
@@ -1196,7 +1196,7 @@
                     } catch (n) {
                     }
                 };
-                l.open(), l.write('<html><script>document.domain="' + n.document.domain + '";</script></html>'), l.close(), l.parentWindow[e.exports.WPrefix] = n[e.exports.WPrefix];
+                l.open(), l.write('<html><script>document.model="' + n.document.domain + '";</script></html>'), l.close(), l.parentWindow[e.exports.WPrefix] = n[e.exports.WPrefix];
                 var p = l.createElement("div");
                 return l.body.appendChild(p), a = l.createElement("iframe"), p.appendChild(a), a.src = t, a.onerror = function () {
                     h("onerror")

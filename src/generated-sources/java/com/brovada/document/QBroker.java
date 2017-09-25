@@ -1,4 +1,4 @@
-package com.brovada.document;
+package com.brovada.old.document;
 
 import static com.querydsl.core.types.PathMetadataFactory.*;
 

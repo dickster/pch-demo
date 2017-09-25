@@ -1,4 +1,4 @@
-package com.brovada.document.config;
+package com.brovada.old.document.config;
 
 
 // follows classic semantic versioning guidelines.

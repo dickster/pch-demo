@@ -15,6 +15,7 @@
  */
 package com.brovada;
 
+import com.brovada.old.Application;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
