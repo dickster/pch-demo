@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.brovada;
+package com.brovada.old;
 
 import com.brovada.old.Application;
 import org.junit.Before;
