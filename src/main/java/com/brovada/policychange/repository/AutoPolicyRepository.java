@@ -7,23 +7,14 @@
  * accordance with the terms of the license agreement you entered into
  * with brovada.
  */
-package com.brovada.policychange.service;
+package com.brovada.policychange.repository;
 
 import com.brovada.policychange.model.AutoPolicy;
-import com.brovada.policychange.repository.AutoPolicyRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.querydsl.QueryDslPredicateExecutor;
 
-import java.util.List;
+public interface AutoPolicyRepository extends MongoRepository<AutoPolicy, String>, QueryDslPredicateExecutor<AutoPolicy> {
 
-@Service
-public class PolicyService {
+    AutoPolicy findAutoPolicyByPolicyNumber(String policyNumber);
 
-    @Autowired
-    AutoPolicyRepository repository;
-
-
-    public List<AutoPolicy> findPolicyByLastName(String lastName) {
-        return null;
-    }
 }

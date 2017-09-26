@@ -9,13 +9,17 @@
  */
 package com.brovada.policychange.model;
 
+import com.querydsl.core.annotations.QueryEntity;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
 /**
  * The type Auto policy.
  */
+@Document
+@QueryEntity
 public class AutoPolicy {
 
     /**
