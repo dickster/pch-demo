@@ -21,6 +21,15 @@ public class CommercialName {
 
     /**
      * Instantiates a new Commercial name.
+     *
+     * @param commercialName the commercial name
+     */
+    public CommercialName(String commercialName) {
+        this.commercialName = commercialName;
+    }
+
+    /**
+     * Instantiates a new Commercial name.
      */
     public CommercialName() {
     }

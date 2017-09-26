@@ -22,7 +22,18 @@ public class PersonName {
     /**
      * The Giving name.
      */
-    private String givingName;
+    private String givenName;
+
+    /**
+     * Instantiates a new Person name.
+     *
+     * @param surname   the surname
+     * @param givenName the given name
+     */
+    public PersonName(String surname, String givenName) {
+        this.surname = surname;
+        this.givenName = givenName;
+    }
 
     /**
      * Instantiates a new Person name.
@@ -53,16 +64,16 @@ public class PersonName {
      *
      * @return the giving name
      */
-    public String getGivingName() {
-        return givingName;
+    public String getGivenName() {
+        return givenName;
     }
 
     /**
      * Sets giving name.
      *
-     * @param givingName the giving name
+     * @param givenName the giving name
      */
-    public void setGivingName(String givingName) {
-        this.givingName = givingName;
+    public void setGivenName(String givenName) {
+        this.givenName = givenName;
     }
 }

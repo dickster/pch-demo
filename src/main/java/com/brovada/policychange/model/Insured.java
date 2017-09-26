@@ -33,6 +33,25 @@ public class Insured {
 
     /**
      * Instantiates a new Insured.
+     *
+     * @param givenName the given name
+     * @param surname   the surname
+     */
+    public Insured(String givenName, String surname) {
+        this.nameInfo = new NameInfo(givenName, surname);
+    }
+
+    /**
+     * Instantiates a new Insured.
+     *
+     * @param commercialName the commercial name
+     */
+    public Insured(String commercialName) {
+        this.nameInfo = new NameInfo(commercialName);
+    }
+
+    /**
+     * Instantiates a new Insured.
      */
     public Insured() {
     }

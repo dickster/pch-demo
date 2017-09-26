@@ -24,6 +24,6 @@ public class PolicyService {
 
 
     public List<AutoPolicy> findPolicyByLastName(String lastName) {
-        return null;
+        return this.repository.findAllByInsuredsNameInfoPersonNameSurname(lastName);
     }
 }

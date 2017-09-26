@@ -13,8 +13,12 @@ import com.brovada.policychange.model.AutoPolicy;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.querydsl.QueryDslPredicateExecutor;
 
+import java.util.List;
+
 public interface AutoPolicyRepository extends MongoRepository<AutoPolicy, String>, QueryDslPredicateExecutor<AutoPolicy> {
 
     AutoPolicy findAutoPolicyByPolicyNumber(String policyNumber);
+
+    List<AutoPolicy> findAllByInsuredsNameInfoPersonNameSurname(String surname);
 
 }

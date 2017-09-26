@@ -26,6 +26,25 @@ public class NameInfo {
 
     /**
      * Instantiates a new Name info.
+     *
+     * @param givenName the given name
+     * @param surname   the surname
+     */
+    public NameInfo(String givenName, String surname) {
+        this.personName = new PersonName(surname, givenName);
+    }
+
+    /**
+     * Instantiates a new Name info.
+     *
+     * @param commercialName the commercial name
+     */
+    public NameInfo(String commercialName) {
+        this.commercialName = new CommercialName(commercialName);
+    }
+
+    /**
+     * Instantiates a new Name info.
      */
     public NameInfo() {
     }

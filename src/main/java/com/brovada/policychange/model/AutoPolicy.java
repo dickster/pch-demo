@@ -13,6 +13,7 @@ import com.querydsl.core.annotations.QueryEntity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -36,22 +37,22 @@ public class AutoPolicy {
     /**
      * The Insureds.
      */
-    private List<Insured> insureds;
+    private List<Insured> insureds = new ArrayList<>();
 
     /**
      * The Drivers.
      */
-    private List<Driver> drivers;
+    private List<Driver> drivers = new ArrayList<>();
 
     /**
      * The Vehicles.
      */
-    private List<Vehicle> vehicles;
+    private List<Vehicle> vehicles = new ArrayList<>();
 
     /**
      * The Locations.
      */
-    private List<Location> locations;
+    private List<Location> locations = new ArrayList<>();
 
     /**
      * Instantiates a new Auto policy.
