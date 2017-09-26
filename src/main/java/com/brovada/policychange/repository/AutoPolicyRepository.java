@@ -21,4 +21,8 @@ public interface AutoPolicyRepository extends MongoRepository<AutoPolicy, String
 
     List<AutoPolicy> findAllByInsuredsNameInfoPersonNameSurname(String surname);
 
+    List<AutoPolicy> findAllByInsuredsNameInfoPersonNameGivenName(String givenName);
+
+    List<AutoPolicy> findAllByInsuredsNameInfoCommercialNameCommercialName(String commercialName);
+
 }

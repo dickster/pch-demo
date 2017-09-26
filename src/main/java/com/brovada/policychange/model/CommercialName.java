@@ -9,9 +9,12 @@
  */
 package com.brovada.policychange.model;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 /**
  * The type Commercial name.
  */
+@Document
 public class CommercialName {
 
     /**

@@ -9,9 +9,12 @@
  */
 package com.brovada.policychange.model;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 /**
  * The type Person name.
  */
+@Document
 public class PersonName {
 
     /**

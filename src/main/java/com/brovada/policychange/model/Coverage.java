@@ -9,11 +9,14 @@
  */
 package com.brovada.policychange.model;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.math.BigDecimal;
 
 /**
  * The type Coverage.
  */
+@Document
 public class Coverage {
 
     /**

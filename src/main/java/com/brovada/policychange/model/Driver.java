@@ -9,11 +9,14 @@
  */
 package com.brovada.policychange.model;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.List;
 
 /**
  * The type Driver.
  */
+@Document
 public class Driver {
 
     /**

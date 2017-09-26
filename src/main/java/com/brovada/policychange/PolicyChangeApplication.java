@@ -3,19 +3,21 @@ package com.brovada.policychange;
 import com.brovada.policychange.model.AutoPolicy;
 import com.brovada.policychange.model.Insured;
 import com.brovada.policychange.repository.AutoPolicyRepository;
+import com.brovada.policychange.service.PolicyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Iterator;
-import java.util.List;
 
 @SpringBootApplication
 public class PolicyChangeApplication implements CommandLineRunner {
 
     @Autowired
     private AutoPolicyRepository autoPolicyRepository;
+    @Autowired
+    private PolicyService service;
 
 	public static void main(String[] args) {
 		SpringApplication.run(PolicyChangeApplication.class, args);
@@ -44,7 +46,7 @@ public class PolicyChangeApplication implements CommandLineRunner {
         policy3.getInsureds().add(insured3);
         autoPolicyRepository.save(policy3);
 
-        List<AutoPolicy> policies = autoPolicyRepository.findAllByInsuredsNameInfoPersonNameSurname("last2");
+        Iterable<AutoPolicy> policies = service.findPoliciesContainName("last");
 
         Iterator<AutoPolicy> iterator = policies.iterator();
         while(iterator.hasNext()) {
