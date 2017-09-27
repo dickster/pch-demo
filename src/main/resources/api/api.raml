@@ -1,0 +1,28 @@
+#%RAML 1.0
+title: Policy Change API
+uses:
+  ResourcesType: ResourcesType.raml
+  DataModel: DataModel.raml
+version: v1
+baseUri: http://api.brovada.com
+
+/policies:
+  type:  { ResourcesType.Collection: {item : DataModel.AutoPolicy} }
+  get:
+    queryParameters:
+      givenName: string
+      surname: string
+      postalCode: string
+      policyNumber: string
+  /{policyNumber}:
+    type:  { ResourcesType.Member: {item : DataModel.AutoPolicy} }
+    post:
+      body:
+        application/json:
+          type: DataModel.AutoPolicy
+      responses:
+        200:
+          body:
+            application/json:
+              type: DataModel.PchJsonManifest
+        404:

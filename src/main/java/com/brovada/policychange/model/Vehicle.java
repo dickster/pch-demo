@@ -47,7 +47,7 @@ public class Vehicle {
     /**
      * The Annual distance.
      */
-    private String annualDistance;
+    private long annualDistance;
 
     /**
      * The Purchase date.
@@ -221,7 +221,7 @@ public class Vehicle {
      *
      * @return the annual distance
      */
-    public String getAnnualDistance() {
+    public long getAnnualDistance() {
         return annualDistance;
     }
 
@@ -230,7 +230,7 @@ public class Vehicle {
      *
      * @param annualDistance the annual distance
      */
-    public void setAnnualDistance(String annualDistance) {
+    public void setAnnualDistance(long annualDistance) {
         this.annualDistance = annualDistance;
     }
 

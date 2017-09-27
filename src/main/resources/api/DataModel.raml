@@ -1,0 +1,87 @@
+#%RAML 1.0 Library
+types:
+  AutoPolicy:
+    properties:
+  PhoneInfo:
+    properties:
+      phoneTypeCd: string
+      communicationUseCd: string
+      phoneNumber: string
+  PersonName:
+    properties:
+      surname: string
+      givenName: string
+  Coverage:
+    properties:
+      coverageCd: string
+      limit: number
+      deductible: number
+  NameInfo:
+    properties:
+      personName: PersonName
+      commercialName: CommercialName
+  Insured:
+    properties:
+      nameInfo: NameInfo
+      addr: Addr
+      phoneInfos: PhoneInfo[]
+  Location:
+    properties:
+      addr: Addr
+  QuestionAnswer:
+    properties:
+      question: string
+      answer: string
+  Driver:
+    properties:
+      nameInfo: NameInfo
+      gender: string
+      birthday: string
+      maritalStatus: string
+      licenses: License[]
+  License:
+    properties:
+      licensedDate: string
+      licenseClass: string
+      licenseNumber: string
+      stateProv: string
+  CommercialName:
+    properties:
+      commercialName: string
+  Addr:
+    properties:
+      addr1: string
+      addr2: string
+      city: string
+      postalCode: string
+      stateProv: string
+      country: string
+  Vehicle:
+    properties:
+      manufacturer: string
+      model: string
+      modelYear: string
+      bodyType: string
+      costNewAmt: string
+      annualDistance: number
+      purchaseDate: string
+      vin: string
+      vehUseCd: string
+      engineType: string
+      rateClassCd: string
+      coverages: Coverage[]
+      questionAnswers: QuestionAnswer[]
+  PchJsonManifestItem:
+    properties:
+      changeType:
+        enum: [ADDED, DELETED, CHANGED]
+      selector: string
+      newValue: string
+      newXpath: string
+      oldValue: string
+      oldXpath: string
+  PchJsonManifest:
+    properties:
+      addedList: PchJsonManifestItem[]
+      deletedList: PchJsonManifestItem[]
+      changedList: PchJsonManifestItem[]
