@@ -35,6 +35,9 @@
             margin-bottom:0;
             margin-top:30px;
         }
+        h6 {
+            padding-top:6px;
+        }
         /*label { margin-bottom:3px;font-size:xx-small;}*/
 
         select.form-control-sm  {font-size:13px;}
@@ -461,6 +464,19 @@
 
         <div class="form-group row">
             <div class="col-md-2">
+                <div><label>New/Used</label></div>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default ">
+                        <input type="radio"  autocomplete="off">New
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio"  autocomplete="off">Used
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-2">
                 <div><label>Leased</label></div>
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default ">
@@ -486,25 +502,133 @@
             </div>
             <div class="col-md-2">
                 <label>&nbsp;</label>
-                <input type="text"  autocomplete="off" placeholder="amount">
+                <input type="number"  autocomplete="off" placeholder="modification amount" min="0">
             </div>
         </div>
         <div class="form-group row">
 
             <div class="col-md-2">
                 <label>Anti-TheftDevice</label>
-                <div class="btn-group" data-toggle="buttons">
-                    <label class="btn btn-default ">
-                        <input type="radio" autocomplete="off">Yes
-                    </label>
-                    <label class="btn btn-default">
-                        <input type="radio"  autocomplete="off">No
-                    </label>
-                </div>
+                <select class="form-control form-control-sm">
+                    <option value="csio:0">None</option>
+                    <option value="csio:1">Electronic Alarm</option>
+                    <option value="csio:3">Engraving</option>
+                    <option value="csio:5">Startup Locking Mechanism With Deactivator</option>
+                    <option value="csio:7">Steering Locking Bar</option>
+                    <option value="csio:8">Tracking System</option>
+                    <option value="csio:M">Original Manufacturer Anti-Theft Package</option>
+                </select>
             </div>
-            <div class="col-md-2">
-                <label>&nbsp;</label>
-                <input type="text"  autocomplete="off" placeholder="anti-theft model">
+            <div class="col-md-5">
+                <label>Anti-Theft Make</label>
+                <select class="form-control-sm form-control">
+                    <option value="csio:1" >Vehicle Manufacturer/Original
+                        Equipment Manufacturer
+                    </option>
+                    <option value="csio:2" >PRO-TG</option>
+                    <option value="csio:3" >Sherlock</option>
+                    <option value="csio:4" >SPAV</option>
+                    <option value="csio:5" >Super Duro-garde</option>
+                    <option value="csio:6" >Doc</option>
+                    <option value="csio:7" >Auto-garde</option>
+                    <option value="csio:8" >RAMCO</option>
+                    <option value="csio:9" >Apple</option>
+                    <option value="csio:10" >Boomerang</option>
+                    <option value="csio:11" >Duro VIP</option>
+                    <option value="csio:12" >VSS 150</option>
+                    <option value="csio:13" >Automate</option>
+                    <option value="csio:14" >Theftbuster TB300V (VICC
+                        approved)
+                    </option>
+                    <option value="csio:15" >Autowatch 329Ti (VICC approved)
+                    </option>
+                    <option value="csio:16" >Magtec 6000 (VICC approved)</option>
+                    <option value="csio:17" >Powerlock Canada (VICC approved)
+                    </option>
+                    <option value="csio:18" >Alpine</option>
+                    <option value="csio:19" >Autostart</option>
+                    <option value="csio:20" >Autowatch</option>
+                    <option value="csio:21" >Boomerang I</option>
+                    <option value="csio:22" >Boomerang II</option>
+                    <option value="csio:23" >Carbine</option>
+                    <option value="csio:24" >Clifford</option>
+                    <option value="csio:25" >Duro</option>
+                    <option value="csio:26" >Intercepter</option>
+                    <option value="csio:27" >Magtec</option>
+                    <option value="csio:28" >Marksman</option>
+                    <option value="csio:29" >Mobilus</option>
+                    <option value="csio:30" >Onstar</option>
+                    <option value="csio:31" >Powerstart</option>
+                    <option value="csio:32" >Prestige</option>
+                    <option value="csio:33" >Pursuit</option>
+                    <option value="csio:34" >Python</option>
+                    <option value="csio:35" >SPAVTrack</option>
+                    <option value="csio:36" >SSN</option>
+                    <option value="csio:37" >SSN (Mul-T-Lock)</option>
+                    <option value="csio:38" >Tiger</option>
+                    <option value="csio:39" >Ultracar</option>
+                    <option value="csio:40" >Ungo</option>
+                    <option value="csio:41" >Vigil</option>
+                    <option value="csio:42" >Viper</option>
+                    <option value="csio:43" >Other Cellular based Technology
+                    </option>
+                    <option value="csio:44" >Other GPS based System</option>
+                    <option value="csio:45" >Astrolock</option>
+                    <option value="csio:46" >Audiovox</option>
+                    <option value="csio:47" >Collard Steadfast</option>
+                    <option value="csio:48" >Doc 4000</option>
+                    <option value="csio:49" >Duro Garde</option>
+                    <option value="csio:50" >Gemni (Skylink GPS)</option>
+                    <option value="csio:51" >Hornet</option>
+                    <option value="csio:52" >Investiguard</option>
+                    <option value="csio:53" >Lynx</option>
+                    <option value="csio:54" >Micro-protec</option>
+                    <option value="csio:55" >Otomax</option>
+                    <option value="csio:56" >Planet Track</option>
+                    <option value="csio:57" >Pro-Gard</option>
+                    <option value="csio:58" >Stealstopper</option>
+                    <option value="csio:59" >Tiger 1000</option>
+                    <option value="csio:60" >Datadot</option>
+                    <option value="csio:61" >Vinlock</option>
+                    <option value="csio:62" >MasterGard M6000</option>
+                    <option value="csio:63" >MasterGard TK</option>
+                    <option value="csio:64" >Canam</option>
+                    <option value="csio:65" >PRO-TG X000</option>
+                    <option value="csio:66" >Spav 06</option>
+                    <option value="csio:67" >Doc 1000 / 2000</option>
+                    <option value="csio:68" >Doc X000</option>
+                    <option value="csio:69" >Otoprotec</option>
+                    <option value="csio:70" >Pass-Key</option>
+                    <option value="csio:71" >NavLynx</option>
+                    <option value="csio:72" >Boomerang Espion Alert</option>
+                    <option value="csio:73" >Boomerang Espion</option>
+                    <option value="csio:75" >Viper 200Max</option>
+                    <option value="csio:76" >Viper 220Max</option>
+                    <option value="csio:77" >Triumph with siren</option>
+                    <option value="csio:78" >Merlin 2000</option>
+                    <option value="csio:79" >Harley with siren</option>
+                    <option value="csio:80" >BMW</option>
+                    <option value="csio:81" >Scorpio SR1500S</option>
+                    <option value="csio:82" >Scorpio SR1500E</option>
+                    <option value="csio:83" >Tridion T2</option>
+                    <option value="csio:84" >Autoluck</option>
+                    <option value="csio:86" >Guardian</option>
+                    <option value="csio:87" >Larlock</option>
+                    <option value="csio:88" >Kolombo URB 1500</option>
+                    <option value="csio:89" >Kolombo URB 2000</option>
+                    <option value="csio:90" >Boomerang Express</option>
+                    <option value="csio:91" >Econotrack</option>
+                    <option value="csio:92" >Boomerang / LoJack Espion (radio
+                        frequency technology)
+                    </option>
+                    <option value="csio:93" >Boomerang / LoJack Espion Alert
+                        (radio frequency technology)
+                    </option>
+                    <option value="csio:94" >Boomerang / LoJack Espion Alert
+                        Plus (radio frequency technology)
+                    </option>
+                    <option value="csio:99" >Other</option>
+                </select>                
             </div>
         </div>
         <div class="form-group row">
@@ -525,27 +649,33 @@
         <div class="form-group row">
             <div class="col-md-2">
                 <div><label>Vehicle Use</label></div>
-                <input type="text">
+                <select class="form-control-sm form-control">
+                    <option value="csio:P" >Pleasure</option>
+                    <option value="csio:B" >Business</option>
+                    <option value="csio:W" >Commute</option>
+                    <option value="csio:F" >Farm</option>
+                    <option value="csio:C" >Commercial</option>
+                </select>
             </div>
             <div class="col-md-2">
                 <div><label>Distance (One Way)</label></div>
-                <input type="number">
+                <input class="form-control-sm form-control" type="number">
             </div>
             <div class="col-md-2">
                 <div><label>Est Annual Kms</label></div>
-                <input type="number">
+                <input class="form-control-sm form-control" type="number">
             </div>
             <div class="col-md-2">
                 <div><label>Est Business Kms</label></div>
-                <input type="number">
+                <input class="form-control-sm form-control" type="number">
             </div>
             <div class="col-md-2">
                 <div><label># of Passengers</label></div>
-                <input type="number">
+                <input class="form-control-sm form-control" type="number">
             </div>
             <div class="col-md-2">
                 <label>Garaging Postal Code</label>
-                <input type="text"  autocomplete="off">
+                <input class="form-control-sm form-control" type="text"  autocomplete="off">
             </div>
         </div>
 
@@ -762,8 +892,13 @@
                 <input type="date" class="form-control form-control-sm" >
             </div>
             <div class="col-md-2">
-                <label>Good Driver</label>
-                <input type="checkbox" class="check">
+                <label>&nbsp;</label>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="">
+                        Good Driver
+                    </label>
+                </div>
             </div>
             <div class="col-md-2">
                 <label>MVR Date</label>
@@ -1369,14 +1504,24 @@
                 <input type="number"  class="form-control form-control-sm" autocomplete="off">
             </div>
             <div class="col-md-2">
-                <label>Chargeable</label>
-                <input type="checkbox"  class="">
+                <label>&nbsp;</label>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="">
+                        Chargeable
+                    </label>
+                </div>
             </div>
             <div class="col-md-2">
-                <label>Claim Settled</label>
-                <input type="checkbox"  class="">
+                <label>&nbsp;</label>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="">
+                        Claim Settled
+                    </label>
+                </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-8">
                 <label>Claim Settled</label>
                 <textarea  rows="1" class="form-control"></textarea>
             </div>
