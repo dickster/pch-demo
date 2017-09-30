@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<!-- saved from url=(0070)http://localhost:8080/b1-insurance/ui/?action=PersAutoPolicyAddRq:form -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+    <script src="https://use.fontawesome.com/1f0e50ab99.js"></script>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
+        <link rel="stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    </head>
+
+    <style>
+        .dropdown-menu { min-width:70px;}
+        .dropdown-item {display:block;color:#666;padding-right:10px;padding-left:10px;padding-top:5px;}
+        <style>
+         .dropdown-menu { min-width:70px;}
+        .dropdown-item {display:block;color:#666;padding-right:10px;padding-left:10px;padding-top:5px;}
+        h5 {
+            background: #666;
+            background: -webkit-linear-gradient(left, #dbe1f5, #6ca6c4);
+            background: -o-linear-gradient(right, #dbe1f5, #6ca6c4);
+            background: -moz-linear-gradient(right, #dbe1f5, #6ca6c4);
+            background: linear-gradient(to right, #dbe1f5 , #6ca6c4) ;
+            padding: 7px;
+            margin-bottom:0;
+            margin-top:30px;
+        }
+        .  h5 {
+            background: #666;
+            background: -webkit-linear-gradient(left, #dbe1f5, #6ca6c4);
+            background: -o-linear-gradient(right, #dbe1f5, #6ca6c4);
+            background: -moz-linear-gradient(right, #dbe1f5, #6ca6c4);
+            background: linear-gradient(to right, #dbe1f5 , #6ca6c4) ;
+            padding: 7px;
+            margin-bottom:0;
+            margin-top:30px;
+        }
+        .input-group-btn .btn.dropdown-toggle {box-shadow:none;border:1px solid #eee;}
+        .input-group-btn + .form-control {padding-left:10px;}
+        h6 {
+            padding-top:6px;
+        }
+        /*label { margin-bottom:3px;font-size:xx-small;}*/
+
+        select.form-control-sm  {font-size:13px;}
+
+        .input-group-btn.show {display:table-cell !important;}
+        .company { display:none;}
+        .input-group-addon.person, .input-group-addon.company { border:1px solid #bbb; background:#eee;}
+    </style>
+
+    <script>
+        $(function() {
+
+        });
+    </script>
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+    <h3 class="card-title"><i class="fa fa-grav"></i>Prototype</h3>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a href="#">Policy Details</a></li>
+        <li class="breadcrumb-item active">Additional Information</a></li>
+        <!--<li class="breadcrumb-item ">Rating</a></li>-->
+        <!--<li class="breadcrumb-item ">Billing</a></li>-->
+        <!--<li class="breadcrumb-item ">Confirmation</li>-->
+    </ol>
+
+    <form class="form">
+
+        <h5>Additional Information</h5>
+        <div class="form-group row">
+            <div class="col-md-4">
+                <div><label>Have you been in an accident in the last year?</label></div>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default ">
+                        <input type="radio">Yes
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio">No
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <textarea class="form-control" rows="2" placeholder="describe accident"></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-4">
+                <div><label>Have you been convicted in the last 5 years?</label></div>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default ">
+                        <input type="radio">Yes
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio">No
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <textarea rows="2" class="form-control" placeholder="describe conviction"></textarea>
+            </div>
+        </div>
+
+        <input class="btn btn-primary" type="submit">
+
+    </form>
+
+</div>
+
+
+</body>
+</html>

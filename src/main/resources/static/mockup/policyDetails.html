@@ -1,0 +1,1691 @@
+pch-demo.html<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<!-- saved from url=(0070)http://localhost:8080/b1-insurance/ui/?action=PersAutoPolicyAddRq:form -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+    <script src="https://use.fontawesome.com/1f0e50ab99.js"></script>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js"
+                crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
+        <link rel="stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+                integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+                crossorigin="anonymous"></script>
+
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+              integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+              crossorigin="anonymous">
+    </head>
+
+    <style>
+        .dropdown-menu {
+            min-width: 70px;
+        }
+
+
+        body table { font-size:13px;}
+        .dropdown-item {
+            display: block;
+            color: #666;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-top: 5px;
+        }
+
+        <
+        style >
+        .dropdown-menu {
+            min-width: 70px;
+        }
+
+        .dropdown-item {
+            display: block;
+            color: #666;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-top: 5px;
+        }
+
+        h5 {
+            background: #666;
+            background: -webkit-linear-gradient(left, #dbe1f5, #6ca6c4);
+            background: -o-linear-gradient(right, #dbe1f5, #6ca6c4);
+            background: -moz-linear-gradient(right, #dbe1f5, #6ca6c4);
+            background: linear-gradient(to right, #dbe1f5, #6ca6c4);
+            padding: 7px;
+            margin-bottom: 0;
+            margin-top: 30px;
+        }
+
+        . h5 {
+            background: #666;
+            background: -webkit-linear-gradient(left, #dbe1f5, #6ca6c4);
+            background: -o-linear-gradient(right, #dbe1f5, #6ca6c4);
+            background: -moz-linear-gradient(right, #dbe1f5, #6ca6c4);
+            background: linear-gradient(to right, #dbe1f5, #6ca6c4);
+            padding: 7px;
+            margin-bottom: 0;
+            margin-top: 30px;
+        }
+
+        .input-group-btn .btn.dropdown-toggle {
+            box-shadow: none;
+            border: 1px solid #eee;
+        }
+
+        .input-group-btn + .form-control {
+            padding-left: 10px;
+        }
+
+        h6 {
+            padding-top: 6px;
+        }
+
+        /*label { margin-bottom:3px;font-size:xx-small;}*/
+
+        select.form-control-sm {
+            font-size: 13px;
+        }
+
+        .input-group-btn.show {
+            display: table-cell !important;
+        }
+
+        .company {
+            display: none;
+        }
+
+        .input-group-addon.person, .input-group-addon.company {
+            border: 1px solid #bbb;
+            background: #eee;
+        }
+    </style>
+
+    <script>
+        $(function () {
+
+        });
+    </script>
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+    <h3 class="card-title"><i class="fa fa-grav"></i>Prototype</h3>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a href="#">Policy Details</a></li>
+        <!--<li class="breadcrumb-item">Additional Information</a></li>-->
+        <!--<li class="breadcrumb-item ">Rating</a></li>-->
+        <!--<li class="breadcrumb-item ">Billing</a></li>-->
+        <!--<li class="breadcrumb-item ">Confirmation</li>-->
+    </ol>
+
+    <form class="form">
+
+        <h5>Policy Details</h5>
+        <div class="form-group row">
+            <div class="col-md-3">
+                <label>Policy Number</label>
+                <input class="form-control form-control-sm" type="text">
+            </div>
+            <div class="col-md-2 col-md-offset-5">
+                <label>Effective Date</label>
+                <input class="form-control form-control-sm" type="date"/>
+            </div>
+            <div class="col-md-2">
+                <label>Expiration Date</label>
+                <input class="form-control form-control-sm" type="date"/>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-6">
+                <label>Name</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Person</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-industry"></i>Company</a>
+                        </div>
+                    </div>
+                    <input class="form-control form-control-sm" type="text">
+                </div>
+                <p class="form-text text-muted person">
+                    This is a person.
+                </p>
+                <p class="form-text text-muted company">
+                    This is a company.
+                </p>
+            </div>
+            <div class="col-md-2">
+                <label>Phone</label>
+                <input class="form-control form-control-sm" type="tel">
+            </div>
+            <div class="col-md-2">
+                <label>Email</label>
+                <input class="form-control form-control-sm" type="email">
+            </div>
+            <div class="col-md-2">
+                <label>Birthday</label>
+                <input class="form-control form-control-sm" type="date">
+            </div>
+        </div>
+
+
+        <!-- Tab panes -->
+        <div class="form-group row">
+            <div class="col-md-2">
+                <label>Street Number</label>
+                <input class="form-control form-control-sm" type="text">
+            </div>
+            <div class="col-md-6">
+                <label>Street Name</label>
+                <input class="form-control form-control-sm" type="text">
+            </div>
+            <div class="col-md-2">
+                <label>Apartment</label>
+                <input class="form-control form-control-sm" type="text">
+            </div>
+            <div class="col-md-2">
+                <label>Postal Code</label>
+                <input class="form-control form-control-sm" type="text">
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-md-5">
+                <label>City</label>
+                <input class="form-control form-control-sm" type="text">
+            </div>
+            <div class="col-md-3">
+                <label>Province</label>
+                <select class="custom-select form-control form-control-sm">
+                    <option disabled value="">Choose One</option>
+                    <option value="AB">Alberta</option>
+                    <option value="BC">British Columbia</option>
+                    <option value="MB">Manitoba</option>
+                    <option value="NB">New Brunswick</option>
+                    <option value="NL">Newfoundland</option>
+                    <option value="NT">Northwest Territories</option>
+                    <option value="NS">Nova Scotia</option>
+                    <option value="NU">Nunavut</option>
+                    <option selected="selected" value="ON">Ontario</option>
+                    <option value="PE">Prince Edward Island</option>
+                    <option value="QC">Quebec</option>
+                    <option value="SK">Saskatchewan</option>
+                    <option value="YT">Yukon</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label>Country</label>
+                <select class="custom-select form-control form-control-sm">
+                    <option disabled value="AF">AFGHANISTAN</option>
+                    <option value="AX">ALAND ISLANDS</option>
+                    <option value="AL">ALBANIA</option>
+                    <option value="DZ">ALGERIA</option>
+                    <option value="AS">AMERICAN SAMOA</option>
+                    <option value="AD">ANDORRA</option>
+                    <option value="AO">ANGOLA</option>
+                    <option value="AI">ANGUILLA</option>
+                    <option value="AQ">ANTARCTICA</option>
+                    <option value="AG">ANTIGUA AND BARBUDA</option>
+                    <option value="AR">ARGENTINA</option>
+                    <option value="AM">ARMENIA</option>
+                    <option value="AW">ARUBA</option>
+                    <option value="AU">AUSTRALIA</option>
+                    <option value="AT">AUSTRIA</option>
+                    <option value="AZ">AZERBAIJAN</option>
+                    <option value="BS">BAHAMAS</option>
+                    <option value="BH">BAHRAIN</option>
+                    <option value="BD">BANGLADESH</option>
+                    <option value="BB">BARBADOS</option>
+                    <option value="BY">BELARUS</option>
+                    <option value="BE">BELGIUM</option>
+                    <option value="BZ">BELIZE</option>
+                    <option value="BJ">BENIN</option>
+                    <option value="BM">BERMUDA</option>
+                    <option value="BT">BHUTAN</option>
+                    <option value="BO">BOLIVIA, PLURINATIONAL STATE OF</option>
+                    <option value="BA">BOSNIA AND HERZEGOVINA</option>
+                    <option value="BW">BOTSWANA</option>
+                    <option value="BV">BOUVET ISLAND</option>
+                    <option value="BR">BRAZIL</option>
+                    <option value="IO">BRITISH INDIAN OCEAN TERRITORY</option>
+                    <option value="BN">BRUNEI DARUSSALAM</option>
+                    <option value="BG">BULGARIA</option>
+                    <option value="BF">BURKINA FASO</option>
+                    <option value="BI">BURUNDI</option>
+                    <option value="KH">CAMBODIA</option>
+                    <option value="CM">CAMEROON</option>
+                    <option selected="selected" value="CA">CANADA</option>
+                    <option value="CV">CAPE VERDE</option>
+                    <option value="KY">CAYMAN ISLANDS</option>
+                    <option value="CF">CENTRAL AFRICAN REPUBLIC</option>
+                    <option value="TD">CHAD</option>
+                    <option value="CL">CHILE</option>
+                    <option value="CN">CHINA</option>
+                    <option value="CX">CHRISTMAS ISLAND</option>
+                    <option value="CC">COCOS (KEELING) ISLANDS</option>
+                    <option value="CO">COLOMBIA</option>
+                    <option value="KM">COMOROS</option>
+                    <option value="CG">CONGO</option>
+                    <option value="CD">CONGO, THE DEMOCRATIC REPUBLIC OF THE</option>
+                    <option value="CK">COOK ISLANDS</option>
+                    <option value="CR">COSTA RICA</option>
+                    <option value="CI">COTE D'IVOIRE</option>
+                    <option value="HR">CROATIA</option>
+                    <option value="CU">CUBA</option>
+                    <option value="CY">CYPRUS</option>
+                    <option value="CZ">CZECH REPUBLIC</option>
+                    <option value="DK">DENMARK</option>
+                    <option value="DJ">DJIBOUTI</option>
+                    <option value="DM">DOMINICA</option>
+                    <option value="DO">DOMINICAN REPUBLIC</option>
+                    <option value="EC">ECUADOR</option>
+                    <option value="EG">EGYPT</option>
+                    <option value="SV">EL SALVADOR</option>
+                    <option value="GQ">EQUATORIAL GUINEA</option>
+                    <option value="ER">ERITREA</option>
+                    <option value="EE">ESTONIA</option>
+                    <option value="ET">ETHIOPIA</option>
+                    <option value="FK">FALKLAND ISLANDS (MALVINAS)</option>
+                    <option value="FO">FAROE ISLANDS</option>
+                    <option value="FJ">FIJI</option>
+                    <option value="FI">FINLAND</option>
+                    <option value="FR">FRANCE</option>
+                    <option value="GF">FRENCH GUIANA</option>
+                    <option value="PF">FRENCH POLYNESIA</option>
+                    <option value="TF">FRENCH SOUTHERN TERRITORIES</option>
+                    <option value="GA">GABON</option>
+                    <option value="GM">GAMBIA</option>
+                    <option value="GE">GEORGIA</option>
+                    <option value="DE">GERMANY</option>
+                    <option value="GH">GHANA</option>
+                    <option value="GI">GIBRALTAR</option>
+                    <option value="GR">GREECE</option>
+                    <option value="GL">GREENLAND</option>
+                    <option value="GD">GRENADA</option>
+                    <option value="GP">GUADELOUPE</option>
+                    <option value="GU">GUAM</option>
+                    <option value="GT">GUATEMALA</option>
+                    <option value="GG">GUERNSEY</option>
+                    <option value="GN">GUINEA</option>
+                    <option value="GW">GUINEA-BISSAU</option>
+                    <option value="GY">GUYANA</option>
+                    <option value="HT">HAITI</option>
+                    <option value="HM">HEARD ISLAND AND MCDONALD ISLANDS</option>
+                    <option value="VA">HOLY SEE (VATICAN CITY STATE)</option>
+                    <option value="HN">HONDURAS</option>
+                    <option value="HK">HONG KONG</option>
+                    <option value="HU">HUNGARY</option>
+                    <option value="IS">ICELAND</option>
+                    <option value="IN">INDIA</option>
+                    <option value="ID">INDONESIA</option>
+                    <option value="IR">IRAN, ISLAMIC REPUBLIC OF</option>
+                    <option value="IQ">IRAQ</option>
+                    <option value="IE">IRELAND</option>
+                    <option value="IM">ISLE OF MAN</option>
+                    <option value="IL">ISRAEL</option>
+                    <option value="IT">ITALY</option>
+                    <option value="JM">JAMAICA</option>
+                    <option value="JP">JAPAN</option>
+                    <option value="JE">JERSEY</option>
+                    <option value="JO">JORDAN</option>
+                    <option value="KZ">KAZAKHSTAN</option>
+                    <option value="KE">KENYA</option>
+                    <option value="KI">KIRIBATI</option>
+                    <option value="KP">KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF</option>
+                    <option value="KR">KOREA, REPUBLIC OF</option>
+                    <option value="KW">KUWAIT</option>
+                    <option value="KG">KYRGYZSTAN</option>
+                    <option value="LA">LAO PEOPLE'S DEMOCRATIC REPUBLIC</option>
+                    <option value="LV">LATVIA</option>
+                    <option value="LB">LEBANON</option>
+                    <option value="LS">LESOTHO</option>
+                    <option value="LR">LIBERIA</option>
+                    <option value="LY">LIBYAN ARAB JAMAHIRIYA</option>
+                    <option value="LI">LIECHTENSTEIN</option>
+                    <option value="LT">LITHUANIA</option>
+                    <option value="LU">LUXEMBOURG</option>
+                    <option value="MO">MACAO</option>
+                    <option value="MK">MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF</option>
+                    <option value="MG">MADAGASCAR</option>
+                    <option value="MW">MALAWI</option>
+                    <option value="MY">MALAYSIA</option>
+                    <option value="MV">MALDIVES</option>
+                    <option value="ML">MALI</option>
+                    <option value="MT">MALTA</option>
+                    <option value="MH">MARSHALL ISLANDS</option>
+                    <option value="MQ">MARTINIQUE</option>
+                    <option value="MR">MAURITANIA</option>
+                    <option value="MU">MAURITIUS</option>
+                    <option value="YT">MAYOTTE</option>
+                    <option value="MX">MEXICO</option>
+                    <option value="FM">MICRONESIA, FEDERATED STATES OF</option>
+                    <option value="MD">MOLDOVA, REPUBLIC OF</option>
+                    <option value="MC">MONACO</option>
+                    <option value="MN">MONGOLIA</option>
+                    <option value="ME">MONTENEGRO</option>
+                    <option value="MS">MONTSERRAT</option>
+                    <option value="MA">MOROCCO</option>
+                    <option value="MZ">MOZAMBIQUE</option>
+                    <option value="MM">MYANMAR</option>
+                    <option value="NA">NAMIBIA</option>
+                    <option value="NR">NAURU</option>
+                    <option value="NP">NEPAL</option>
+                    <option value="NL">NETHERLANDS</option>
+                    <option value="AN">NETHERLANDS ANTILLES</option>
+                    <option value="NC">NEW CALEDONIA</option>
+                    <option value="NZ">NEW ZEALAND</option>
+                    <option value="NI">NICARAGUA</option>
+                    <option value="NE">NIGER</option>
+                    <option value="NG">NIGERIA</option>
+                    <option value="NU">NIUE</option>
+                    <option value="NF">NORFOLK ISLAND</option>
+                    <option value="MP">NORTHERN MARIANA ISLANDS</option>
+                    <option value="NO">NORWAY</option>
+                    <option value="OM">OMAN</option>
+                    <option value="PK">PAKISTAN</option>
+                    <option value="PW">PALAU</option>
+                    <option value="PS">PALESTINIAN TERRITORY, OCCUPIED</option>
+                    <option value="PA">PANAMA</option>
+                    <option value="PG">PAPUA NEW GUINEA</option>
+                    <option value="PY">PARAGUAY</option>
+                    <option value="PE">PERU</option>
+                    <option value="PH">PHILIPPINES</option>
+                    <option value="PN">PITCAIRN</option>
+                    <option value="PL">POLAND</option>
+                    <option value="PT">PORTUGAL</option>
+                    <option value="PR">PUERTO RICO</option>
+                    <option value="QA">QATAR</option>
+                    <option value="RE">REUNION</option>
+                    <option value="RO">ROMANIA</option>
+                    <option value="RU">RUSSIAN FEDERATION</option>
+                    <option value="RW">RWANDA</option>
+                    <option value="BL">SAINT BARTHELEMY</option>
+                    <option value="SH">SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA</option>
+                    <option value="KN">SAINT KITTS AND NEVIS</option>
+                    <option value="LC">SAINT LUCIA</option>
+                    <option value="MF">SAINT MARTIN</option>
+                    <option value="PM">SAINT PIERRE AND MIQUELON</option>
+                    <option value="VC">SAINT VINCENT AND THE GRENADINES</option>
+                    <option value="WS">SAMOA</option>
+                    <option value="SM">SAN MARINO</option>
+                    <option value="ST">SAO TOME AND PRINCIPE</option>
+                    <option value="SA">SAUDI ARABIA</option>
+                    <option value="SN">SENEGAL</option>
+                    <option value="RS">SERBIA</option>
+                    <option value="SC">SEYCHELLES</option>
+                    <option value="SL">SIERRA LEONE</option>
+                    <option value="SG">SINGAPORE</option>
+                    <option value="SK">SLOVAKIA</option>
+                    <option value="SI">SLOVENIA</option>
+                    <option value="SB">SOLOMON ISLANDS</option>
+                    <option value="SO">SOMALIA</option>
+                    <option value="ZA">SOUTH AFRICA</option>
+                    <option value="GS">SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS</option>
+                    <option value="ES">SPAIN</option>
+                    <option value="LK">SRI LANKA</option>
+                    <option value="SD">SUDAN</option>
+                    <option value="SR">SURINAME</option>
+                    <option value="SJ">SVALBARD AND JAN MAYEN</option>
+                    <option value="SZ">SWAZILAND</option>
+                    <option value="SE">SWEDEN</option>
+                    <option value="CH">SWITZERLAND</option>
+                    <option value="SY">SYRIAN ARAB REPUBLIC</option>
+                    <option value="TW">TAIWAN, PROVINCE OF CHINA</option>
+                    <option value="TJ">TAJIKISTAN</option>
+                    <option value="TZ">TANZANIA, UNITED REPUBLIC OF</option>
+                    <option value="TH">THAILAND</option>
+                    <option value="TL">TIMOR-LESTE</option>
+                    <option value="TG">TOGO</option>
+                    <option value="TK">TOKELAU</option>
+                    <option value="TO">TONGA</option>
+                    <option value="TT">TRINIDAD AND TOBAGO</option>
+                    <option value="TN">TUNISIA</option>
+                    <option value="TR">TURKEY</option>
+                    <option value="TM">TURKMENISTAN</option>
+                    <option value="TC">TURKS AND CAICOS ISLANDS</option>
+                    <option value="TV">TUVALU</option>
+                    <option value="UG">UGANDA</option>
+                    <option value="UA">UKRAINE</option>
+                    <option value="AE">UNITED ARAB EMIRATES</option>
+                    <option value="GB">UNITED KINGDOM</option>
+                    <option value="US">UNITED STATES</option>
+                    <option value="UM">UNITED STATES MINOR OUTLYING ISLANDS</option>
+                    <option value="UY">URUGUAY</option>
+                    <option value="UZ">UZBEKISTAN</option>
+                    <option value="VU">VANUATU</option>
+                    <option value="VE">VENEZUELA, BOLIVARIAN REPUBLIC OF</option>
+                    <option value="VN">VIET NAM</option>
+                    <option value="VG">VIRGIN ISLANDS, BRITISH</option>
+                    <option value="VI">VIRGIN ISLANDS, U.S.</option>
+                    <option value="WF">WALLIS AND FUTUNA</option>
+                    <option value="EH">WESTERN SAHARA</option>
+                    <option value="YE">YEMEN</option>
+                    <option value="ZM">ZAMBIA</option>
+                    <option value="ZW">ZIMBABWE</option>
+                </select>
+
+            </div>
+
+
+        </div>
+
+        <h5>Vehicle</h5>
+        <div class="form-group row">
+            <div class="col-md-1">
+                <label>VIN</label>
+                <input class="form-control form-control-sm" type="text">
+            </div>
+            <div class="col-md-1">
+                <label>Year</label>
+                <input class="form-control form-control-sm" type="number">
+            </div>
+            <div class="col-md-2">
+                <label>Make</label>
+                <input class="form-control form-control-sm" type="text">
+            </div>
+            <div class="col-md-2">
+                <label>Model</label>
+                <input class="form-control form-control-sm" type="text">
+            </div>
+            <div class="col-md-2">
+                <label>Purchase Date</label>
+                <input class="form-control form-control-sm" type="date">
+            </div>
+            <div class="col-md-2">
+                <label>Purchase Price</label>
+                <input class="form-control form-control-sm" type="number">
+            </div>
+            <div class="col-md-2">
+                <label>List Price New</label>
+                <input class="form-control form-control-sm" type="number">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-2">
+                <div><label>New/Used</label></div>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default ">
+                        <input type="radio" autocomplete="off">New
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio" autocomplete="off">Used
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-2">
+                <div><label>Leased</label></div>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default ">
+                        <input type="radio" autocomplete="off">Yes
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio" autocomplete="off">No
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-2">
+                <div><label>Modified</label></div>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default ">
+                        <input type="radio" autocomplete="off">Yes
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio" autocomplete="off">No
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label>&nbsp;</label>
+                <input type="number" autocomplete="off" placeholder="" min="0">
+            </div>
+        </div>
+        <div class="form-group row">
+
+            <div class="col-md-2">
+                <label>Anti-TheftDevice</label>
+                <select class="form-control form-control-sm">
+                    <option value="csio:0">None</option>
+                    <option value="csio:1">Electronic Alarm</option>
+                    <option value="csio:3">Engraving</option>
+                    <option value="csio:5">Startup Locking Mechanism With Deactivator</option>
+                    <option value="csio:7">Steering Locking Bar</option>
+                    <option value="csio:8">Tracking System</option>
+                    <option value="csio:M">Original Manufacturer Anti-Theft Package</option>
+                </select>
+            </div>
+            <div class="col-md-5">
+                <label>Anti-Theft Make</label>
+                <select class="form-control-sm form-control">
+                    <option value="csio:1">Vehicle Manufacturer/Original
+                        Equipment Manufacturer
+                    </option>
+                    <option value="csio:2">PRO-TG</option>
+                    <option value="csio:3">Sherlock</option>
+                    <option value="csio:4">SPAV</option>
+                    <option value="csio:5">Super Duro-garde</option>
+                    <option value="csio:6">Doc</option>
+                    <option value="csio:7">Auto-garde</option>
+                    <option value="csio:8">RAMCO</option>
+                    <option value="csio:9">Apple</option>
+                    <option value="csio:10">Boomerang</option>
+                    <option value="csio:11">Duro VIP</option>
+                    <option value="csio:12">VSS 150</option>
+                    <option value="csio:13">Automate</option>
+                    <option value="csio:14">Theftbuster TB300V (VICC
+                        approved)
+                    </option>
+                    <option value="csio:15">Autowatch 329Ti (VICC approved)
+                    </option>
+                    <option value="csio:16">Magtec 6000 (VICC approved)</option>
+                    <option value="csio:17">Powerlock Canada (VICC approved)
+                    </option>
+                    <option value="csio:18">Alpine</option>
+                    <option value="csio:19">Autostart</option>
+                    <option value="csio:20">Autowatch</option>
+                    <option value="csio:21">Boomerang I</option>
+                    <option value="csio:22">Boomerang II</option>
+                    <option value="csio:23">Carbine</option>
+                    <option value="csio:24">Clifford</option>
+                    <option value="csio:25">Duro</option>
+                    <option value="csio:26">Intercepter</option>
+                    <option value="csio:27">Magtec</option>
+                    <option value="csio:28">Marksman</option>
+                    <option value="csio:29">Mobilus</option>
+                    <option value="csio:30">Onstar</option>
+                    <option value="csio:31">Powerstart</option>
+                    <option value="csio:32">Prestige</option>
+                    <option value="csio:33">Pursuit</option>
+                    <option value="csio:34">Python</option>
+                    <option value="csio:35">SPAVTrack</option>
+                    <option value="csio:36">SSN</option>
+                    <option value="csio:37">SSN (Mul-T-Lock)</option>
+                    <option value="csio:38">Tiger</option>
+                    <option value="csio:39">Ultracar</option>
+                    <option value="csio:40">Ungo</option>
+                    <option value="csio:41">Vigil</option>
+                    <option value="csio:42">Viper</option>
+                    <option value="csio:43">Other Cellular based Technology
+                    </option>
+                    <option value="csio:44">Other GPS based System</option>
+                    <option value="csio:45">Astrolock</option>
+                    <option value="csio:46">Audiovox</option>
+                    <option value="csio:47">Collard Steadfast</option>
+                    <option value="csio:48">Doc 4000</option>
+                    <option value="csio:49">Duro Garde</option>
+                    <option value="csio:50">Gemni (Skylink GPS)</option>
+                    <option value="csio:51">Hornet</option>
+                    <option value="csio:52">Investiguard</option>
+                    <option value="csio:53">Lynx</option>
+                    <option value="csio:54">Micro-protec</option>
+                    <option value="csio:55">Otomax</option>
+                    <option value="csio:56">Planet Track</option>
+                    <option value="csio:57">Pro-Gard</option>
+                    <option value="csio:58">Stealstopper</option>
+                    <option value="csio:59">Tiger 1000</option>
+                    <option value="csio:60">Datadot</option>
+                    <option value="csio:61">Vinlock</option>
+                    <option value="csio:62">MasterGard M6000</option>
+                    <option value="csio:63">MasterGard TK</option>
+                    <option value="csio:64">Canam</option>
+                    <option value="csio:65">PRO-TG X000</option>
+                    <option value="csio:66">Spav 06</option>
+                    <option value="csio:67">Doc 1000 / 2000</option>
+                    <option value="csio:68">Doc X000</option>
+                    <option value="csio:69">Otoprotec</option>
+                    <option value="csio:70">Pass-Key</option>
+                    <option value="csio:71">NavLynx</option>
+                    <option value="csio:72">Boomerang Espion Alert</option>
+                    <option value="csio:73">Boomerang Espion</option>
+                    <option value="csio:75">Viper 200Max</option>
+                    <option value="csio:76">Viper 220Max</option>
+                    <option value="csio:77">Triumph with siren</option>
+                    <option value="csio:78">Merlin 2000</option>
+                    <option value="csio:79">Harley with siren</option>
+                    <option value="csio:80">BMW</option>
+                    <option value="csio:81">Scorpio SR1500S</option>
+                    <option value="csio:82">Scorpio SR1500E</option>
+                    <option value="csio:83">Tridion T2</option>
+                    <option value="csio:84">Autoluck</option>
+                    <option value="csio:86">Guardian</option>
+                    <option value="csio:87">Larlock</option>
+                    <option value="csio:88">Kolombo URB 1500</option>
+                    <option value="csio:89">Kolombo URB 2000</option>
+                    <option value="csio:90">Boomerang Express</option>
+                    <option value="csio:91">Econotrack</option>
+                    <option value="csio:92">Boomerang / LoJack Espion (radio
+                        frequency technology)
+                    </option>
+                    <option value="csio:93">Boomerang / LoJack Espion Alert
+                        (radio frequency technology)
+                    </option>
+                    <option value="csio:94">Boomerang / LoJack Espion Alert
+                        Plus (radio frequency technology)
+                    </option>
+                    <option value="csio:99">Other</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+
+            <div class="col-md-2">
+                <label>Unrepaired Damage</label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default ">
+                        <input type="radio" autocomplete="off">Yes
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio" autocomplete="off">No
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-2">
+                <div><label>Vehicle Use</label></div>
+                <select class="form-control-sm form-control">
+                    <option value="csio:P">Pleasure</option>
+                    <option value="csio:B">Business</option>
+                    <option value="csio:W">Commute</option>
+                    <option value="csio:F">Farm</option>
+                    <option value="csio:C">Commercial</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <div><label>Distance (One Way)</label></div>
+                <input class="form-control-sm form-control" type="number">
+            </div>
+            <div class="col-md-2">
+                <div><label>Est Annual Kms</label></div>
+                <input class="form-control-sm form-control" type="number">
+            </div>
+            <div class="col-md-2">
+                <div><label>Est Business Kms</label></div>
+                <input class="form-control-sm form-control" type="number">
+            </div>
+            <div class="col-md-2">
+                <div><label># of Passengers</label></div>
+                <input class="form-control-sm form-control" type="number">
+            </div>
+            <div class="col-md-2">
+                <label>Garaging Postal Code</label>
+                <input class="form-control-sm form-control" type="text" autocomplete="off">
+            </div>
+        </div>
+
+        <div class="form-group row col-md-offset-1">
+            <h6>Coverages</h6>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Coverage</th>
+                    <th>Limit</th>
+                    <th>Deductible</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Bodily Injury - TPBI (Third Party - Bodily Injury)</td>
+                    <td>
+                        <select class="form-control form-control-sm">
+                            <option disabled selected value="">Choose One</option>
+                            <option>$1,0000</option>
+                            <option>$2,0000</option>
+                            <option>$3,0000</option>
+                        </select></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Property Damage - TPPD (Third Party - Property Damage)</td>
+                    <td>
+                        <select class="form-control form-control-sm">
+                            <option disabled selected value="">Choose One</option>
+                            <option>$1,0000</option>
+                            <option>$2,0000</option>
+                            <option>$3,0000</option>
+                        </select></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Accident Benefits -AB</td>
+                    <td>
+                        <select class="form-control form-control-sm">
+                            <option disabled selected value="">Choose One</option>
+                            <option>$1,0000</option>
+                            <option>$2,0000</option>
+                            <option>$3,0000</option>
+                        </select></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Uninsured Automobile - UA</td>
+                    <td>
+                        <select class="form-control form-control-sm">
+                            <option disabled selected value="">Choose One</option>
+                            <option>$1,0000</option>
+                            <option>$2,0000</option>
+                            <option>$3,0000</option>
+                        </select></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TPDC (Direct Compensation)</td>
+                    <td>
+                    </td>
+                    <td><select class="form-control form-control-sm">
+                        <option disabled selected value="">Choose One</option>
+                        <option>$1,0000</option>
+                        <option>$2,0000</option>
+                        <option>$3,0000</option>
+                    </select></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="col-md-2">
+                <a class="btn btn-default">Add Coverage</a>
+            </div>
+        </div>
+
+        <div class="form-group row col-md-offset-1">
+            <h6>Discounts/Surcharges</h6>
+            <div class="col-md-2">
+                <a class="btn btn-default">Add Discounts/Surcharge</a>
+            </div>
+
+        </div>
+
+
+        <div class="form-group row col-md-offset-1">
+            <h6>Nature of Interest</h6>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Company Name</th>
+                    <th>Nature of Interest</th>
+                    <th>Address 1</th>
+                    <th>Address 2</th>
+                    <th>City</th>
+                    <th>Province</th>
+                    <th>Postal Code</th>
+                    <th>Country</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Joe Fresh</td>
+                    <td>
+                        <select class="form-control form-control-sm">
+                            <option value="csio:AD">Additional Interest</option>
+                            <option value="csio:AO">Actual Owner</option>
+                            <option value="csio:EX">Executor</option>
+                            <option value="csio:LH">Lienholder</option>
+                            <option value="csio:LP">Loss Payee</option>
+                            <option value="csio:LR">Lessor</option>
+                            <option value="csio:MG">Mortgagee (Financial Institution)</option>
+                            <option value="csio:MO">Mortgagee (Other)</option>
+                            <option value="csio:RO">Registered Owner</option>
+                        </select>
+                    </td>
+                    <td>100 Main Street.</td>
+                    <td></td>
+                    <td>Toronto</td>
+                    <td>Ontario</td>
+                    <td>m6p 2y6</td>
+                    <td>Canada</td>
+                </tr>
+                <tr>
+                    <td>Proctor & Gamble</td>
+                    <td><select class="form-control form-control-sm">
+                        <option value="csio:AD">Additional Interest</option>
+                        <option value="csio:AO">Actual Owner</option>
+                        <option value="csio:EX">Executor</option>
+                        <option value="csio:LH">Lienholder</option>
+                        <option value="csio:LP">Loss Payee</option>
+                        <option value="csio:LR">Lessor</option>
+                        <option value="csio:MG">Mortgagee (Financial Institution)</option>
+                        <option value="csio:MO">Mortgagee (Other)</option>
+                        <option value="csio:RO">Registered Owner</option>
+                    </select>
+                    </td>
+                    <td>643 Fewton Abbey</td>
+                    <td></td>
+                    <td>Digbyville</td>
+                    <td>Ontario</td>
+                    <td>m9k 5t1</td>
+                    <td>Canada</td>
+                </tr>
+
+                </tbody>
+            </table>
+            <div class="col-md-2">
+                <a class="btn btn-default">Add Additional Interest</a>
+            </div>
+        </div>
+
+
+        <h5>Drivers</h5>
+        <div class="form-group row">
+            <div class="col-md-2">
+                <div><label>Company Name</label></div>
+                <input type="text" class="form-control form-control-sm">
+            </div>
+            <div class="col-md-2">
+                <div><label>First Name</label></div>
+                <input type="text" class="form-control form-control-sm">
+            </div>
+            <div class="col-md-2">
+                <div><label>Last Name</label></div>
+                <input type="text" class="form-control form-control-sm">
+            </div>
+            <div class="col-md-2">
+                <div><label>Birth Date</label></div>
+                <input type="date" class="form-control form-control-sm">
+            </div>
+            <div class="col-md-2">
+                <div><label>Gender</label></div>
+                <select class="form-control form-control-sm">
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Unknown</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-2">
+                <label>Marital Status</label>
+                <select class="form-control form-control-sm">
+                    <option value="csio:C">Common-law</option>
+                    <option value="csio:D">optionorced</option>
+                    <option value="csio:M">Married</option>
+                    <option value="csio:P">Separated</option>
+                    <option value="csio:S">Single</option>
+                    <option value="csio:W">Widowed</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label>Relationship</label>
+                <select class="form-control form-control-sm">
+                    <option value="csio:B">Brother/Sister</option>
+                    <option value="csio:C">Child</option>
+                    <option value="csio:E">Employee</option>
+                    <option value="csio:H">Co habitant</option>
+                    <option value="csio:I">Insured</option>
+                    <option value="csio:L">Lessee</option>
+                    <option value="csio:O">Other</option>
+                    <option value="csio:P">Parent</option>
+                    <option value="csio:R">Other Relative</option>
+                    <option value="csio:S">Spouse</option>
+                    <option value="csio:T">Third Party</option>
+                    <option value="csio:1">Partner, Same-sex</option>
+                    <option value="csio:2">Common Law Spouse</option>
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <label>Driver Training</label>
+                <input type="text" class="form-control form-control-sm">
+            </div>
+            <div class="col-md-2">
+                <label>Driver Training Date</label>
+                <input type="date" class="form-control form-control-sm">
+            </div>
+            <div class="col-md-2">
+                <label>&nbsp;</label>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="">
+                        Good Driver
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label>MVR Date</label>
+                <input type="date" class="form-control form-control-sm">
+            </div>
+        </div>
+
+        <h6>Licenses</h6>
+        <div class="form-group row">
+            <div class="col-md-2">
+                <label>License Number</label>
+                <input type="text" class="form-control form-control-sm" autocomplete="off">
+            </div>
+            <div class="col-md-2">
+                <label>Province</label>
+                <select class="custom-select form-control form-control-sm">
+                    <option disabled value="">Choose One</option>
+                    <option value="AB">Alberta</option>
+                    <option value="BC">British Columbia</option>
+                    <option value="MB">Manitoba</option>
+                    <option value="NB">New Brunswick</option>
+                    <option value="NL">Newfoundland</option>
+                    <option value="NT">Northwest Territories</option>
+                    <option value="NS">Nova Scotia</option>
+                    <option value="NU">Nunavut</option>
+                    <option selected="selected" value="ON">Ontario</option>
+                    <option value="PE">Prince Edward Island</option>
+                    <option value="QC">Quebec</option>
+                    <option value="SK">Saskatchewan</option>
+                    <option value="YT">Yukon</option>
+                </select>
+
+            </div>
+
+        </div>
+        <div class="form-group row">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Date Licensed</th>
+                    <th>License Class Code</th>
+                    <th style="width:50%"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="date" class="form-control form-control-sm"></td>
+                    <td>
+                        <select class="form-control form-control-sm">
+                            <option>G</option>
+                            <option>G1</option>
+                            <option>G2</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                            <option>F</option>
+                            <option>M1</option>
+                            <option>M2</option>
+                        </select>
+                    </td>
+                    <td></td>
+                </tr>
+
+
+                </tbody>
+            </table>
+
+            <a class="btn btn-default col-md-2">Add Driver</a>
+        </div>
+
+
+        <div class="form-group row">
+            <h5>Driver Vehicle Assignments</h5>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Driver 1</th>
+                    <th style="width:50%"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Vehicle 1</td>
+                    <td><input type="number" class="form-control form-control-sm" min="0" max="100" step="5"></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-group row">
+            <h5>Claims</h5>
+            <div class="col-md-2">
+                <label>Loss Date</label>
+                <input type="date" class="form-control form-control-sm" autocomplete="off">
+            </div>
+            <div class="col-md-2">
+                <label>Cause</label>
+                <select class="form-control form-control-sm">
+                    <option value="501">Appliance - Malfunction</option>
+                    <option value="502">Bodily Injury</option>
+                    <option value="503">Burglary</option>
+                    <option value="504">Collapse - Above Ground Pool</option>
+                    <option value="505">Collapse - Building</option>
+                    <option value="506">Collapse - Inground Pool</option>
+                    <option value="507">Collapse - Weight of Ice/Snow</option>
+                    <option value="508">Collapse - Unspecified</option>
+                    <option value="509">Consequential Loss</option>
+                    <option value="510">Credit Card Forgery and Counterfeit
+                        Money
+                    </option>
+                    <option value="520">Domestic Pets</option>
+                    <option value="521">Earthquake</option>
+                    <option value="522">Electrical Power Interruption/Power
+                        Surge
+                    </option>
+                    <option value="523">Employee Fraud</option>
+                    <option value="524">Entrapment</option>
+                    <option value="525">Explosion - Propane/Natural Gas
+                        Appliance
+                    </option>
+                    <option value="526">Explosion - Unspecified</option>
+                    <option value="527">Explosion - Electric Arcing</option>
+                    <option value="534">Financial Fraud - Identity Theft</option>
+                    <option value="535">Fire- Spread from Third Party
+                        Property
+                    </option>
+                    <option value="536">Falling Object</option>
+                    <option value="537">Fire - Arson/Arson Suspected</option>
+                    <option value="538">Fire - Careless use of
+                        Candles/Matches
+                    </option>
+                    <option value="539">Fire - Careless Smoking</option>
+                    <option value="540">Fire - Cooking Operations/Grease
+                        Fire
+                    </option>
+                    <option value="541">Fire - Electrical</option>
+                    <option value="542">Fire - Fireplace/Chimney</option>
+                    <option value="543">Fire - Portable Heater</option>
+                    <option value="544">Fire - Woodstove/Chimney</option>
+                    <option value="545">Fire Department Charges</option>
+                    <option value="546">Fire - Improper Storage &amp; Handling
+                        of Chemicals/Fuels
+                    </option>
+                    <option value="547">Fire - Unspecified</option>
+                    <option value="548">Forgery</option>
+                    <option value="549">Freezer Contents</option>
+                    <option value="550">Fuel Leakage - Exterior Oil Storage
+                        Tank
+                    </option>
+                    <option value="551">Fuel Leakage - Interior Oil Storage
+                        Tank
+                    </option>
+                    <option value="561">Glass Breakage - Accidental</option>
+                    <option value="562">Glass Breakage - Vandalism</option>
+                    <option value="563">Glass Breakage - Unspecified</option>
+                    <option value="564">Hail Damage</option>
+                    <option value="565">Impact - Aircraft</option>
+                    <option value="566">Impact - Land Vehicle, Insured
+                        Operator
+                    </option>
+                    <option value="567">Impact - Land Vehicle, Third Party
+                        Operator
+                    </option>
+                    <option value="568">Lightning - Antenna/Dish</option>
+                    <option value="569">Lightning - Chimney</option>
+                    <option value="570">Lightning - Electrical Equipment</option>
+                    <option value="571">Lightning - Unspecified</option>
+                    <option value="572">Loss Assessment Coverage</option>
+                    <option value="573">Lost/Stolen Keys</option>
+                    <option value="583">Mass Evacuation</option>
+                    <option value="584">Mysterious Disappearance</option>
+                    <option value="585">Pollution Damage</option>
+                    <option value="586">Pollution Liability</option>
+                    <option value="587">Prohibited Access by Civil Authority
+                    </option>
+                    <option value="588">Property Damage</option>
+                    <option value="589">Riot</option>
+                    <option value="590">Robbery</option>
+                    <option value="591">Sewer Backup</option>
+                    <option value="592">Smoke - Fire in Adjacent
+                        Premises/Building
+                    </option>
+                    <option value="593">Smoke - Heating/Ventilation
+                        Malfunction
+                    </option>
+                    <option value="594">Smoke - Unspecified</option>
+                    <option value="595">Tenants Legal Liability</option>
+                    <option value="596">Theft/Attempted Theft - Off Premises,
+                        Non-vehicle
+                    </option>
+                    <option value="597">Theft/Attempted Theft - Off Premises,
+                        Vehicle
+                    </option>
+                    <option value="598">Theft/Attempted Theft - On Premises,
+                        Non-forced Entry
+                    </option>
+                    <option value="599">Transportation -
+                        Collision/Upset/Overturn
+                    </option>
+                    <option value="600">Transportation - Unspecified</option>
+                    <option value="610">Vandalism/Malicious Damage - Building
+                        Vacant
+                    </option>
+                    <option value="611">Vandalism/Malicious Damage -
+                        Explosion
+                    </option>
+                    <option value="612">Vandalism/Malicious Damage - Insured
+                        Suspect
+                    </option>
+                    <option value="613">Vandalism/Malicious Damage -
+                        Unspecified
+                    </option>
+                    <option value="614">Voluntary Compensation</option>
+                    <option value="615">Voluntary Medical Payment</option>
+                    <option value="616">Voluntary Property Damage</option>
+                    <option value="617">Vandalism/Malicious Damage - Illegal
+                        Substance Cultivation and Manufacturing
+                    </option>
+                    <option value="626">Water Damage - Ice Build-up on Roof
+                    </option>
+                    <option value="627">Water Damage - Unspecified</option>
+                    <option value="628">Water Escape/Rupture - Building</option>
+                    <option value="629">Water Escape/Rupture - Contents</option>
+                    <option value="630">Water Escape/Rupture - Eavestrough or
+                        Downspout
+                    </option>
+                    <option value="631">Water Escape/Rupture - Freezing
+                        Building
+                    </option>
+                    <option value="632">Water Escape/Rupture - Freezing,
+                        Unheated Building
+                    </option>
+                    <option value="633">Water Escape/Rupture - Plumbing
+                        System
+                    </option>
+                    <option value="634">Water Escape/Rupture -
+                        Seepage/Leakage
+                    </option>
+                    <option value="635">Water Escape/Rupture - Sewer/Drain
+                    </option>
+                    <option value="636">Water Escape/Rupture - Sprinkler
+                        System
+                    </option>
+                    <option value="637">Water Escape/Rupture - Sump Pump
+                        Failure
+                    </option>
+                    <option value="638">Water Escape/Rupture - Swimming
+                        Pool/Equipment
+                    </option>
+                    <option value="639">Water Escape/Rupture - Waterbed</option>
+                    <option value="640">Water Escape/Rupture - Unspecified
+                    </option>
+                    <option value="641">Windstorm Damage</option>
+                    <option value="642">Water Damage - Infiltration</option>
+                    <option value="999">Other</option>
+                    <option value="001">Backed Into Car</option>
+                    <option value="002">Changed Lanes</option>
+                    <option value="003">Collision with Animal</option>
+                    <option value="004">Collision - Head-on</option>
+                    <option value="005">Collision - Rear-ended</option>
+                    <option value="006">Collision - Multi-vehicle</option>
+                    <option value="007">Collision - Insured Vehicle Parked
+                    </option>
+                    <option value="008">Collision - Other</option>
+                    <option value="009">Damage Caused by Children/Animals
+                    </option>
+                    <option value="010">Disobeyed Stop Sign</option>
+                    <option value="011">Disobeyed Yield Sign</option>
+                    <option value="012">Disobeyed Red Light</option>
+                    <option value="013">Exits Parking Lot - Road/Street</option>
+                    <option value="014">Explosion</option>
+                    <option value="015">Fire Damage - Partial</option>
+                    <option value="016">Fire Damage - Total Loss</option>
+                    <option value="017">Flood</option>
+                    <option value="018">Glass/Windshield</option>
+                    <option value="019">Hit &amp; Run</option>
+                    <option value="020">Hit Pedestrian</option>
+                    <option value="021">Lightning</option>
+                    <option value="022">Lost Control</option>
+                    <option value="023">Neutral Intersection</option>
+                    <option value="024">Opened Door</option>
+                    <option value="025">Parking Lot</option>
+                    <option value="026">Passing On Shoulder</option>
+                    <option value="027">Pulled Out From Curb</option>
+                    <option value="028">Riot/Civil Commotion</option>
+                    <option value="029">Sideswipe</option>
+                    <option value="030">Theft - Entire Vehicle</option>
+                    <option value="031">Theft - Partial/Attempted</option>
+                    <option value="032">Turned Left - Car Approaching</option>
+                    <option value="033">Turned Left - Car Passing</option>
+                    <option value="034">Vandalism</option>
+                    <option value="035">Wind/Hail Carried Spray</option>
+                    <option value="036">Windstorm/Hail</option>
+                    <option value="037">Wrong Way - One-way Street</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label>Driver</label>
+                <input type="text" class="form-control form-control-sm" autocomplete="off">
+            </div>
+            <div class="col-md-2">
+                <label>Insurer</label>
+                <select class="form-control form-control-sm" autocomplete="off">
+                    <option value=""></option>
+                    <option value="AMA">Alberta Motor</option>
+                    <option value="ALG">Algoma Mutual</option>
+                    <option value="ALZ">Allianz</option>
+                    <option value="ALL">Allstate</option>
+                    <option value="AIM">Amherst Island Mutual</option>
+                    <option value="AFM">Antigonish Farmers Mutual</option>
+                    <option value="ASC">Ascentus</option>
+                    <option value="CGUI">Aviva</option>
+                    <option value="AXA">Intact (AXA)</option>
+                    <option value="AYR">Ayr Mutual</option>
+                    <option value="BQM">Bay of Quinte</option>
+                    <option value="BCAA">BCAA</option>
+                    <option value="BCM">Bertie &amp; Clinton Mutual</option>
+                    <option value="BII">Boiler Inspection &amp; Insurance
+                    </option>
+                    <option value="BOR">Boreal</option>
+                    <option value="BRANT">Brant Mutual</option>
+                    <option value="CAA">CAA</option>
+                    <option value="CAB">Cabot</option>
+                    <option value="CC">Canadian Commerce</option>
+                    <option value="CG">Canadian General</option>
+                    <option value="CAMIM">Canadian Millers Mutual</option>
+                    <option value="CNS">Canadian Northern Shield</option>
+                    <option value="CAN">Canassurance</option>
+                    <option value="CARD">Caradoc Delaware Mutual</option>
+                    <option value="CARL">Carleton Mutual</option>
+                    <option value="CAY">Cayuga Mutual</option>
+                    <option value="CIC">Travelers (Chieftain)</option>
+                    <option value="CHUB">Chubb</option>
+                    <option value="COA">Coachman</option>
+                    <option value="QUE">Compagnie dAssurance du Quebec</option>
+                    <option value="CUL">Culross Mutual</option>
+                    <option value="DOC">Travelers (Dominion)</option>
+                    <option value="DUF">Dufferin</option>
+                    <option value="DMI">Dumfries</option>
+                    <option value="ECC">Ecclesiastical</option>
+                    <option value="ECHE">Echelon</option>
+                    <option value="ECON">Economical</option>
+                    <option value="ELT">Aviva (Elite)</option>
+                    <option value="ERI">Erie Mutual</option>
+                    <option value="EVER">Everest</option>
+                    <option value="FAHAL">Facility - Nordic (Facility -
+                        Halifax)
+                    </option>
+                    <option value="FARO">Facility - RSA</option>
+                    <option value="FAM">Factory Mutual</option>
+                    <option value="FIC">Family Insurance</option>
+                    <option value="COMGRP">Commonwell (Farmers Lindsay)</option>
+                    <option value="FEDM">Federated</option>
+                    <option value="FUND">Fundy Mutual</option>
+                    <option value="GAN">Gan Incendie</option>
+                    <option value="GAR">Garante</option>
+                    <option value="GENK">Genmark Insurance</option>
+                    <option value="GERM">Germania</option>
+                    <option value="GIB">Gibraltar</option>
+                    <option value="GLEN">Glengarry Farmers Mutual</option>
+                    <option value="GORE">Gore</option>
+                    <option value="GRAN">Grain</option>
+                    <option value="GRE">Great Eastern</option>
+                    <option value="GWI">Great White Insurance</option>
+                    <option value="GMI">Grenville</option>
+                    <option value="GBM">Grey &amp; Bruce Mutual</option>
+                    <option value="GNA">Guarantee Company of North America
+                    </option>
+                    <option value="HALW">Halwell</option>
+                    <option value="HAM">Hamilton Twp.</option>
+                    <option value="HAN">Hanover</option>
+                    <option value="HRT">Hartford</option>
+                    <option value="HAY">Hay Mutual</option>
+                    <option value="HMI">Howard Mutual</option>
+                    <option value="HOW">Howick Mutual</option>
+                    <option value="GC">Intact (Groupe Commerce)</option>
+                    <option value="HAL">Intact (Halifax)</option>
+                    <option value="GRP">Intact (Novex)</option>
+                    <option value="WELL">Intact (Wellington)</option>
+                    <option value="WU">Intact (ING Western Union)</option>
+                    <option value="INNOV">Innovassur</option>
+                    <option value="ICPEI">Insurance Company of PEI</option>
+                    <option value="ICNW">Ins. Corp. of Newfoundland</option>
+                    <option value="ICBC">ICBC</option>
+                    <option value="JEV">Intact ( Jevco)</option>
+                    <option value="KE">Kent &amp; Essex</option>
+                    <option value="KING">Kings Mutual</option>
+                    <option value="LA">L &amp; A Mutual</option>
+                    <option value="CAP">La Capitale</option>
+                    <option value="CONC">La Concorde</option>
+                    <option value="SEC">La Securite</option>
+                    <option value="STM">La St-Maurice</option>
+                    <option value="ALH">LAlpha</option>
+                    <option value="LAM">Lambton Mutual</option>
+                    <option value="LANA">Lanark Mutual</option>
+                    <option value="LAG">Laurentian General</option>
+                    <option value="LNX">Lennox &amp; Addington</option>
+                    <option value="LEX">LExclusive</option>
+                    <option value="LBM">Liberty Mutual</option>
+                    <option value="IN">LIndustrielle (Industrial General)
+                    </option>
+                    <option value="LGI">Northbridge (Lombard)</option>
+                    <option value="LOY">Loyalist</option>
+                    <option value="UNCN">LUnion Canadienne</option>
+                    <option value="UNIQ">LUnique</option>
+                    <option value="MPIC">Manitoba Public Insurance</option>
+                    <option value="MAPL">Maplex General</option>
+                    <option value="MAR">Northbridge (Markel)</option>
+                    <option value="MAX">MAX Canada</option>
+                    <option value="MCK">McKillop</option>
+                    <option value="MMA">Mennonite Mutual (Alberta)</option>
+                    <option value="MMFS">Mennonite Mutual Fire
+                        (Saskatchewan)
+                    </option>
+                    <option value="METG">Metro General</option>
+                    <option value="MET">Metropolitan</option>
+                    <option value="LTM">Middlesex (London Twp.)</option>
+                    <option value="MCG">Middlesex (McGillivray)</option>
+                    <option value="MILL">Millennium</option>
+                    <option value="OT2">Miscellaneous - European Company</option>
+                    <option value="OT1">Miscellaneous - US Company</option>
+                    <option value="MISS">Economical (Missisquoi)</option>
+                    <option value="MUF">Mutual Fire Insurance Co. of B.C.
+                    </option>
+                    <option value="NATS">National Society (Societe
+                        Nationale)
+                    </option>
+                    <option value="NIA">Niagara Fire</option>
+                    <option value="NOM">Norfolk Mutual</option>
+                    <option value="NORG">NorGroupe</option>
+                    <option value="NBM">North Blenheim Mutual</option>
+                    <option value="NKM">North Kent Mutual</option>
+                    <option value="NORW">North Waterloo</option>
+                    <option value="NORT">Northumberland</option>
+                    <option value="NS">Nova Scotia General</option>
+                    <option value="OREP">Old Republic</option>
+                    <option value="OGA">Omega</option>
+                    <option value="NORF">Optimum (Optimum Frontier)</option>
+                    <option value="OPA">Optimum (Societe dAssurance)</option>
+                    <option value="OPTW">Optimum (Optimum West)</option>
+                    <option value="OT3">Other</option>
+                    <option value="OXF">Oxford Mutual</option>
+                    <option value="PAF">Pafco</option>
+                    <option value="PEA">Peace Hills</option>
+                    <option value="PMM">Peel Maryborough</option>
+                    <option value="PEEL">Peel Mutual</option>
+                    <option value="PEI">PEI Mutual</option>
+                    <option value="PEMB">Pembridge</option>
+                    <option value="PERT">Economical (Perth)</option>
+                    <option value="PCFM">Pictou County Farmers Mutual</option>
+                    <option value="LABI">Portage La Biche</option>
+                    <option value="PORT">Portage La Prairie</option>
+                    <option value="PRM">Prairies Mutual</option>
+                    <option value="PRE">Premier</option>
+                    <option value="PRES">Prestcott</option>
+                    <option value="PREC">PrEvoyance</option>
+                    <option value="PRET">PrEvoyants</option>
+                    <option value="PRIME">Primeguard</option>
+                    <option value="CANL">Primmum (formerly Canada Life
+                        Casualty)
+                    </option>
+                    <option value="RICH">Promutuel Appalaches - St-FranCois
+                        (Richmond &amp; Val St-FranCois)
+                    </option>
+                    <option value="APP">Promutuel Appalaches - St-FranCois
+                    </option>
+                    <option value="VSF">Promutuel Appalaches - St-FranCois
+                        (Val St-FranCois)
+                    </option>
+                    <option value="BAG">Promutuel Bagot</option>
+                    <option value="BEA">Promutuel Beauce</option>
+                    <option value="BEM">Promutuel Bellechasse</option>
+                    <option value="BOI">Promutuel Bois-Francs</option>
+                    <option value="CHL">Promutuel Charlevoix-Montmorency</option>
+                    <option value="IAC">Promutuel Charlevoix-Montmorency
+                        (LIle-aux-Coudres)
+                    </option>
+                    <option value="COAT">Promutuel Coaticook-Sherbrooke</option>
+                    <option value="COMS">Promutuel Coaticook-Sherbrooke
+                        (Compton-Sherbrooke)
+                    </option>
+                    <option value="STOM">Promutuel Coaticook-Sherbrooke
+                        (Stanstead-Orford)
+                    </option>
+                    <option value="EST">Promutuel de LEst</option>
+                    <option value="BIC">Promutuel de lEst (Bic)</option>
+                    <option value="DEUX">Promutuel Deux-Montagnes</option>
+                    <option value="DOR">Promutuel Dorchester</option>
+                    <option value="DRUM">Promutuel Drummond</option>
+                    <option value="SAG">Promutuel du Lac Fjord (Saguenay)
+                    </option>
+                    <option value="GAS">Promutuel GaspEsie - les Iles</option>
+                    <option value="HAUT">Promutuel Haut St-Laurent</option>
+                    <option value="BEH">Promutuel Haut St-Laurent
+                        (Beauharnois)
+                    </option>
+                    <option value="SAL">Promutuel Haut St-Laurent
+                        (Salaberry)
+                    </option>
+                    <option value="KAM">Promutuel Kamouraska-CÃ´te-Nord</option>
+                    <option value="VLM">Promutuel La VallEe</option>
+                    <option value="ABI">Promutuel LAbitibienne</option>
+                    <option value="LSJ">Promutuel Lac au Fjord (Lac St-Jean)
+                    </option>
+                    <option value="LSP">Promutuel Lac St-Pierre - Les Forges
+                    </option>
+                    <option value="LAN">Promutuel LanaudiEre</option>
+                    <option value="NAP">Promutuel Les Prairies (Napierville
+                        &amp; Laprairie)
+                    </option>
+                    <option value="LEV">Promutuel LEvisienne-OrlEans</option>
+                    <option value="INS">Promutuel LIslet</option>
+                    <option value="LOT">Promutuel LotbiniEre</option>
+                    <option value="OUT">Promutuel LOutaouais</option>
+                    <option value="MON">Promutuel Montmagny</option>
+                    <option value="PROMR">Promutuel Monts et Rives</option>
+                    <option value="FRO">Promutuel Monts et Rives (Frontenac)
+                    </option>
+                    <option value="LOMG">Promutuel Monts et Rives (LotbiniEre
+                        and MEgantic)
+                    </option>
+                    <option value="PROPC">Promutuel Portneuf-Champlain</option>
+                    <option value="MAU">Promutuel Portneuf-Champlain
+                        (Mauricienne)
+                    </option>
+                    <option value="PONF">Promutuel Portneuf-Champlain
+                        (Portneuvienne)
+                    </option>
+                    <option value="PROR">Promutuel REassurance</option>
+                    <option value="RIV">Promutuel RiviEre-du-Loup</option>
+                    <option value="ROU">Promutuel
+                        Rouyn-Noranda-TEmiscamingue
+                    </option>
+                    <option value="SOU">Promutuel Soulanges</option>
+                    <option value="TEM">Promutuel TEmiscouata</option>
+                    <option value="VMM">Promutuel Valmont</option>
+                    <option value="VAU">Promutuel Vaudreuil</option>
+                    <option value="VER">Promutuel VerchEres</option>
+                    <option value="PROT">Protection Universelle (Universal
+                        Protection)
+                    </option>
+                    <option value="PRO">Protective</option>
+                    <option value="PRUO">Prudasco</option>
+                    <option value="PRU">Prudential</option>
+                    <option value="RRVM">Red River Valley Mutual</option>
+                    <option value="ROY">RSA</option>
+                    <option value="FROY">Royal Facility</option>
+                    <option value="SKM">Saskatchewan Mutual</option>
+                    <option value="SG">Scotia General</option>
+                    <option value="SENT">SEcuritE Nationale</option>
+                    <option value="SECN">Security National</option>
+                    <option value="SEN">Sentry</option>
+                    <option value="SGI">SGI</option>
+                    <option value="SGIS">SGI (Insurance Services)</option>
+                    <option value="SIMC">Simcoe &amp; Erie</option>
+                    <option value="SDQ">Societe Mutuelle Reass. du P.Q.</option>
+                    <option value="SOC">Society Mutual Reinsurance</option>
+                    <option value="SEHM">South Easthope Mutual</option>
+                    <option value="SWEST">South Western Insurance</option>
+                    <option value="SEM">Southeastern Mutual</option>
+                    <option value="SOV">Sovereign</option>
+                    <option value="SSQ">SSQ Societe dass.</option>
+                    <option value="STP">St. Paul</option>
+                    <option value="STAN">Stanley Mutual Fire</option>
+                    <option value="SAP">St-Anne des Plaines Mutual</option>
+                    <option value="TOWC">Town and Country Mutual</option>
+                    <option value="TOWN">Townsend Farmers Mutual</option>
+                    <option value="TRG">Traders General</option>
+                    <option value="TRAF">Intact (Trafalgar)</option>
+                    <option value="TRAV">Travelers</option>
+                    <option value="FM">Trillium (Formosa)</option>
+                    <option value="UQ">Union QuEbecoise Mutual</option>
+                    <option value="UHM">Usborne and Hibbert Mutual</option>
+                    <option value="UTIC">Utica</option>
+                    <option value="WAB">Wabisa Mutual</option>
+                    <option value="WAT">Economical (Waterloo)</option>
+                    <option value="WAWA">Wawanesa</option>
+                    <option value="WEM">West Elgin Mutual</option>
+                    <option value="WESW">West Wawanosh Mutual</option>
+                    <option value="WEST">RSA (Western Assurance)</option>
+                    <option value="WGMI">Economical (Western General)</option>
+                    <option value="WFIEL">Westfield</option>
+                    <option value="WSL">Westland</option>
+                    <option value="WM">Westminster Mutual</option>
+                    <option value="YAR">Yarmouth Mutual</option>
+                    <option value="YORK">Unica (York Fire)</option>
+                    <option value="ZUR">Zurich</option>
+
+                </select>
+                </option>
+            </div>
+            <div class="col-md-2">
+                <label>Total Damage</label>
+                <input type="number" class="form-control form-control-sm" autocomplete="off">
+            </div>
+            <div class="col-md-2">
+                <label>% Responsible</label>
+                <input type="number" class="form-control form-control-sm" autocomplete="off">
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-2">
+                <label>&nbsp;</label>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="">
+                        Chargeable
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-2">
+                <label>&nbsp;</label>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="">
+                        Claim Settled
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <label>Description</label>
+                <textarea rows="1" class="form-control form-control-sm"></textarea>
+            </div>
+
+        </div>
+
+        <div class="form-group row col-md-offset-1">
+            <h6>Payments</h6>
+            <table class="table table-striped ">
+                <thead>
+                <tr>
+                    <th>Coverage Code</th>
+                    <th>Payment Amount</th>
+                    <th class="col-md-6"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Third Party Liability</td>
+                    <td><input min="0" type="number" class="form-control form-control-sm"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Third Party Bodily Injury</td>
+                    <td><input min="0" type="number" class="form-control form-control-sm"></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td>Accident Benefits</td>
+                    <td><input min="0" type="number" class="form-control form-control-sm"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Collision</td>
+                    <td><input min="0" type="number" class="form-control form-control-sm"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Direct Compensation - Property Damage</td>
+                    <td><input min="0" type="number" class="form-control form-control-sm"></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="form-group row">
+            <a class="btn btn-defaul">Add Claim</a>
+        </div>
+
+        <div class="form-group row ">
+            <h5>Convictions</h5>
+            <!--add convictions stuff here...-->
+        </div>
+        <div class="form-group row">
+            <a class="btn btn-defaul">Add Conviction</a>
+        </div>
+
+        <div class="form-group row ">
+            <h5>Billing</h5>
+            <div class="col-md-4">
+                <label>Billing Method</label>
+                <select class="form-control form-control-sm">
+                    <option>Agency/Brokerage Billed</option>
+                    <option>Direct Bill Account</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label>Billing Method</label>
+                <select class="form-control form-control-sm">
+                    <option>1 Payment</option>
+                    <option>Annual</option>
+                    <option>Monthly</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row ">
+            <h5>Remarks</h5>
+            <textarea rows="2" class="form-control"></textarea>
+        </div>
+
+        <input class="btn btn-primary" type="submit">
+
+
+    </form>
+
+
+</div>
+
+
+</body>
+</html>
