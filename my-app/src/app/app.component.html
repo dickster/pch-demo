@@ -1,20 +1,19 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="bs-example" data-example-id="simple-jumbotron">
+  <div class="jumbotron">
+    <div class="row text-primary">
+      <h1 class="col-md-6"><i class="fa fa-hand-spock-o" aria-hidden="true"></i><span>Brovada Demo<span></span></span></h1>
+      <span class=" col-md-1"><a class="text-muted" routerLink="/login">Login</a></span>
+      <span class="col-md-1"><a class="text-muted" routerLink="/create">Create</a></span>
+      <span class="col-md-1"><a class="text-muted" routerLink="/insured">Insured</a></span>
+      <span class="col-md-1"><a class="text-muted" routerLink="/ai">AI</a></span>
+      <span class="col-md-1"><a class="text-muted" routerLink="/ai2">AI2</a></span>
+      <span class="col-md-1"><a class="text-muted" routerLink="/payment">Payment</a></span>
+    </div>
+    <div class="row">
+      <p class="col-md-8">Angular 2 / Spring / REST / Mongo & More!</p>
+    </div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
+<router-outlet></router-outlet>
 
