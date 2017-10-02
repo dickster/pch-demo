@@ -1,0 +1,30 @@
+
+<form class="form-horizontal" [formGroup]="form"  (submit)="handleSubmit($event)" >
+
+    <section class="col-md-4 col-md-offset-4">
+        <div class="form-group">
+            <label class="control-label" >User </label>
+            <input formControlName="user" type="text" class="form-control">
+            <small class="hint error" *ngIf="form.controls.user.touched && !form.controls.user.valid">You need a username!</small>
+        </div>
+
+        <div [formGroup]="passwords">
+            <div class="form-group">
+                <label class="control-label">Password</label>
+                <input formControlName="password" type="password" class="form-control" >
+            </div>
+            <div class="form-group">
+                <label class="control-label">Confirm Password</label>
+                <input type="password" formControlName="confirm" class="form-control">
+                <small class="hint error" *ngIf="passwords.errors" class=""> {{passwords.errors.isValid}}</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-raised btn-primary btn-lg" role="button" [disabled]="!form.valid">Login</button>
+            <a style="padding-left:50px;" role="button" routerLink="/create">Create Account</a>
+        </div>
+
+    </section>
+
+</form>
