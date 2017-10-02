@@ -36,7 +36,7 @@ export class AdminComponent implements OnInit {
         console.log('clicked on....' + index + '--->' + policy.number);
         this.data.put(policy);
         // this.router.navigate(['/rating'], {id:policy.number});
-        this.router.navigate(['/rating']);
+        this.router.navigate(['/ai']);
     }
 
     ngAfterContentChecked() {
