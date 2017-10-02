@@ -8,6 +8,7 @@ import {LoginComponent} from "./login.component";
 import {AdminComponent} from "./admin.component";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { Data } from './data.store';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { HttpModule } from '@angular/http';
     ReactiveFormsModule
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [Data],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

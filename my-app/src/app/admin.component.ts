@@ -5,6 +5,7 @@ import {RestService} from './rest.service';
 import {Observable} from 'rxjs/Observable';
 import {Policy} from "./policy";
 import {PolicyService} from "./policy.service";
+import {Data} from "./data.store";
 
 declare var jQuery:any;
 
@@ -18,6 +19,7 @@ export class AdminComponent implements OnInit {
     public policies:Observable<Policy[]>;
 
     constructor(
+        private data:Data,
         private router: Router,
         private policyService: PolicyService,
         private elementRef:ElementRef) {
@@ -30,6 +32,7 @@ export class AdminComponent implements OnInit {
 
     clickRow(policy:Policy, index:number) {
         console.log('clicked on....' + index + '--->' + policy.number);
+        this.data.put(policy);
         //this.router.navigate(['/rating'], {id:policy.number});
     }
 
