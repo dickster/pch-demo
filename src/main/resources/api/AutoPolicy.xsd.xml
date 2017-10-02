@@ -1,0 +1,114 @@
+<AutoPolicy>
+  <policyNumber>string</policyNumber>
+  <policyEffectiveDate>string</policyEffectiveDate>
+  <!--Zero or more repetitions:-->
+  <insureds>
+    <!--Optional:-->
+    <addr>
+      <addr1>string</addr1>
+      <!--Optional:-->
+      <addr2>string</addr2>
+      <!--Optional:-->
+      <city>string</city>
+      <!--Optional:-->
+      <country>string</country>
+      <postalCode>string</postalCode>
+      <stateProv>string</stateProv>
+    </addr>
+    <nameInfo>
+      <!--Optional:-->
+      <commercialName>
+        <commercialName>string</commercialName>
+      </commercialName>
+      <!--Optional:-->
+      <personName>
+        <givenName>string</givenName>
+        <surname>string</surname>
+      </personName>
+    </nameInfo>
+    <!--Zero or more repetitions:-->
+    <phoneInfos>
+      <!--Optional:-->
+      <communicationUseCd>string</communicationUseCd>
+      <!--Optional:-->
+      <phoneNumber>string</phoneNumber>
+      <!--Optional:-->
+      <phoneTypeCd>string</phoneTypeCd>
+    </phoneInfos>
+  </insureds>
+  <!--Zero or more repetitions:-->
+  <drivers>
+    <birthday>string</birthday>
+    <gender>string</gender>
+    <!--Zero or more repetitions:-->
+    <licenses>
+      <licenseClass>string</licenseClass>
+      <licenseNumber>string</licenseNumber>
+      <licensedDate>string</licensedDate>
+      <stateProv>string</stateProv>
+    </licenses>
+    <!--Optional:-->
+    <maritalStatus>string</maritalStatus>
+    <nameInfo>
+      <!--Optional:-->
+      <commercialName>
+        <commercialName>string</commercialName>
+      </commercialName>
+      <!--Optional:-->
+      <personName>
+        <givenName>string</givenName>
+        <surname>string</surname>
+      </personName>
+    </nameInfo>
+  </drivers>
+  <!--Zero or more repetitions:-->
+  <vehicles>
+    <annualDistance>10</annualDistance>
+    <!--Optional:-->
+    <bodyType>string</bodyType>
+    <!--Optional:-->
+    <costNewAmt>string</costNewAmt>
+    <!--Zero or more repetitions:-->
+    <coverages>
+      <coverageCd>string</coverageCd>
+      <!--Optional:-->
+      <deductible>1000.00</deductible>
+      <limit>1000.00</limit>
+    </coverages>
+    <!--Optional:-->
+    <engineType>string</engineType>
+    <!--Optional:-->
+    <manufacturer>string</manufacturer>
+    <!--Optional:-->
+    <model>string</model>
+    <!--Optional:-->
+    <modelYear>string</modelYear>
+    <!--Optional:-->
+    <purchaseDate>string</purchaseDate>
+    <!--Zero or more repetitions:-->
+    <questionAnswers>
+      <answer>string</answer>
+      <question>string</question>
+    </questionAnswers>
+    <!--Optional:-->
+    <rateClassCd>string</rateClassCd>
+    <!--Optional:-->
+    <vehUseCd>string</vehUseCd>
+    <vin>string</vin>
+  </vehicles>
+  <!--Zero or more repetitions:-->
+  <locations>
+    <!--Optional:-->
+    <addr>
+      <addr1>string</addr1>
+      <!--Optional:-->
+      <addr2>string</addr2>
+      <!--Optional:-->
+      <city>string</city>
+      <!--Optional:-->
+      <country>string</country>
+      <postalCode>string</postalCode>
+      <stateProv>string</stateProv>
+    </addr>
+  </locations>
+</AutoPolicy>

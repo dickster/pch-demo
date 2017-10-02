@@ -1,0 +1,122 @@
+<?samples version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="AutoPolicy" type="autoPolicy"/>
+
+  <xs:complexType name="autoPolicy">
+    <xs:sequence>
+      <xs:element name="policyNumber" type="xs:string"/>
+      <xs:element name="policyEffectiveDate" type="xs:string"/>
+      <xs:element name="insureds" type="insured" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="drivers" type="driver" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="vehicles" type="vehicle" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="locations" type="location" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="insured">
+    <xs:sequence>
+      <xs:element name="addr" type="addr" minOccurs="0"/>
+      <xs:element name="nameInfo" type="nameInfo"/>
+      <xs:element name="phoneInfos" type="phoneInfo" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addr">
+    <xs:sequence>
+      <xs:element name="addr1" type="xs:string"/>
+      <xs:element name="addr2" type="xs:string" minOccurs="0"/>
+      <xs:element name="city" type="xs:string" minOccurs="0"/>
+      <xs:element name="country" type="xs:string" minOccurs="0"/>
+      <xs:element name="postalCode" type="xs:string"/>
+      <xs:element name="stateProv" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="nameInfo">
+    <xs:sequence>
+      <xs:element name="commercialName" type="commercialName" minOccurs="0"/>
+      <xs:element name="personName" type="personName" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="commercialName">
+    <xs:sequence>
+      <xs:element name="commercialName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="personName">
+    <xs:sequence>
+      <xs:element name="givenName" type="xs:string"/>
+      <xs:element name="surname" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="phoneInfo">
+    <xs:sequence>
+      <xs:element name="communicationUseCd" type="xs:string" minOccurs="0"/>
+      <xs:element name="phoneNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="phoneTypeCd" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="driver">
+    <xs:sequence>
+      <xs:element name="birthday" type="xs:string"/>
+      <xs:element name="gender" type="xs:string"/>
+      <xs:element name="licenses" type="license" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="maritalStatus" type="xs:string" minOccurs="0"/>
+      <xs:element name="nameInfo" type="nameInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="license">
+    <xs:sequence>
+      <xs:element name="licenseClass" type="xs:string"/>
+      <xs:element name="licenseNumber" type="xs:string"/>
+      <xs:element name="licensedDate" type="xs:string"/>
+      <xs:element name="stateProv" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="vehicle">
+    <xs:sequence>
+      <xs:element name="annualDistance" type="xs:long"/>
+      <xs:element name="bodyType" type="xs:string" minOccurs="0"/>
+      <xs:element name="costNewAmt" type="xs:string" minOccurs="0"/>
+      <xs:element name="coverages" type="coverage" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="engineType" type="xs:string" minOccurs="0"/>
+      <xs:element name="manufacturer" type="xs:string" minOccurs="0"/>
+      <xs:element name="model" type="xs:string" minOccurs="0"/>
+      <xs:element name="modelYear" type="xs:string" minOccurs="0"/>
+      <xs:element name="purchaseDate" type="xs:string" minOccurs="0"/>
+      <xs:element name="questionAnswers" type="questionAnswer" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="rateClassCd" type="xs:string" minOccurs="0"/>
+      <xs:element name="vehUseCd" type="xs:string" minOccurs="0"/>
+      <xs:element name="vin" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="coverage">
+    <xs:sequence>
+      <xs:element name="coverageCd" type="xs:string"/>
+      <xs:element name="deductible" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="limit" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="questionAnswer">
+    <xs:sequence>
+      <xs:element name="answer" type="xs:string"/>
+      <xs:element name="question" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="location">
+    <xs:sequence>
+      <xs:element name="addr" type="addr" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
