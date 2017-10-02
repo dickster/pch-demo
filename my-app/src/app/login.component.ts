@@ -48,11 +48,10 @@ export class LoginComponent implements OnInit {
     handleSubmit(event:any) {
         // console.log(this.form.value);
         event.preventDefault();
-        this.router.navigate(['/insured']);
+        this.router.navigate(['/admin']);
     }
 
     ngAfterContentChecked() {
-        // jQuery.material.init();
         // jQuery(this.elementRef.nativeElement).find('.completer-input').addClass('form-control');
     }
 

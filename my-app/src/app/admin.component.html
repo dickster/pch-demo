@@ -1,0 +1,26 @@
+<div id="main-content" class="container">
+
+    <table  class="table  table-hover ">
+        <caption><h3>Policies</h3></caption>
+        <thead>
+        <tr>
+            <th>Policy #</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th >Effective Date</th>
+            <th >Expiration Date</th>
+            <th class="col-md-3"></th>
+        </tr>
+        </thead>
+        <tr *ngFor="let policy of policies | async; let i = index" (click)="clickRow(policy,i)">
+            <td>{{policy.number}}</td>
+            <td>{{policy.firstName}}</td>
+            <td>{{policy.lastName}}</td>
+            <td>{{policy.lastName}}</td>
+            <td>{{policy.effectiveDate|date}}</td>
+            <td>{{policy.expirationDate|date}}</td>
+            <td></td>
+        </tr>
+    </table>
+
+</div>
