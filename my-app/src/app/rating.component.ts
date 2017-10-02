@@ -31,7 +31,7 @@ export class RatingComponent implements OnInit {
 
     handleSubmit(event:any) {
         event.preventDefault();
-        this.router.navigate(['/login']);
+        this.router.navigate(['/confirmation']);
     }
 
     ngAfterContentChecked() {

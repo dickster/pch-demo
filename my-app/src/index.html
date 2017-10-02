@@ -17,6 +17,26 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <script>
+        var progWidth = 0;
+        var update = function() {
+            var delay = parseInt(50+(Math.random() * 80), 10);
+            if (progWidth<=100) {
+                $('#progress').css('width',progWidth+'%');
+                setTimeout(update,delay);
+            }
+            else {
+                setTimeout(function() {
+                    $('#pp').hide();
+                    $('#msg').removeClass('hide');
+                }, 700);
+            }
+            progWidth+=2;
+        }
+  </script>
+
+
 </head>
 <body>
 <main class="container demo">
