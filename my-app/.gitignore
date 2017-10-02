@@ -6,7 +6,6 @@
 /out-tsc
 
 # dependencies
-/node_modules
 src/main/resources/static/node_modules
 
 # IDEs and editors
