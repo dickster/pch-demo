@@ -93,7 +93,7 @@ public class PolicyController {
         if (saved != null) {
             URI location = ServletUriComponentsBuilder.fromCurrentRequest()
                                                       .path("/{policyNumber}")
-                                                      .buildAndExpand(saved.policyNumber)
+                                                      .buildAndExpand(saved.getPolicyNumber())
                                                       .toUri();
             return ResponseEntity.ok(location);
         }

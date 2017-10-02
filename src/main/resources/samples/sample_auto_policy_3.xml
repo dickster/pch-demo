@@ -1,0 +1,88 @@
+<?samples version="1.0" encoding="UTF-8"?>
+<AutoPolicy>
+    <policyNumber>test3</policyNumber>
+    <policyEffectiveDate>2017-10-10</policyEffectiveDate>
+    <insureds>
+        <addr>
+            <addr1>123 Main Street</addr1>
+            <city>Toronto</city>
+            <country>Canada</country>
+            <postalCode>A1A1A1</postalCode>
+            <stateProv>ON</stateProv>
+        </addr>
+        <nameInfo>
+            <personName>
+                <givenName>James</givenName>
+                <surname>Bond</surname>
+            </personName>
+        </nameInfo>
+        <!--Zero or more repetitions:-->
+        <phoneInfos>
+            <!--Optional:-->
+            <communicationUseCd>Business</communicationUseCd>
+            <!--Optional:-->
+            <phoneNumber>6477654321</phoneNumber>
+            <!--Optional:-->
+            <phoneTypeCd>Cell</phoneTypeCd>
+        </phoneInfos>
+    </insureds>
+    <!--Zero or more repetitions:-->
+    <drivers>
+        <birthday>1959-01-01</birthday>
+        <gender>M</gender>
+        <!--Zero or more repetitions:-->
+        <licenses>
+            <licenseClass>G</licenseClass>
+            <licenseNumber>G123456</licenseNumber>
+            <licensedDate>1995-01-01</licensedDate>
+            <stateProv>ON</stateProv>
+        </licenses>
+        <!--Optional:-->
+        <maritalStatus>Married</maritalStatus>
+        <nameInfo>
+            <personName>
+                <givenName>James</givenName>
+                <surname>Bond</surname>
+            </personName>
+        </nameInfo>
+    </drivers>
+    <vehicles>
+        <annualDistance>10</annualDistance>
+        <!--Optional:-->
+        <bodyType>Sedan</bodyType>
+        <!--Optional:-->
+        <costNewAmt>20000</costNewAmt>
+        <!--Zero or more repetitions:-->
+        <coverages>
+            <coverageCd>COL</coverageCd>
+            <deductible>1000.00</deductible>
+            <limit>1000.00</limit>
+        </coverages>
+        <!--Optional:-->
+        <engineType>gas</engineType>
+        <!--Optional:-->
+        <manufacturer>Honda</manufacturer>
+        <!--Optional:-->
+        <model>Civic</model>
+        <!--Optional:-->
+        <modelYear>2016</modelYear>
+        <!--Optional:-->
+        <purchaseDate>2017-10-09</purchaseDate>
+        <!--Zero or more repetitions:-->
+        <questionAnswers>
+            <answer>Winter tires?</answer>
+            <question>Yes</question>
+        </questionAnswers>
+        <vehUseCd>Pleasure</vehUseCd>
+        <vin>VIN1234567878</vin>
+    </vehicles>
+    <locations>
+        <addr>
+            <addr1>123 Main Street</addr1>
+            <city>Toronto</city>
+            <country>Canada</country>
+            <postalCode>A1A1A1</postalCode>
+            <stateProv>ON</stateProv>
+        </addr>
+    </locations>
+</AutoPolicy>

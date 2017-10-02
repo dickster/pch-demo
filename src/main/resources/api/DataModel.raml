@@ -71,15 +71,22 @@ types:
       rateClassCd: string
       coverages: Coverage[]
       questionAnswers: QuestionAnswer[]
-  PchJsonManifestItem:
+  Changes:
     properties:
       changeType:
         enum: [ADDED, DELETED, CHANGED]
-      selector: string
+      uiSelector: string
       newValue: string
       newXpath: string
       oldValue: string
       oldXpath: string
+  UiConfig:
+    properties:
+      map: object
+  PchJsonManifestItem:
+    properties:
+      changes: Changes
+      configs: UiConfig
   PchJsonManifest:
     properties:
       addedList: PchJsonManifestItem[]

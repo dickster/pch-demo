@@ -12,6 +12,9 @@ package com.brovada.policychange.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,18 +23,21 @@ import java.util.List;
  * The type Auto policy.
  */
 @Document
-@XmlRootElement
+@XmlRootElement(name="AutoPolicy")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class AutoPolicy {
 
     /**
      * The Policy number.
      */
     @Id
-    public String policyNumber;
+    @XmlElement(required = true)
+    private String policyNumber;
 
     /**
      * The Policy effective date.
      */
+    @XmlElement(required = true)
     private String policyEffectiveDate;
 
     /**
@@ -93,7 +99,7 @@ public class AutoPolicy {
      * @return the policy number
      */
     public String getPolicyNumber() {
-        return policyNumber;
+        return this.policyNumber;
     }
 
     /**

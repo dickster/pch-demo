@@ -109,8 +109,8 @@ public class RemarkGeneratorService {
      * Generate.
      *
      * @param manifest the manifest
-     * @param oldXml   the old xml
-     * @param newXml   the new xml
+     * @param oldXml   the old samples
+     * @param newXml   the new samples
      */
     public void generate(PchJsonManifest manifest, final String oldXml, final String newXml) {
         init(manifest, oldXml, newXml);
@@ -122,8 +122,8 @@ public class RemarkGeneratorService {
      * Init.
      *
      * @param manifest the manifest
-     * @param oldXml   the old xml
-     * @param newXml   the new xml
+     * @param oldXml   the old samples
+     * @param newXml   the new samples
      */
     private void init(PchJsonManifest manifest, String oldXml, String newXml) {
 
@@ -150,9 +150,9 @@ public class RemarkGeneratorService {
     }
 
     /**
-     * Remove xml string namespace and preamble string.
+     * Remove samples string namespace and preamble string.
      *
-     * @param xmlString the xml string
+     * @param xmlString the samples string
      *
      * @return the string
      */
