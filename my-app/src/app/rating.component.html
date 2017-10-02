@@ -1,10 +1,12 @@
     <h5>Rating</h5>
     <form class="form col-md-offset-3" >
 
-        <hr class="col-md-9">
 
         <div class="form-group row ">
-            Policy : {{policy.number}}
+            <div class="col-md-4 ">
+                <label>Policy</label>
+                <div>{{policy.number}}</div>
+            </div>
         </div>
         <div class="form-group row ">
             <div class="col-md-4 ">
@@ -19,20 +21,20 @@
         <div class="form-group row">
             <div class="col-md-3">
                 <label>Policy Amount</label>
-                <div>{{policy.amount|number:'1.2-2'}}</div>
+                <div>{{policy.amount|currency:'USD':true:'1.2-2'}}</div>
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-3">
                 <label>Taxes</label>
-                <div>{{policy.amount*.135|number:'1.2-2'}}</div>
+                <div>{{policy.amount*.135|currency:'USD':true:'1.2-2'}}</div>
             </div>
         </div>
         <hr class="col-md-9">
         <div class="form-group row">
             <div class="col-md-3">
                 <label>Total</label>
-                <span>{{policy.amount*1.135|number:'1.2-2'}}</span>
+                <span>{{policy.amount*1.135|currency:'USD':true:'1.2-2'}}</span>
             </div>
         </div>
 
