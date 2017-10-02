@@ -3,34 +3,36 @@
 
         <hr class="col-md-9">
 
-        <p>form</p>
+        <div class="form-group row ">
+            Policy : {{policy.number}}
+        </div>
         <div class="form-group row ">
             <div class="col-md-4 ">
                 <label>Effective Date</label>
-                <div>January 18, 2018</div>
+                <div>{{policy.effectiveDate|date}}</div>
             </div>
             <div class="col-md-3">
                 <label>Expiration Date</label>
-                <div>January 18, 2019</div>
+                <div>{{policy.expirationDate|date}}</div>
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-3">
                 <label>Policy Amount</label>
-                <div>$1384.00</div>
+                <div>{{policy.amount|number:'1.2-2'}}</div>
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-3">
                 <label>Taxes</label>
-                <div>$196.00</div>
+                <div>{{policy.amount*.135|number:'1.2-2'}}</div>
             </div>
         </div>
         <hr class="col-md-9">
         <div class="form-group row">
             <div class="col-md-3">
                 <label>Total</label>
-                <span>$1480.00</span>
+                <span>{{policy.amount*1.135|number:'1.2-2'}}</span>
             </div>
         </div>
 

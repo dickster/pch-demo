@@ -14,11 +14,11 @@ export class PolicyService extends RestService<Policy> {
 
 
     policies:Policy[] = [
-            new Policy('derek', 'dick', '123'),
-            new Policy('peter', 'johnson', '738'),
-            new Policy('joe', 'blow', '3738' ),
-            new Policy('sally', 'silly', '849'),
-            new Policy('billy', 'dally', '392')
+            new Policy('derek', 'dick', '123', new Date(), new Date(2018,1,18)),
+            new Policy('peter', 'johnson', '738', new Date(), new Date(2018,7,5)),
+            new Policy('joe', 'blow', '3738', new Date(), new Date(2018,1,29) ),
+            new Policy('sally', 'silly', '849', new Date(), new Date(2018,4,13)),
+            new Policy('billy', 'dally', '392', new Date(), new Date(2018,11,9))
         ];
 
     constructor(public _http: Http  ) {

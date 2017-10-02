@@ -1,6 +1,6 @@
 import {Component, OnInit, ElementRef} from "@angular/core";
 import {Router} from "@angular/router";
-
+import { DatePipe } from '@angular/common';
 import {RestService} from './rest.service';
 import {Observable} from 'rxjs/Observable';
 import {Policy} from "./policy";
@@ -19,12 +19,14 @@ export class AdminComponent implements OnInit {
     public policies:Observable<Policy[]>;
 
     constructor(
-        private data:Data,
+        private data:Data<Policy>,
         private router: Router,
         private policyService: PolicyService,
         private elementRef:ElementRef) {
         this.policies = this.policyService.readBogusData();
     }
+
+
 
     ngOnInit() {
 
@@ -33,7 +35,8 @@ export class AdminComponent implements OnInit {
     clickRow(policy:Policy, index:number) {
         console.log('clicked on....' + index + '--->' + policy.number);
         this.data.put(policy);
-        //this.router.navigate(['/rating'], {id:policy.number});
+        // this.router.navigate(['/rating'], {id:policy.number});
+        this.router.navigate(['/rating']);
     }
 
     ngAfterContentChecked() {

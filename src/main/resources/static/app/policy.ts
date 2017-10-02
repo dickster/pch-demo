@@ -1,5 +1,6 @@
 export interface Policy {
 
+    amount: Number;
     user: string;
     passwords : {
         password: string;

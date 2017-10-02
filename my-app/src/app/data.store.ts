@@ -3,18 +3,18 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class Data {
+export class Data<T> {
 
-    public storage: any;
+    public storage: T;
 
     public constructor() { }
 
-    public put(data:any):void {
+    public put(data:T):void {
         console.log('saving data ' + JSON.stringify(data));
         this.storage = data;
     }
 
-    public get():void {
+    public get():T {
         return this.storage;
     }
 }
