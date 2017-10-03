@@ -29,7 +29,7 @@ public class PchComparitorService {
 
     public PchJsonManifest compare(String oldXml, String newXml) {
 
-        String scriptPath = "config/comparitor/pch.groovy";
+        String scriptPath = this.getClass().getResource("/config/comparitor/pch.groovy").getFile();
 
         LOG.debug("Loading groovy class " + scriptPath);
 

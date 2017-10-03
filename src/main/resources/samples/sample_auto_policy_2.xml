@@ -12,8 +12,8 @@
         </addr>
         <nameInfo>
             <personName>
-                <givenName>James</givenName>
-                <surname>Bond</surname>
+                <givenName>Lady</givenName>
+                <surname>Gaga</surname>
             </personName>
         </nameInfo>
         <!--Zero or more repetitions:-->
@@ -41,8 +41,8 @@
         <maritalStatus>Married</maritalStatus>
         <nameInfo>
             <personName>
-                <givenName>James</givenName>
-                <surname>Bond</surname>
+                <givenName>Lady</givenName>
+                <surname>Gaga</surname>
             </personName>
         </nameInfo>
     </drivers>
@@ -61,11 +61,11 @@
         <!--Optional:-->
         <engineType>gas</engineType>
         <!--Optional:-->
-        <manufacturer>Honda</manufacturer>
+        <manufacturer>Toyota</manufacturer>
         <!--Optional:-->
-        <model>Civic</model>
+        <model>Camry</model>
         <!--Optional:-->
-        <modelYear>2016</modelYear>
+        <modelYear>2014</modelYear>
         <!--Optional:-->
         <purchaseDate>2017-10-09</purchaseDate>
         <!--Zero or more repetitions:-->
@@ -74,7 +74,7 @@
             <question>Yes</question>
         </questionAnswers>
         <vehUseCd>Pleasure</vehUseCd>
-        <vin>VIN1234567878</vin>
+        <vin>VIN123142351238</vin>
     </vehicles>
     <locations>
         <addr>
