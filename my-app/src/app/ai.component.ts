@@ -48,7 +48,7 @@ export class AIComponent implements OnInit {
     }
 
     public isNotRadio(value:string) {
-        return 'true'!=value;
+        return 'false'==value;
     }
 
     handleSubmit(event:any) {

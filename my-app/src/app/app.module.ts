@@ -12,10 +12,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Data } from './data.store';
 import {AIComponent} from "./ai.component";
+import {PolicyDetailsComponent} from "./policyDetails.component";
 
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, AdminComponent, RatingComponent, ConfirmationComponent, AIComponent
+    AppComponent, LoginComponent, AdminComponent, RatingComponent, ConfirmationComponent, AIComponent, PolicyDetailsComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes),

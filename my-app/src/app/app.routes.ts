@@ -5,11 +5,13 @@ import {AdminComponent} from "./admin.component";
 import {RatingComponent} from "./rating.component";
 import {ConfirmationComponent} from "./confirmation.component";
 import {AIComponent} from "./ai.component";
+import {PolicyDetailsComponent} from "./policyDetails.component";
 
 export const routes: Routes = [
     { path: '', component: LoginComponent},
     { path: 'admin', component: AdminComponent },
     { path: 'rating', component: RatingComponent},
     { path: 'confirmation', component: ConfirmationComponent},
+    { path: 'policyDetails', component: PolicyDetailsComponent},
     { path: 'ai', component: AIComponent}
 ]
