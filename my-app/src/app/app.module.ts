@@ -7,13 +7,15 @@ import {routes} from "./app.routes";
 import {LoginComponent} from "./login.component";
 import {AdminComponent} from "./admin.component";
 import {RatingComponent} from "./rating.component";
+import {ConfirmationComponent} from "./confirmation.component";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Data } from './data.store';
+import {AIComponent} from "./ai.component";
 
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, AdminComponent, RatingComponent
+    AppComponent, LoginComponent, AdminComponent, RatingComponent, ConfirmationComponent, AIComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes),

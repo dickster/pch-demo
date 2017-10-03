@@ -1,10 +1,10 @@
 import {Component, OnInit, ElementRef, Input} from '@angular/core';
 
-import {FormControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+// import {FormControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from "@angular/router";
 import {Policy} from "./policy";
 import {Data} from "./data.store";
-import { DatePipe } from '@angular/common';
+// import { DatePipe } from '@angular/common';
 
 declare var jQuery : any;
 
@@ -31,7 +31,7 @@ export class RatingComponent implements OnInit {
 
     handleSubmit(event:any) {
         event.preventDefault();
-        this.router.navigate(['/login']);
+        this.router.navigate(['/confirmation']);
     }
 
     ngAfterContentChecked() {
