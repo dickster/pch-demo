@@ -55,8 +55,8 @@
         <!--Zero or more repetitions:-->
         <coverages>
             <coverageCd>COL</coverageCd>
-            <deductible>1000.00</deductible>
-            <limit>1000.00</limit>
+            <deductible>1000</deductible>
+            <limit>1000</limit>
         </coverages>
         <!--Optional:-->
         <engineType>gas</engineType>

@@ -175,7 +175,7 @@ public class PolicyController {
             String oldXml;
             StringWriter sw = new StringWriter();
             try {
-                JAXBContext context = JAXBContext.newInstance("com.brovada.policychange.model");
+                JAXBContext context = JAXBContext.newInstance(AutoPolicy.class);
                 Marshaller marshaller = context.createMarshaller();
                 marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
                 marshaller.marshal(oldPolicy, sw);

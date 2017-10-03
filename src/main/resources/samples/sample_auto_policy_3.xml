@@ -12,8 +12,8 @@
         </addr>
         <nameInfo>
             <personName>
-                <givenName>James</givenName>
-                <surname>Bond</surname>
+                <givenName>Nicolas</givenName>
+                <surname>Cage</surname>
             </personName>
         </nameInfo>
         <!--Zero or more repetitions:-->
@@ -41,8 +41,8 @@
         <maritalStatus>Married</maritalStatus>
         <nameInfo>
             <personName>
-                <givenName>James</givenName>
-                <surname>Bond</surname>
+                <givenName>Nicolas</givenName>
+                <surname>Cage</surname>
             </personName>
         </nameInfo>
     </drivers>
@@ -61,11 +61,11 @@
         <!--Optional:-->
         <engineType>gas</engineType>
         <!--Optional:-->
-        <manufacturer>Honda</manufacturer>
+        <manufacturer>BMW</manufacturer>
         <!--Optional:-->
-        <model>Civic</model>
+        <model>M3</model>
         <!--Optional:-->
-        <modelYear>2016</modelYear>
+        <modelYear>2010</modelYear>
         <!--Optional:-->
         <purchaseDate>2017-10-09</purchaseDate>
         <!--Zero or more repetitions:-->
