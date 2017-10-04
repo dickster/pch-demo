@@ -10,7 +10,7 @@ export class Data<T> {
     public constructor() { }
 
     public put(data:T):void {
-        // console.log('saving data ' + JSON.stringify(data));
+        console.log('saving data ' + JSON.stringify(data));
         this.storage = data;
     }
 
