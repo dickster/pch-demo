@@ -8,17 +8,15 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th >Effective Date</th>
-            <th >Expiration Date</th>
+          <!--<th >Expiration Date</th>-->
             <th class="col-md-3"></th>
         </tr>
         </thead>
         <tr *ngFor="let policy of policies | async; let i = index" (click)="clickRow(policy,i)">
-            <td>{{policy.number}}</td>
-            <td>{{policy.firstName}}</td>
-            <td>{{policy.lastName}}</td>
-            <td>{{policy.lastName}}</td>
-            <td>{{policy.effectiveDate|date}}</td>
-            <td>{{policy.expirationDate|date}}</td>
+          <td>{{policy.policyNumber}}</td>
+          <td>{{policy.insureds[0].nameInfo.personName.givenName}}</td>
+          <td>{{policy.insureds[0].nameInfo.personName.surname}}</td>
+          <td>{{policy.policyEffectiveDate|date}}</td>
             <td></td>
         </tr>
     </table>
