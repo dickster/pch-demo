@@ -42,6 +42,16 @@
             min-width: 70px;
         }
 
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1 0 auto;
+        }
 
         body table { font-size:13px;}
         .dropdown-item {
@@ -121,6 +131,19 @@
             clip: rect(0, 0, 0, 0);
             pointer-events: none;
         }
+
+        .footer {
+            border: 1px solid #dbe1f5;
+            left: 0px;
+            position: fixed;
+            bottom: 0px;
+            height: 56px;
+            width: 100%;
+            padding-left: 5%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background: #f3f3f5;
+        }
     </style>
 
 
@@ -131,6 +154,7 @@
   <app-root></app-root>
 
 </main>
+
 
 </body>
 </html>

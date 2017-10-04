@@ -51,8 +51,17 @@ export class AIComponent implements OnInit {
         return 'false'==value;
     }
 
+    public hasGuns(text:string):boolean {
+        let x = text.match('gun/i');
+        if (x) {
+            return true;
+        }
+        return false;
+    }
+
     handleSubmit(event:any) {
         event.preventDefault();
+        this.data.put(this.form.value);
         this.router.navigate(['/rating']);
     }
 

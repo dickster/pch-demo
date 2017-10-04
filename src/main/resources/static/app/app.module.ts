@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppRoutes} from './app.routes';
 import {RouterModule} from '@angular/router';
-import {Ng2CompleterModule} from "ng2-completer";
 
 import {MixedCase} from './mixedCase.pipe';
 import { AppComponent }  from './app.component';

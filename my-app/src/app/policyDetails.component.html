@@ -1,19 +1,19 @@
 
-    <form class="form" (submit)="handleSubmit($event)">
+    <form class="form" [formGroup]="form" (submit)="handleSubmit($event)">
 
         <h5>Policy Details</h5>
         <div class="form-group row">
             <div class="col-md-3">
                 <label>Policy Number</label>
-                <input class="form-control form-control-sm" type="text">
+                <input formControlName="number" class="form-control form-control-sm" type="text">
             </div>
             <div class="col-md-2 col-md-offset-5">
                 <label>Effective Date</label>
-                <input class="form-control form-control-sm" type="date"/>
+                <input formControlName="effectiveDate" class="form-control form-control-sm" type="date"/>
             </div>
             <div class="col-md-2">
                 <label>Expiration Date</label>
-                <input class="form-control form-control-sm" type="date"/>
+                <input formControlName="expirationDate" class="form-control form-control-sm" type="date"/>
             </div>
         </div>
 
@@ -26,11 +26,16 @@
                             <i class="fa fa-user" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Person</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-industry"></i>Company</a>
+                            <a class="dropdown-item"><i class="fa fa-user"></i>Person</a>
+                            <a class="dropdown-item"><i class="fa fa-industry"></i>Company</a>
                         </div>
                     </div>
-                    <input class="form-control form-control-sm" type="text">
+                    <input formControlName="name" class="form-control form-control-sm" type="text">
+                    <!--TODO : hook this up to name parser. -->
+                    <!--<input formControlName="firstName" class="form-control form-control-sm" type="hidden">-->
+                    <!--<input formControlName="lastName" class="form-control form-control-sm" type="hidden">-->
+                    <!--<input formControlName="middleName" class="form-control form-control-sm" type="hidden">-->
+                    <!--<input formControlName="salutation" class="form-control form-control-sm" type="hidden">-->
                 </div>
                 <p class="form-text text-muted person">
                     This is a person.
@@ -1538,8 +1543,10 @@
             <textarea rows="2" class="form-control"></textarea>
         </div>
 
-        <input class="btn btn-primary" type="submit">
 
+        <footer class="footer">
+            <input class="btn btn-primary" type="submit">
+         </footer>
 
     </form>
 
