@@ -1,44 +1,40 @@
-import {Component, OnInit, ElementRef, ViewChild, Renderer2} from '@angular/core';
-
-import {FormControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {Policy} from "./policy";
 import {Data} from "./data.store";
-import { DatePipe } from '@angular/common';
+import {AutoPolicy} from "./model";
 
-declare function update() : void;
+declare function update(): void;
 
 @Component({
-    selector:'confirmation',
-    templateUrl: 'confirmation.component.html',
-    // styles: ['.jumbotron .msg {display:block;} .jumbotron.working .msg {display:none;}  .jumbotron.working .progress {display:block;} .jumbotron .progress{display:none;}'],
-    providers: []
+  selector: 'confirmation',
+  templateUrl: 'confirmation.component.html',
+  // styles: ['.jumbotron .msg {display:block;} .jumbotron.working .msg {display:none;}  .jumbotron.working .progress {display:block;} .jumbotron .progress{display:none;}'],
+  providers: []
 })
 export class ConfirmationComponent implements OnInit {
 
-    // @ViewChild("bar") bar: ElementRef;
-    // @ViewChild("progress") progress: ElementRef;
-    // @ViewChild("msg") msg: ElementRef;
+  // @ViewChild("bar") bar: ElementRef;
+  // @ViewChild("progress") progress: ElementRef;
+  // @ViewChild("msg") msg: ElementRef;
 
-    constructor(
-        // private renderer:Renderer2,
-        private data:Data<Policy>,
-        private router:Router) {
-    }
+  constructor(// private renderer:Renderer2,
+    private data: Data<AutoPolicy>,
+    private router: Router) {
+  }
 
-    ngOnInit() {
-        update();
-    }
+  ngOnInit() {
+    update();
+  }
 
 
-    handleSubmit(event:any) {
-        event.preventDefault();
-        this.router.navigate(['/login']);
-    }
+  handleSubmit(event: any) {
+    event.preventDefault();
+    this.router.navigate(['/login']);
+  }
 
-    ngAfterContentChecked() {
-        // jQuery(this.elementRef.nativeElement).find('.completer-input').addClass('form-control');
-    }
+  ngAfterContentChecked() {
+    // jQuery(this.elementRef.nativeElement).find('.completer-input').addClass('form-control');
+  }
 
 
 }

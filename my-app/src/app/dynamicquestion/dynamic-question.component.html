@@ -1,0 +1,23 @@
+<div [formGroup]="form" class="form-group">
+  <h4 class="col-md-6" [attr.for]="question.key">{{question.label}}</h4>
+
+  <div [ngSwitch]="question.controlType">
+
+    <input *ngSwitchCase="'textbox'" [formControlName]="question.key" class="form-control"
+           [id]="question.key" [type]="question.type">
+
+    <select [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key" class="form-control">
+      <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
+    </select>
+
+    <div *ngSwitchCase="'radio'" class="btn-group">
+      <label class="btn btn-default" *ngFor="let opt of question.options">
+        <input [formControlName]="question.key"
+               [id]="question.key" [type]="question.type" [value]="opt.key">{{opt.value}}
+      </label>
+    </div>
+
+  </div>
+
+  <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>
+</div>
