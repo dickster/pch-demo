@@ -11,7 +11,6 @@ import {ConfirmationComponent} from "./confirmation.component";
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {Data} from './data.store';
-import {AIComponent} from "./ai.component";
 import {PolicyDetailsComponent} from "./policyDetails.component";
 import {DynamicAiFormQuestionComponent} from "./dynamicquestion/dynamic-question.component";
 import {DynamicAiFormComponent} from "./dynamicquestion/dynamic-form.component";
@@ -19,7 +18,7 @@ import {DynamicAiComponent} from "./dynamicquestion/dynamic-ai.component";
 
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, AdminComponent, RatingComponent, ConfirmationComponent, AIComponent, PolicyDetailsComponent,
+    AppComponent, LoginComponent, AdminComponent, RatingComponent, ConfirmationComponent, PolicyDetailsComponent,
     DynamicAiFormComponent, DynamicAiFormQuestionComponent, DynamicAiComponent
   ],
   imports: [

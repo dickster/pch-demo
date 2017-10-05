@@ -55,7 +55,7 @@ export class PolicyDetailsComponent implements OnInit {
     event.preventDefault();
     this.data.put(this.form.value);
     console.log('FORM = ' + JSON.stringify(this.form.value));
-    this.router.navigate(['/dynamic-ai']);
+    this.router.navigate(['/ai']);
   }
 
   ngAfterContentChecked() {

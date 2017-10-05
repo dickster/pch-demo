@@ -11,9 +11,9 @@
     </select>
 
     <div *ngSwitchCase="'radio'" class="btn-group">
-      <label class="btn btn-default" *ngFor="let opt of question.options">
-        <input [formControlName]="question.key"
-               [id]="question.key" [type]="question.type" [value]="opt.key">{{opt.value}}
+      <label *ngFor="let opt of question.options" class="btn btn-default" [class.active]="radioSelected == opt.key"
+             (click)="onClick(opt)">
+        <input [formControlName]="question.key" type="radio" [value]="opt.key">{{opt.value}}
       </label>
     </div>
 

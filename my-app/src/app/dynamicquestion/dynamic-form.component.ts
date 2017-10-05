@@ -3,6 +3,7 @@ import {FormGroup} from '@angular/forms';
 
 import {QuestionBase} from './question-base';
 import {QuestionControlService} from './question-control.service';
+import {AutoPolicy} from "../model";
 
 @Component({
   selector: 'dynamic-form',
@@ -12,6 +13,7 @@ import {QuestionControlService} from './question-control.service';
 export class DynamicAiFormComponent implements OnInit {
 
   @Input() questions: QuestionBase<any>[] = [];
+  @Input() policy: AutoPolicy;
   form: FormGroup;
   payLoad = '';
 

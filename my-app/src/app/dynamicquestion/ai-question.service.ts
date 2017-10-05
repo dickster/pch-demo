@@ -8,8 +8,6 @@ import {RadioQuestion} from "./question-radio";
 @Injectable()
 export class AiQuestionService {
 
-  // Todo: get from a remote source of question metadata
-  // Todo: make asynchronous
   getQuestions() {
 
     let questions: QuestionBase<any>[] = [

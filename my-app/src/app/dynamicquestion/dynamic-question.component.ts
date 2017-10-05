@@ -11,7 +11,13 @@ export class DynamicAiFormQuestionComponent {
   @Input() question: QuestionBase<any>;
   @Input() form: FormGroup;
 
+  radioSelected: string;
+
   get isValid() {
     return this.form.controls[this.question.key].valid;
+  }
+
+  onClick(opt: any) {
+    this.radioSelected = opt.key;
   }
 }

@@ -7,7 +7,7 @@ export class RadioQuestion extends QuestionBase<string> {
 
   constructor(options: {} = {}) {
     super(options);
-    this.options = options['options'] || '';
+    this.options = options['options'] || [];
     this.type = options['type'] || '';
   }
 }
