@@ -79,8 +79,8 @@ const sample = "{\n" +
   "            ],\n" +
   "            \"questionAnswers\": [\n" +
   "                {\n" +
-  "                    \"question\": \"Yes\",\n" +
-  "                    \"answer\": \"Winter tires?\"\n" +
+  "                    \"question\": \"Hungry?\",\n" +
+  "                    \"answer\": \"Y\"\n" +
   "                }\n" +
   "            ]\n" +
   "        }\n" +

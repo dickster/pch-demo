@@ -28,16 +28,18 @@ export class DynamicAiFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.processForm();
+    this.processForm(this.policy);
     this.data.put(this.policy);
     this.payLoad = JSON.stringify(this.aiQuestions);
   }
 
-  private processForm() {
-    let qas = this.policy.vehicles[0].questionAnswers;
+  private processForm(policy: AutoPolicy) {
+    this.aiQuestions = [];
+    policy.vehicles[0].questionAnswers = [];
     Object.keys(this.form.controls).forEach(key => {
-      let q = new QuestionAnswerImpl(key, this.form.get(key).value);
-      qas.push(q);
+      let v = this.form.get(key).value;
+      let q = new QuestionAnswerImpl(key, v);
+      policy.vehicles[0].questionAnswers.push(q);
       this.aiQuestions.push(q);
     });
   }
