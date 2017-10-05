@@ -5,6 +5,7 @@ import {QuestionBase} from './question-base';
 import {QuestionControlService} from './question-control.service';
 import {AutoPolicy, QuestionAnswer} from "../model";
 import {Data} from "../data.store";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'dynamic-form',
@@ -20,7 +21,8 @@ export class DynamicAiFormComponent implements OnInit {
   payLoad = '';
 
   constructor(private qcs: QuestionControlService,
-              private data: Data<AutoPolicy>) {
+              private data: Data<AutoPolicy>,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -31,6 +33,7 @@ export class DynamicAiFormComponent implements OnInit {
     this.processForm(this.policy);
     this.data.put(this.policy);
     this.payLoad = JSON.stringify(this.aiQuestions);
+    this.router.navigate(['/rating']);
   }
 
   private processForm(policy: AutoPolicy) {
