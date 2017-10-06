@@ -1,60 +1,51 @@
-import { Injectable } from '@angular/core';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import {Injectable} from '@angular/core';
+import {Headers, Http, Response} from '@angular/http';
 import 'rxjs/add/operator/map'
 import {Observable} from 'rxjs/Rx';
-//import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class RestService<T> {
 
-    private actionUrl: string;
-    private headers: Headers;
+  private headers: Headers;
 
-    constructor(public http: Http ) {
-        this.headers = new Headers();
-        this.headers.append('Content-Type', 'application/json');
-        this.headers.append('Accept', 'application/json');
-    }
+  constructor(public http: Http, public baseUrl: string) {
+    this.headers = new Headers();
+    this.headers.append('Content-Type', 'application/json');
+    this.headers.append('Accept', 'application/json');
+  }
 
-    public withUrl(url:string) {
-        this.actionUrl = url;
-        return this;
-    }
+  public withUrl(path: string): string {
+    return this.baseUrl + path;
+  }
 
-
-
-
-
-
-    public get(): Observable<T[]> {
-       return this.http.get(this.actionUrl)
-            .map((response: Response) => <T[]>response.json())
-            .catch(this.handleError);
+  public getAll(): Observable<T[]> {
+    return this.http.get(this.baseUrl)
+      .map((response: Response) => <T[]>response.json())
+      .catch(this.handleError);
     // console.log('hello');
-   // return null;
-    }
+    // return null;
+  }
 
+  public get(path: string): Observable<T> {
+    return this.http.get(path)
+      .map((response: Response) => <T>response.json())
+      .catch(this.handleError);
+  }
 
-// NOT TESTED YET:
-//     public add(toAdd: T): Observable<T> {
-//         return this._http.post(this.actionUrl, toAdd, { headers: this.headers })
-//             .map((response: Response) => <T>response.json())
-//             .catch(this.handleError);
-//     }
+  public post(path: string, body: T): Observable<T> {
+    return this.http.post(path, body, {headers: this.headers})
+      .map((response: Response) => <T>response.json())
+      .catch(this.handleError);
+  }
 
-    // public put(data:T) : Observable<T> {
-    //     let headers = new Headers({ 'Content-Type': 'application/json' });
-    //     let options = new RequestOptions({ headers: headers });
-    //     return this.http.post(this.actionUrl, data, options) // ...using post request
-    //         .map((res:Response) => res.json()) // ...and calling .json() on the response to return data
-    //         .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if
-    // }
+  public put(path: string, body: T): Observable<T> {
+    return this.http.put(path, body, {headers: this.headers})
+      .map((res: Response) => <T>res.json())
+      .catch(this.handleError);
+  }
 
-
-
-
-    private handleError(error: Response) {
-        console.error(error);
-        return Observable.throw(error.json().error || 'rest service error');
-    }
+  private handleError(error: Response) {
+    console.error(error);
+    return Observable.throw(error.json().error || 'rest service error');
+  }
 }
