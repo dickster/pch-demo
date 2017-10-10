@@ -1,0 +1,18 @@
+BUGS :
+
+- 'choose one' in select doesn't behave properly.
+
+bug notes : for <select>'s,  we should use
+    <select>
+        <option value="" disabled selected>Select your option</option>
+        <option value="hurr">Durr</option>
+    </select>
+  that way, the "select your option" choice will never be shown as the value in the changeEditor. (unless it's the initial value
+  which it should never be?)  i could look for option:not(disabled).
+
+- need to allow for "rollup" of changes. i.e. if a driver has 5 fields (name, address, email, etc..) that are changed it will list
+it as "driver X changed" as opposed to listing all of the changes separately.   this requires back end changes - the change data would need
+to include a reference to a "parent" and the html would need to have an associated selector.  (e.g. data-parent-id="foo")
+
+
+

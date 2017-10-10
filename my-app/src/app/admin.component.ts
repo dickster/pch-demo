@@ -25,14 +25,13 @@ export class AdminComponent implements OnInit {
 
 
   ngOnInit() {
-
   }
 
   clickRow(policy: AutoPolicy, index: number) {
     console.log('clicked on....' + index + '--->' + policy.policyNumber);
     this.data.put(policy);
     // this.router.navigate(['/rating'], {id:policy.number});
-    this.router.navigate(['/policyDetails']);
+    this.router.navigate(['/pch']);
   }
 
   ngAfterContentChecked() {

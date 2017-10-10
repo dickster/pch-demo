@@ -1,0 +1,396 @@
+
+.change-panel .fa.fa-minus-circle {
+    color: #b48585;
+}
+.change-panel .fa.fa-plus-circle {
+    color:#005000;
+}
+.change-panel .fa.fa-stack-1x span {
+    color: white;
+    font-size: .7em;
+    margin-left: 13px;
+    margin-top: -25px;
+    padding: 3px 6px;
+    background: #cd2b2b;
+    font-family: sans-serif;
+}
+
+.change-modify.popover .popover-title {
+    background:#d9edf7;
+}
+
+.change-input .popover-title .fa,
+.change-panel .panel-heading .fa {
+    color: #5171ba;
+}
+
+.change-input .popover-title .fa {
+    font-weight:bold;
+    padding-right:5px;
+}
+
+.change-panel .panel-heading .fa-stack {
+    margin-right:10px;
+}
+
+.change-panel .change-value:empty:after {
+    content:'-';
+    font-size:12px;
+    font-style:italic;
+    color:#999;
+}
+
+.change-editor.fullwidth .change-panel .btn.prev-change,
+.change-editor.fullwidth .change-panel .btn.next-change,
+.change-editor.fullwidth .change-panel .btn.maximize,
+.change-editor.fullwidth .change-panel .btn.maximize {
+    display:none;
+}
+
+.change-editor.maximized .btn.minimize {
+    display:inline-block;    
+}
+.change-editor:not(maximized) .btn.minimize {
+    display:none;
+}
+.change-editor:not(.fullwidth):not(.maximized) .btn.maximize {
+    display:inline-block;
+}
+.change-editor.maximized .btn.maximize {
+    display:none;
+}
+
+.change-editor:not(.fullwidth) .change-panel .panel-body { 
+    overflow-y: scroll;
+}
+
+.change-panel .panel-body { 
+    position:relative;
+    padding:0;
+}
+
+.change-editor.fullwidth .panel-body {
+    max-height: 100%;
+    height:100%;
+}
+
+.change-editor.maximized .panel-body {
+    max-height: 450px;
+}
+
+.change-editor:not(.fullwidth):not(.maximized) .panel-body {
+    max-height: 45px;
+}
+
+
+.change-item.list-group-item.active {
+    text-shadow: none;
+    background: #d4dfe4;
+    border-color: #ccc;
+    color: #447;
+    position: relative;
+}
+
+.change-panel .change-item.active:hover {
+    color:#447;
+    background-color: #cde;
+    border-color: #8fa8b5;
+}
+
+.change-panel .btn.minmax.btn-default {
+    margin-left:10px;
+    margin-right:-10px;
+}
+
+.change-panel .panel-body .change-item .summary:hover {
+    cursor:pointer;
+    color:#094be2;
+    text-decoration: underline;
+}
+.change-panel .panel-body .change-item:hover {
+    cursor:default;
+}
+
+.change-panel .panel-body .toggle i:hover {
+    cursor:pointer;
+}
+.change-panel.panel:hover {
+    opacity:1 !important;
+}
+
+.change-editor:not('fullwidth') .change-panel.panel {
+    opacity:.85 !important;
+}
+
+
+.change-value .change-input-accept {
+    visibility:hidden;
+    color:#669;
+    padding-left:5px;
+    display:inline-block;
+    width:24px;
+}
+
+.change-value.accepted .change-input-accept {
+    visibility:visible;
+    color: #a29dcc;
+}
+
+.change-value:hover {
+    cursor:pointer;
+}
+
+.change-value:hover .change-input-accept {
+    color: #14b41f;
+    visibility: visible;
+    font-weight:bold;
+}
+
+.btn-group-xxs>.btn {
+    padding: 1px 3px;
+    font-size: 8px;
+    line-height: 1;
+    border-radius: 0;
+}
+
+.popover .list-group { margin-bottom:0; }
+.change-editor.fullwidth {
+}
+
+.change-editor:not(.fullwidth) {
+    min-width:450px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 23234;
+}
+
+/*--------------------*/
+
+.change-panel.panel .change-item-add section li {
+    color: #4f9462;
+}
+.change-panel.panel .change-item-modify section li {
+    color: #8ea5b5;
+}
+.change-panel.panel .change-item-delete section li {
+    color: #a57468;
+}
+
+.change-item .summary {
+    color: #2b3c91;
+}
+
+.list-group-item.change-item {
+    padding: 3px 3px;
+    /* position: relative; */
+}
+
+
+.change-item .toggle i.fa {
+    position: absolute;
+    font-size: 22px;
+    color: #707b85;
+    right: 5px;
+    top: 0;
+}
+
+.change-item .toggle-override i.fa {
+    font-size:16px;
+    padding-right: 6px;
+    margin-top: 7px;
+    color: #a87b4c;
+}
+
+.change-item .toggle .fa { 
+    
+}
+.change-item section>.fa {
+    float: left;
+    margin-left: -22px;
+    margin-top: -14px;
+}
+.change-item:not(.accepted) .fa-toggle-off {
+    display:inline-block;
+}
+.change-item.accepted .fa-toggle-on {
+    display:inline-block;
+}
+
+/*this is the default layout/config for icon. i know this layout wont work for all - you will
+ need to put those hacks in a separate .css file specific to your implementation.
+ */
+li.change-input-icon {
+    position:absolute;
+    top:0;
+    right: 6px;
+    color: #759ee8;
+    padding:2px 0;
+}
+
+li.change-add-icon,
+li.change-delete-icon {
+    float:right;
+    margin-top:-40px;
+    margin-right:10px;
+}
+
+@keyframes highlightBorder {
+    from { border-size:inherit; }
+    to { border-width:3px; border-color: #5171ba;}
+}
+
+
+@keyframes highlight {
+    from {box-shadow: inset 0 0 0 200px rgba(255, 253, 48, 0.49); border:1px solid #C1A227 ;}
+    to {box-shadow: none; }
+}
+
+
+.active-change {
+    animation-name: highlight;
+    animation-duration: 380ms;
+    animation-iteration-count:2;
+}
+
+
+.change-editor.fullwidth .change-value {
+    overflow:inherit;
+}
+.change-value {
+     text-overflow: ellipsis;
+     white-space: nowrap;
+     overflow: hidden;
+     max-width: 92%;
+     /* outline: 1px solid blue; */
+     display: inline-block;
+}
+
+.change-value.lg {
+    /* margin-left:25px; */
+    /* display: block; */
+}
+.change-value.sm {
+    /* margin-left:25px; */
+}
+
+.change-item .summary {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.change-summary .change-value {
+    display:block;
+}
+
+.change-panel-title {
+    font-size: 22px;
+    color: #5171ba;
+    vertical-align: middle;
+    font-weight: normal;
+}
+
+.change-aside {
+    font-style:italic;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display:inline-block;
+}
+
+.change-value.md {
+    max-width:50%;
+}
+
+.change-aside.lg,
+.change-value.lg+.change-aside {
+    display: block;
+    padding-left:0;
+    max-width: 75%;
+    font-style: inherit;
+}
+
+.change-aside.sm,
+.change-aside.md {
+    padding-left:5px;
+}
+
+.change-item section {
+    margin-left: 25px;
+    display:none;
+}
+
+.change-item.change-item-delete section,
+.change-item.change-item-add section,
+.change-item.change-item-modify section {
+    display:block;
+}
+
+.change-item-modify section div:not(.accepted) {
+    display:none;
+}
+
+.change-add.panel {
+    margin-bottom: -10px;
+    background: #c3e4c0;
+}
+.change-delete.panel {
+    background: #f4d6b7;
+}
+.change-add .fa.fa-level-down {
+    vertical-align: text-top;
+    font-size: 20px;
+    color: #95a1df;
+}
+
+.change-delete summary,
+.change-add summary {
+    font-size:larger;
+    display: inline-block;
+    padding-left: 10px;
+}
+
+.change-delete .popover h3,
+.change-add .popover h3,
+.change-modify.popover h3 {
+    background:#d9edf7;
+}
+
+.change-add .change-value,
+.change-delete .change-value,
+.change-modify .change-value {
+    padding:4px 0;
+    border:none;
+    display: block;
+}
+
+.change-add.popover,
+.change-delete.popover,
+.change-modify.popover {
+    min-width: 300px;
+    /* put this in front of change-panel.*/
+    z-index:2000;
+    border: 3px solid rgba(127,143,191,.4);
+}
+
+
+/*  BLARGH!  hacks to overcome forms & easy & other .css */
+.change-add.popover .btn.btn-default,
+.change-delete.popover .btn.btn-default,
+.change-modify.popover .btn.btn-default,
+.change-panel.panel .btn.btn-default {
+    border-color:#ccc;
+    padding: 1px 5px;
+    color: #66a;
+}
+
+.change-panel.panel .btn.btn-default {
+    font-size: 14px;
+}
+
+.change-panel.panel.popover a.list-group-item,
+.change-modify.popover.popover a.list-group-item  {
+    color: #666;
+    font-size: 12px;
+    text-decoration: none;
+}

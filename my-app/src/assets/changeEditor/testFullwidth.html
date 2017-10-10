@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<!-- saved from url=(0070)http://localhost:8080/b1-insurance/ui/?action=PersAutoPolicyAddRq:form -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=blob_plain;f=wicket-core/src/main/resources/META-INF/wicket-1.5.xsd;hb=master"
+      lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.js"
+            integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+            crossorigin="anonymous"></script>
+
+    <script
+            src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"
+            integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+            crossorigin="anonymous"></script>
+
+    <script src="https://use.fontawesome.com/1f0e50ab99.js"></script>
+
+    <script type="text/javascript" src="Peel-full-form_files/jquery-ui.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="handlebars-v4.0.5.js"></script>
+
+    <!--TODO : these javascript files should be concatenated into one (via Gulp or whatever)
+        it's great for coding maintenance to have them in separate files but bad for performance.
+    -->
+
+    <script src="Utils.js"></script>
+    <script src="IE-Shims.js"></script>
+    <script src="changePanel.js"></script>
+    <script src="changeInput.js"></script>
+    <script src="valHook.js"></script>
+    <script src="changeEditor.js"></script>
+
+    <link rel="stylesheet" href="policyChange.css" >
+
+    <script type="application/javascript">
+        $(function() {
+            Utils.debugChangeEditor('fullwidthChanges', 'fullwidthConfig');
+        });
+    </script>
+
+
+    <title></title>
+
+</head>
+
+<body>
+
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Policy Change Demo</h1>
+    </div>
+
+    <div class="change-editor fullwidth">Changes</div>
+
+</div>
+
+
+</body>
+</html>
