@@ -19,12 +19,17 @@ import { ItemComponent, } from "./policydetails/item.component";
 import { InsuredComponent } from "./policydetails/insured.component";
 import { UnknownDynamicComponent } from "./policydetails/dynamicItem";
 import { PhoneInfoComponent } from "./policydetails/phoneInfo.component";
+import { VehicleComponent } from "./policydetails/vehicle.component";
+import { CoverageComponent } from "./policydetails/coverage.component";
+import { QuestionAnswerComponent } from "./policydetails/questionAnswer.component";
+import { DriverComponent } from "./policydetails/driver.component";
+import { LicenseComponent } from "./policydetails/license.component";
 
 @NgModule( {
   declarations: [
     AppComponent, LoginComponent, AdminComponent, RatingComponent, ConfirmationComponent, PolicyDetailsComponent,
     DynamicAiFormComponent, DynamicAiFormQuestionComponent, DynamicAiComponent, ListComponent, PhoneInfoComponent, InsuredComponent,
-    ItemComponent, UnknownDynamicComponent
+    ItemComponent, UnknownDynamicComponent, VehicleComponent, CoverageComponent, QuestionAnswerComponent, DriverComponent, LicenseComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot( routes ),
@@ -38,7 +43,12 @@ import { PhoneInfoComponent } from "./policydetails/phoneInfo.component";
   entryComponents: [
     PhoneInfoComponent,
     InsuredComponent,
-    UnknownDynamicComponent
+    VehicleComponent,
+    CoverageComponent,
+    UnknownDynamicComponent,
+    QuestionAnswerComponent,
+    DriverComponent,
+    LicenseComponent
   ],
 } )
 export class AppModule {

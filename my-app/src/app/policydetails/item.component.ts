@@ -12,6 +12,11 @@ import { FormArray } from "@angular/forms";
 import { DynamicItem, UnknownDynamicComponent } from "./dynamicItem";
 import { PhoneInfoComponent } from "./phoneInfo.component";
 import { InsuredComponent } from "./insured.component";
+import { VehicleComponent } from "./vehicle.component";
+import { CoverageComponent } from "./coverage.component";
+import { QuestionAnswerComponent } from "./questionAnswer.component";
+import { DriverComponent } from "./driver.component";
+import { LicenseComponent } from "./license.component";
 
 @Component( {
   selector: 'dynamic-item',
@@ -35,7 +40,12 @@ export class ItemComponent implements OnInit, OnDestroy {
   private componentRef: ComponentRef<{}>;
   private mappings = {
     'insured': InsuredComponent,
-    'phoneInfo': PhoneInfoComponent
+    'phoneInfo': PhoneInfoComponent,
+    'vehicle': VehicleComponent,
+    'coverage': CoverageComponent,
+    'questionAnswer': QuestionAnswerComponent,
+    'driver': DriverComponent,
+    'license': LicenseComponent
   }
 
   constructor( private componentFactoryResolver: ComponentFactoryResolver ) {

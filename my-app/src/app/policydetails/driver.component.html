@@ -1,0 +1,51 @@
+<div [formGroup]="ownForm">
+  <!-- names -->
+  <div class="form-group row">
+    <div class="col-md-3">
+      <label>Given Name</label>
+      <input formControlName="givenName" class="form-control form-control-sm" type="text">
+    </div>
+    <div class="col-md-3">
+      <label>Surname</label>
+      <input formControlName="surname" class="form-control form-control-sm" type="text">
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-md-3">
+      <label>Gender</label>
+      <select formControlName="gender" class="custom-select form-control form-control-sm">
+        <option disabled value="">Choose One</option>
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label>Birthday</label>
+      <input formControlName="birthday" class="form-control form-control-sm" type="text">
+    </div>
+    <div class="col-md-3">
+      <label>Marital Status</label>
+      <select formControlName="maritalStatus" class="custom-select form-control form-control-sm">
+        <option disabled value="">Choose One</option>
+        <option value="M">Married</option>
+        <option value="S">Single</option>
+      </select>
+    </div>
+  </div>
+
+  <h6>Licenses</h6>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Licensed Date</th>
+      <th>License Class</th>
+      <th>License Number</th>
+      <th>Province</th>
+    </tr>
+    </thead>
+    <tbody>
+    <list [parentForm]="ownForm" [childrenData]="child.licenses" [itemType]="'license'"></list>
+    </tbody>
+  </table>
+
+</div>

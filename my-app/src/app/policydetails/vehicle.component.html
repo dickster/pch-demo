@@ -1,0 +1,79 @@
+<div [formGroup]="ownForm">
+  <div class="form-group row">
+    <div class="col-md-3">
+      <label>VIN</label>
+      <input formControlName="vin" class="form-control form-control-sm" type="text">
+    </div>
+    <div class="col-md-3">
+      <label>Year</label>
+      <input formControlName="modelYear" class="form-control form-control-sm" type="number">
+    </div>
+    <div class="col-md-3">
+      <label>Make</label>
+      <input formControlName="manufacturer" class="form-control form-control-sm" type="text">
+    </div>
+    <div class="col-md-3">
+      <label>Model</label>
+      <input formControlName="model" class="form-control form-control-sm" type="text">
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-md-3">
+      <label>Purchase Date</label>
+      <input formControlName="purchaseDate" class="form-control form-control-sm" type="date">
+    </div>
+    <div class="col-md-3">
+      <label>Purchase Price</label>
+      <input formControlName="costNewAmt" class="form-control form-control-sm" type="number">
+    </div>
+    <div class="col-md-3">
+      <label>Body Type</label>
+      <input formControlName="bodyType" class="form-control form-control-sm" type="number">
+    </div>
+    <div class="col-md-3">
+      <label>Annual Travel Distance</label>
+      <input formControlName="annualDistance" class="form-control form-control-sm" type="number">
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-md-3">
+      <label>Vehicle use</label>
+      <input formControlName="vehUseCd" class="form-control form-control-sm" type="date">
+    </div>
+    <div class="col-md-3">
+      <label>Engine Type</label>
+      <input formControlName="engineType" class="form-control form-control-sm" type="number">
+    </div>
+    <div class="col-md-3">
+      <label>Rate Class</label>
+      <input formControlName="rateClassCd" class="form-control form-control-sm" type="number">
+    </div>
+  </div>
+
+  <h6>Coverages</h6>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Coverage</th>
+      <th>Limit</th>
+      <th>Deductible</th>
+    </tr>
+    </thead>
+    <tbody>
+    <list [parentForm]="ownForm" [childrenData]="child.coverages" [itemType]="'coverage'"></list>
+    </tbody>
+  </table>
+
+  <h6>Question Answers</h6>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Question</th>
+      <th>Answer</th>
+    </tr>
+    </thead>
+    <tbody>
+    <list [parentForm]="ownForm" [childrenData]="child.questionAnswers" [itemType]="'questionAnswer'"></list>
+    </tbody>
+  </table>
+</div>
