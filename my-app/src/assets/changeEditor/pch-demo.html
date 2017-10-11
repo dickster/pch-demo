@@ -1,0 +1,847 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<!-- saved from url=(0070)http://localhost:8080/b1-insurance/ui/?action=PersAutoPolicyAddRq:form -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+    <script src="https://use.fontawesome.com/1f0e50ab99.js"></script>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
+        <link rel="stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    </head>
+
+    <style>
+        .dropdown-menu { min-width:70px;}
+        .dropdown-item {display:block;color:#666;padding-right:10px;padding-left:10px;padding-top:5px;}
+        h5 {
+            background: rgba(205, 206, 211, 0.49);
+            padding: 7px;
+            margin-bottom:0;
+            margin-top:20px;
+        }
+        /*label { margin-bottom:3px;font-size:xx-small;}*/
+
+        .input-group-btn.show {display:table-cell !important;}
+        .company { display:none;}
+        .input-group-addon.person, .input-group-addon.company { border:1px solid #bbb; background:#eee;}
+    </style>
+
+    <script>
+        $(function() {
+
+        });
+    </script>
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+    <h4 class="card-title"><i class="fa fa-grav"></i>Prototype</h4>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a href="#">Policy Details</a></li>
+        <!--<li class="breadcrumb-item">Additional Information</a></li>-->
+        <!--<li class="breadcrumb-item ">Rating</a></li>-->
+        <!--<li class="breadcrumb-item ">Billing</a></li>-->
+        <!--<li class="breadcrumb-item ">Confirmation</li>-->
+    </ol>
+
+    <form class="form">
+
+        <h5>Policy Details</h5>
+        <div class="form-group row">
+            <div class="col-md-3">
+                <label>Policy Number</label>
+                <input class="form-control form-control-sm" type="text">
+            </div>
+            <div class="col-md-3 col-md-offset-3">
+                <label>Effective Date</label>
+                <input class="form-control form-control-sm" type="date" />
+            </div>
+            <div class="col-md-3">
+                <label>Expiration Date</label>
+                <input class="form-control form-control-sm" type="date" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-6">
+                <label>Name</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#"><i class="fa fa-user" ></i>Person</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-industry" ></i>Company</a>
+                        </div>
+                    </div>
+                    <input class="form-control form-control-sm" type="text">
+                </div>
+                <p class="form-text text-muted person">
+                    This is a person.
+                </p>
+                <p class="form-text text-muted company">
+                    This is a company.
+                </p>
+            </div>
+            <div class="col-md-2">
+                <label>Phone</label>
+                <input class="form-control form-control-sm" type="tel">
+            </div>
+            <div class="col-md-2">
+                <label>Email</label>
+                <input class="form-control form-control-sm" type="email">
+            </div>
+            <div class="col-md-2">
+                <label>Birthday</label>
+                <input class="form-control form-control-sm" type="date">
+            </div>
+        </div>
+
+
+
+        <!-- Tab panes -->
+        <div class="form-group row">
+            <div class="col-md-2">
+                <label>Street Number</label>
+                <input class="form-control form-control-sm" type="text">
+            </div>
+            <div class="col-md-5">
+                <label>Street Name</label>
+                <input class="form-control form-control-sm" type="text">
+            </div>
+            <div class="col-md-2">
+                <label>Apartment</label>
+                <input class="form-control form-control-sm" type="text">
+            </div>
+            <div class="col-md-2">
+                <label>Postal Code</label>
+                <input class="form-control form-control-sm" type="text">
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-md-3">
+                <label>City</label>
+                <input class="form-control form-control-sm" type="text">
+            </div>
+            <div class="col-md-3">
+                <label>Province</label>
+                <select class="custom-select form-control form-control-sm">
+                    <option disabled value="">Choose One</option>
+                    <option value="AB">Alberta</option>
+                    <option value="BC">British Columbia</option>
+                    <option value="MB">Manitoba</option>
+                    <option value="NB">New Brunswick</option>
+                    <option value="NL">Newfoundland</option>
+                    <option value="NT">Northwest Territories</option>
+                    <option value="NS">Nova Scotia</option>
+                    <option value="NU">Nunavut</option>
+                    <option selected="selected" value="ON">Ontario</option>
+                    <option value="PE">Prince Edward Island</option>
+                    <option value="QC">Quebec</option>
+                    <option value="SK">Saskatchewan</option>
+                    <option value="YT">Yukon</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label>Country</label>
+                <select class="custom-select form-control form-control-sm">
+                    <option disabled value="AF">AFGHANISTAN</option>
+                    <option value="AX">ALAND ISLANDS</option>
+                    <option value="AL">ALBANIA</option>
+                    <option value="DZ">ALGERIA</option>
+                    <option value="AS">AMERICAN SAMOA</option>
+                    <option value="AD">ANDORRA</option>
+                    <option value="AO">ANGOLA</option>
+                    <option value="AI">ANGUILLA</option>
+                    <option value="AQ">ANTARCTICA</option>
+                    <option value="AG">ANTIGUA AND BARBUDA</option>
+                    <option value="AR">ARGENTINA</option>
+                    <option value="AM">ARMENIA</option>
+                    <option value="AW">ARUBA</option>
+                    <option value="AU">AUSTRALIA</option>
+                    <option value="AT">AUSTRIA</option>
+                    <option value="AZ">AZERBAIJAN</option>
+                    <option value="BS">BAHAMAS</option>
+                    <option value="BH">BAHRAIN</option>
+                    <option value="BD">BANGLADESH</option>
+                    <option value="BB">BARBADOS</option>
+                    <option value="BY">BELARUS</option>
+                    <option value="BE">BELGIUM</option>
+                    <option value="BZ">BELIZE</option>
+                    <option value="BJ">BENIN</option>
+                    <option value="BM">BERMUDA</option>
+                    <option value="BT">BHUTAN</option>
+                    <option value="BO">BOLIVIA, PLURINATIONAL STATE OF</option>
+                    <option value="BA">BOSNIA AND HERZEGOVINA</option>
+                    <option value="BW">BOTSWANA</option>
+                    <option value="BV">BOUVET ISLAND</option>
+                    <option value="BR">BRAZIL</option>
+                    <option value="IO">BRITISH INDIAN OCEAN TERRITORY</option>
+                    <option value="BN">BRUNEI DARUSSALAM</option>
+                    <option value="BG">BULGARIA</option>
+                    <option value="BF">BURKINA FASO</option>
+                    <option value="BI">BURUNDI</option>
+                    <option value="KH">CAMBODIA</option>
+                    <option value="CM">CAMEROON</option>
+                    <option selected="selected" value="CA">CANADA</option>
+                    <option value="CV">CAPE VERDE</option>
+                    <option value="KY">CAYMAN ISLANDS</option>
+                    <option value="CF">CENTRAL AFRICAN REPUBLIC</option>
+                    <option value="TD">CHAD</option>
+                    <option value="CL">CHILE</option>
+                    <option value="CN">CHINA</option>
+                    <option value="CX">CHRISTMAS ISLAND</option>
+                    <option value="CC">COCOS (KEELING) ISLANDS</option>
+                    <option value="CO">COLOMBIA</option>
+                    <option value="KM">COMOROS</option>
+                    <option value="CG">CONGO</option>
+                    <option value="CD">CONGO, THE DEMOCRATIC REPUBLIC OF THE</option>
+                    <option value="CK">COOK ISLANDS</option>
+                    <option value="CR">COSTA RICA</option>
+                    <option value="CI">COTE D'IVOIRE</option>
+                    <option value="HR">CROATIA</option>
+                    <option value="CU">CUBA</option>
+                    <option value="CY">CYPRUS</option>
+                    <option value="CZ">CZECH REPUBLIC</option>
+                    <option value="DK">DENMARK</option>
+                    <option value="DJ">DJIBOUTI</option>
+                    <option value="DM">DOMINICA</option>
+                    <option value="DO">DOMINICAN REPUBLIC</option>
+                    <option value="EC">ECUADOR</option>
+                    <option value="EG">EGYPT</option>
+                    <option value="SV">EL SALVADOR</option>
+                    <option value="GQ">EQUATORIAL GUINEA</option>
+                    <option value="ER">ERITREA</option>
+                    <option value="EE">ESTONIA</option>
+                    <option value="ET">ETHIOPIA</option>
+                    <option value="FK">FALKLAND ISLANDS (MALVINAS)</option>
+                    <option value="FO">FAROE ISLANDS</option>
+                    <option value="FJ">FIJI</option>
+                    <option value="FI">FINLAND</option>
+                    <option value="FR">FRANCE</option>
+                    <option value="GF">FRENCH GUIANA</option>
+                    <option value="PF">FRENCH POLYNESIA</option>
+                    <option value="TF">FRENCH SOUTHERN TERRITORIES</option>
+                    <option value="GA">GABON</option>
+                    <option value="GM">GAMBIA</option>
+                    <option value="GE">GEORGIA</option>
+                    <option value="DE">GERMANY</option>
+                    <option value="GH">GHANA</option>
+                    <option value="GI">GIBRALTAR</option>
+                    <option value="GR">GREECE</option>
+                    <option value="GL">GREENLAND</option>
+                    <option value="GD">GRENADA</option>
+                    <option value="GP">GUADELOUPE</option>
+                    <option value="GU">GUAM</option>
+                    <option value="GT">GUATEMALA</option>
+                    <option value="GG">GUERNSEY</option>
+                    <option value="GN">GUINEA</option>
+                    <option value="GW">GUINEA-BISSAU</option>
+                    <option value="GY">GUYANA</option>
+                    <option value="HT">HAITI</option>
+                    <option value="HM">HEARD ISLAND AND MCDONALD ISLANDS</option>
+                    <option value="VA">HOLY SEE (VATICAN CITY STATE)</option>
+                    <option value="HN">HONDURAS</option>
+                    <option value="HK">HONG KONG</option>
+                    <option value="HU">HUNGARY</option>
+                    <option value="IS">ICELAND</option>
+                    <option value="IN">INDIA</option>
+                    <option value="ID">INDONESIA</option>
+                    <option value="IR">IRAN, ISLAMIC REPUBLIC OF</option>
+                    <option value="IQ">IRAQ</option>
+                    <option value="IE">IRELAND</option>
+                    <option value="IM">ISLE OF MAN</option>
+                    <option value="IL">ISRAEL</option>
+                    <option value="IT">ITALY</option>
+                    <option value="JM">JAMAICA</option>
+                    <option value="JP">JAPAN</option>
+                    <option value="JE">JERSEY</option>
+                    <option value="JO">JORDAN</option>
+                    <option value="KZ">KAZAKHSTAN</option>
+                    <option value="KE">KENYA</option>
+                    <option value="KI">KIRIBATI</option>
+                    <option value="KP">KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF</option>
+                    <option value="KR">KOREA, REPUBLIC OF</option>
+                    <option value="KW">KUWAIT</option>
+                    <option value="KG">KYRGYZSTAN</option>
+                    <option value="LA">LAO PEOPLE'S DEMOCRATIC REPUBLIC</option>
+                    <option value="LV">LATVIA</option>
+                    <option value="LB">LEBANON</option>
+                    <option value="LS">LESOTHO</option>
+                    <option value="LR">LIBERIA</option>
+                    <option value="LY">LIBYAN ARAB JAMAHIRIYA</option>
+                    <option value="LI">LIECHTENSTEIN</option>
+                    <option value="LT">LITHUANIA</option>
+                    <option value="LU">LUXEMBOURG</option>
+                    <option value="MO">MACAO</option>
+                    <option value="MK">MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF</option>
+                    <option value="MG">MADAGASCAR</option>
+                    <option value="MW">MALAWI</option>
+                    <option value="MY">MALAYSIA</option>
+                    <option value="MV">MALDIVES</option>
+                    <option value="ML">MALI</option>
+                    <option value="MT">MALTA</option>
+                    <option value="MH">MARSHALL ISLANDS</option>
+                    <option value="MQ">MARTINIQUE</option>
+                    <option value="MR">MAURITANIA</option>
+                    <option value="MU">MAURITIUS</option>
+                    <option value="YT">MAYOTTE</option>
+                    <option value="MX">MEXICO</option>
+                    <option value="FM">MICRONESIA, FEDERATED STATES OF</option>
+                    <option value="MD">MOLDOVA, REPUBLIC OF</option>
+                    <option value="MC">MONACO</option>
+                    <option value="MN">MONGOLIA</option>
+                    <option value="ME">MONTENEGRO</option>
+                    <option value="MS">MONTSERRAT</option>
+                    <option value="MA">MOROCCO</option>
+                    <option value="MZ">MOZAMBIQUE</option>
+                    <option value="MM">MYANMAR</option>
+                    <option value="NA">NAMIBIA</option>
+                    <option value="NR">NAURU</option>
+                    <option value="NP">NEPAL</option>
+                    <option value="NL">NETHERLANDS</option>
+                    <option value="AN">NETHERLANDS ANTILLES</option>
+                    <option value="NC">NEW CALEDONIA</option>
+                    <option value="NZ">NEW ZEALAND</option>
+                    <option value="NI">NICARAGUA</option>
+                    <option value="NE">NIGER</option>
+                    <option value="NG">NIGERIA</option>
+                    <option value="NU">NIUE</option>
+                    <option value="NF">NORFOLK ISLAND</option>
+                    <option value="MP">NORTHERN MARIANA ISLANDS</option>
+                    <option value="NO">NORWAY</option>
+                    <option value="OM">OMAN</option>
+                    <option value="PK">PAKISTAN</option>
+                    <option value="PW">PALAU</option>
+                    <option value="PS">PALESTINIAN TERRITORY, OCCUPIED</option>
+                    <option value="PA">PANAMA</option>
+                    <option value="PG">PAPUA NEW GUINEA</option>
+                    <option value="PY">PARAGUAY</option>
+                    <option value="PE">PERU</option>
+                    <option value="PH">PHILIPPINES</option>
+                    <option value="PN">PITCAIRN</option>
+                    <option value="PL">POLAND</option>
+                    <option value="PT">PORTUGAL</option>
+                    <option value="PR">PUERTO RICO</option>
+                    <option value="QA">QATAR</option>
+                    <option value="RE">REUNION</option>
+                    <option value="RO">ROMANIA</option>
+                    <option value="RU">RUSSIAN FEDERATION</option>
+                    <option value="RW">RWANDA</option>
+                    <option value="BL">SAINT BARTHELEMY</option>
+                    <option value="SH">SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA</option>
+                    <option value="KN">SAINT KITTS AND NEVIS</option>
+                    <option value="LC">SAINT LUCIA</option>
+                    <option value="MF">SAINT MARTIN</option>
+                    <option value="PM">SAINT PIERRE AND MIQUELON</option>
+                    <option value="VC">SAINT VINCENT AND THE GRENADINES</option>
+                    <option value="WS">SAMOA</option>
+                    <option value="SM">SAN MARINO</option>
+                    <option value="ST">SAO TOME AND PRINCIPE</option>
+                    <option value="SA">SAUDI ARABIA</option>
+                    <option value="SN">SENEGAL</option>
+                    <option value="RS">SERBIA</option>
+                    <option value="SC">SEYCHELLES</option>
+                    <option value="SL">SIERRA LEONE</option>
+                    <option value="SG">SINGAPORE</option>
+                    <option value="SK">SLOVAKIA</option>
+                    <option value="SI">SLOVENIA</option>
+                    <option value="SB">SOLOMON ISLANDS</option>
+                    <option value="SO">SOMALIA</option>
+                    <option value="ZA">SOUTH AFRICA</option>
+                    <option value="GS">SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS</option>
+                    <option value="ES">SPAIN</option>
+                    <option value="LK">SRI LANKA</option>
+                    <option value="SD">SUDAN</option>
+                    <option value="SR">SURINAME</option>
+                    <option value="SJ">SVALBARD AND JAN MAYEN</option>
+                    <option value="SZ">SWAZILAND</option>
+                    <option value="SE">SWEDEN</option>
+                    <option value="CH">SWITZERLAND</option>
+                    <option value="SY">SYRIAN ARAB REPUBLIC</option>
+                    <option value="TW">TAIWAN, PROVINCE OF CHINA</option>
+                    <option value="TJ">TAJIKISTAN</option>
+                    <option value="TZ">TANZANIA, UNITED REPUBLIC OF</option>
+                    <option value="TH">THAILAND</option>
+                    <option value="TL">TIMOR-LESTE</option>
+                    <option value="TG">TOGO</option>
+                    <option value="TK">TOKELAU</option>
+                    <option value="TO">TONGA</option>
+                    <option value="TT">TRINIDAD AND TOBAGO</option>
+                    <option value="TN">TUNISIA</option>
+                    <option value="TR">TURKEY</option>
+                    <option value="TM">TURKMENISTAN</option>
+                    <option value="TC">TURKS AND CAICOS ISLANDS</option>
+                    <option value="TV">TUVALU</option>
+                    <option value="UG">UGANDA</option>
+                    <option value="UA">UKRAINE</option>
+                    <option value="AE">UNITED ARAB EMIRATES</option>
+                    <option value="GB">UNITED KINGDOM</option>
+                    <option value="US">UNITED STATES</option>
+                    <option value="UM">UNITED STATES MINOR OUTLYING ISLANDS</option>
+                    <option value="UY">URUGUAY</option>
+                    <option value="UZ">UZBEKISTAN</option>
+                    <option value="VU">VANUATU</option>
+                    <option value="VE">VENEZUELA, BOLIVARIAN REPUBLIC OF</option>
+                    <option value="VN">VIET NAM</option>
+                    <option value="VG">VIRGIN ISLANDS, BRITISH</option>
+                    <option value="VI">VIRGIN ISLANDS, U.S.</option>
+                    <option value="WF">WALLIS AND FUTUNA</option>
+                    <option value="EH">WESTERN SAHARA</option>
+                    <option value="YE">YEMEN</option>
+                    <option value="ZM">ZAMBIA</option>
+                    <option value="ZW">ZIMBABWE</option>
+                </select>
+
+            </div>
+
+
+
+
+        </div>
+
+        <h5>Vehicle</h5>
+        <div class="form-group row">
+            <div class="col-md-1">
+                <label>VIN</label>
+                <input class="form-control form-control-sm" type="text">
+            </div>
+            <div class="col-md-1">
+                <label>Year</label>
+                <input class="form-control form-control-sm" type="number">
+            </div>
+            <div class="col-md-2">
+                <label>Make</label>
+                <input class="form-control form-control-sm" type="text">
+            </div>
+            <div class="col-md-2">
+                <label>Model</label>
+                <input class="form-control form-control-sm" type="text">
+            </div>
+            <div class="col-md-2">
+                <label>Purchase Date</label>
+                <input class="form-control form-control-sm" type="date">
+            </div>
+            <div class="col-md-2">
+                <label>Purchase Price</label>
+                <input class="form-control form-control-sm" type="number">
+            </div>
+            <div class="col-md-2">
+                <label>List Price New</label>
+                <input class="form-control form-control-sm" type="number">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-2">
+                <div><label>Leased</label></div>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default ">
+                        <input type="radio"  autocomplete="off">Yes
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio"  autocomplete="off">No
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div><label>Modified</label></div>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default ">
+                        <input type="radio"  autocomplete="off">Yes
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio"  autocomplete="off">No
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label>&nbsp;</label>
+                <input type="text"  autocomplete="off" placeholder="amount">
+            </div>
+            <div class="col-md-2">
+                <label>Anti-TheftDevice</label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default ">
+                        <input type="radio" autocomplete="off">Yes
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio"  autocomplete="off">No
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label>&nbsp;</label>
+                <input type="text"  autocomplete="off" placeholder="anti-theft model">
+            </div>
+            <div class="col-md-2">
+                <label>Unrepaired Damage</label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default ">
+                        <input type="radio"  autocomplete="off">Yes
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio"  autocomplete="off">No
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-2">
+                <div><label>Vehicle Use</label></div>
+                <input type="text">
+            </div>
+            <div class="col-md-2">
+                <div><label>Distance (One Way)</label></div>
+                <input type="number">
+            </div>
+            <div class="col-md-2">
+                <div><label>Est Annual Kms</label></div>
+                <input type="number">
+            </div>
+            <div class="col-md-2">
+                <div><label>Est Business Kms</label></div>
+                <input type="number">
+            </div>
+            <div class="col-md-2">
+                <div><label># of Passengers</label></div>
+                <input type="number">
+            </div>
+            <div class="col-md-2">
+                <label>Garaging Postal Code</label>
+                <input type="text"  autocomplete="off">
+            </div>
+        </div>
+
+        <h6>Coverages</h6>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Coverage</th>
+                <th>Limit</th>
+                <th>Deductible</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Bodily Injury - TPBI (Third Party - Bodily Injury)</td>
+                <td>
+                    <select class="form-control form-control-sm">
+                        <option disabled selected value="">Choose One</option><option>$1,0000</option>
+                        <option>$2,0000</option>
+                        <option>$3,0000</option>
+                    </select></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Property Damage - TPPD (Third Party - Property Damage) </td>
+                <td>
+                    <select class="form-control form-control-sm">
+                        <option disabled selected value="">Choose One</option><option>$1,0000</option>
+                        <option>$2,0000</option>
+                        <option>$3,0000</option>
+                    </select></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Accident Benefits -AB</td>
+                <td>
+                    <select class="form-control form-control-sm">
+                        <option disabled selected value="">Choose One</option><option>$1,0000</option>
+                        <option>$2,0000</option>
+                        <option>$3,0000</option>
+                    </select></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Uninsured Automobile - UA</td>
+                <td>
+                    <select class="form-control form-control-sm">
+                        <option disabled selected value="">Choose One</option> <option>$1,0000</option>
+                        <option>$2,0000</option>
+                        <option>$3,0000</option>
+                    </select></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>TPDC (Direct Compensation)</td>
+                <td>
+                </td>
+                <td><select class="form-control form-control-sm">
+                    <option disabled selected value="">Choose One</option>
+                    <option>$1,0000</option>
+                    <option>$2,0000</option>
+                    <option>$3,0000</option>
+                </select></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h6>Nature of Interest</h6>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Company Name</th>
+                <th>Nature of Interest</th>
+                <th>Address 1</th>
+                <th>Address 2</th>
+                <th>City</th>
+                <th>Province</th>
+                <th>Postal Code</th>
+                <th>Country</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Joe Fresh</td>
+                <td>NOI</td>
+                <td>100 Main Street.</td>
+                <td></td>
+                <td>Toronto</td>
+                <td>Ontario</td>
+                <td>m6p 2y6</td>
+                <td>Canada</td>
+            </tr>
+            <tr>
+                <td>Proctor & Gamble</td>
+                <td>NOI</td>
+                <td>643 Fewton Abbey</td>
+                <td></td>
+                <td>Digbyville</td>
+                <td>Ontario</td>
+                <td>m9k 5t1</td>
+                <td>Canada</td>
+            </tr>
+
+            </tbody>
+        </table>
+
+
+        <h5>Drivers</h5>
+        <div class="form-group row">
+            <div class="col-md-2">
+                <div><label>Company Name</label></div>
+                <input type="text" class="form-control form-control-sm">
+            </div>
+            <div class="col-md-2">
+                <div><label>First Name</label></div>
+                <input type="text" class="form-control form-control-sm">
+            </div>
+            <div class="col-md-2">
+                <div><label>Last Name</label></div>
+                <input type="text" class="form-control form-control-sm">
+            </div>
+            <div class="col-md-2">
+                <div><label>Birth Date</label></div>
+                <input type="date" class="form-control form-control-sm">
+            </div>
+            <div class="col-md-2">
+                <div><label>Gender</label></div>
+                <select class="form-control form-control-sm" >
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-2">
+                <label>Marital Status</label>
+                <input type="text"  class="form-control form-control-sm" autocomplete="off">
+            </div>
+            <div class="col-md-2">
+                <label>Relationship</label>
+                <input type="text"  class="form-control form-control-sm" autocomplete="off">
+            </div>
+
+            <div class="col-md-2">
+                <label>Driver Training</label>
+                <input type="text" class="form-control form-control-sm">
+            </div>
+            <div class="col-md-2">
+                <label>Driver Training Date</label>
+                <input type="date" class="form-control form-control-sm" >
+            </div>
+            <div class="col-md-2">
+                <label>Good Driver</label>
+                <input type="checkbox" class="check">
+            </div>
+            <div class="col-md-2">
+                <label>MVR Date</label>
+                <input type="date" class="form-control form-control-sm">
+            </div>
+        </div>
+
+        <h6>Licenses</h6>
+        <div class="form-group row">
+            <div class="col-md-2">
+                <label>License Number</label>
+                <input type="text"  class="form-control form-control-sm" autocomplete="off">
+            </div>
+            <div class="col-md-2">
+                <label>Province</label>
+                <input type="text"  class="form-control form-control-sm" autocomplete="off">
+            </div>
+
+        </div>
+        <div class="form-group row">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Date Licensed</th>
+                <th>License Class Code</th>
+                <th style="width:50%"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="date" class="form-control form-control-sm"></td>
+                <td>
+                    <select class="form-control form-control-sm">
+                        <option>G</option>
+                        <option>G1</option>
+                        <option>G2</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                        <option>E</option>
+                        <option>F</option>
+                        <option>M1</option>
+                        <option>M2</option>
+                    </select>
+                </td>
+    <td></td>
+            </tr>
+
+
+            </tbody>
+        </table>
+
+        <a class="btn btn-default col-md-2">Add Driver</a>
+        </div>
+
+
+        <div class="form-group row">
+            <h5>Driver Vehicle Assignments</h5>
+            <table class="table table-striped">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Driver 1</th>
+                <th style="width:50%"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Vehicle 1</td>
+                <td> <input type="number" class="form-control form-control-sm" min="0" max="100" step="5"></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <div class="form-group row">
+            <h5>Claims</h5>
+            <div class="col-md-2">
+                <label>Loss Date</label>
+                <input type="date"  class="form-control form-control-sm" autocomplete="off">
+            </div>
+            <div class="col-md-2">
+                <label>Cause</label>
+                <input type="text"  class="form-control form-control-sm" autocomplete="off">
+            </div>
+            <div class="col-md-2">
+                <label>Driver</label>
+                <input type="text"  class="form-control form-control-sm" autocomplete="off">
+            </div>
+            <div class="col-md-2">
+                <label>Insurer</label>
+                <input type="text"  class="form-control form-control-sm" autocomplete="off">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-2">
+                <label>Total Damage</label>
+                <input type="number"  class="form-control form-control-sm" autocomplete="off">
+            </div>
+            <div class="col-md-2">
+                <label>% Responsible</label>
+                <input type="number"  class="form-control form-control-sm" autocomplete="off">
+            </div>
+            <div class="col-md-2">
+                <label>Chargeable</label>
+                <input type="checkbox"  class="">
+            </div>
+            <div class="col-md-2">
+                <label>Claim Settled</label>
+                <input type="checkbox"  class="">
+            </div>
+            <div class="col-md-12">
+                <label>Claim Settled</label>
+                <textarea  class="form-control"/>
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-2">
+                <label>Payments</label>
+                <input type="number"  class="form-control form-control-sm" autocomplete="off">
+            </div>
+            <div class="col-md-2">
+                <label>Coverage Code Payment Amt</label>
+                <input type="number"  class="form-control form-control-sm" autocomplete="off">
+            </div>
+            <div class="col-md-2">
+                <label>Third Party Liability</label>
+                <input type="checkbox"  class="">
+            </div>
+            <div class="col-md-2">
+                <label>Third Party Bodily Injury</label>
+                <input type="checkbox"  class="">
+            </div>
+            <div class="col-md-12">
+                <label>Accident Benefits</label>
+                <textarea  class="form-control"/>
+            </div>
+            <div class="col-md-12">
+                <label>Collision</label>
+                <textarea  class="form-control"/>
+            </div>
+            <div class="col-md-12">
+                <label>Direct Compensation - Property Damage</label>
+                <textarea  class="form-control"/>
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+</body>
+</html>

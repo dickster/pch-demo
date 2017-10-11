@@ -7,7 +7,9 @@ export class Data<T> {
 
     public storage: T;
 
-    public constructor() { }
+    public constructor() {
+
+    }
 
     public put(data:T):void {
         console.log('saving data ' + JSON.stringify(data));

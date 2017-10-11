@@ -9,6 +9,11 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script
+          src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"
+          integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+          crossorigin="anonymous"></script>
+
 
   <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
   <link rel="stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css" crossorigin="anonymous">
@@ -17,6 +22,145 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+
+    <script id="changePanelTitle" type="text/x-handlebars-template">
+        <div class="panel-heading">
+            <span class="fa-stack fa-lg">
+            <i class="fa fa-files-o fa-stack-2x"></i>
+            <i class="fa fa-stack-1x" >
+                <span class="badge">{{changesCount}}</span>
+            </i>
+        </span>
+            <span class="change-panel-title">{{config.header}}</span>
+
+            <div class="btn-group pull-right">
+                <a class="btn btn-default prev-change"> <i class="fa fa-arrow-up fa-2x"></i> </a>
+                <a class="btn btn-default next-change"> <i class="fa fa-arrow-down fa-2x"></i> </a>
+                <a class="btn btn-default minimize"> <i class="fa fa-window-restore fa-2x"></i> </a>
+                <a class="btn btn-default maximize"> <i class="fa fa-window-maximize fa-2x"></i> </a>
+            </div>
+        </div>
+    </script>
+
+    <script id="changePanelContent" type="text/x-handlebars-template">
+        <a class="list-group-item change-item change-item-{{type}}">
+
+            {{#if isContainer}}
+            <li class="fa fa-asterisk"></li>
+            <span class="summary"><span>{{summary}} 1: </span></span>
+            <span class="change-aside">({{changes.length}} Changes)</span>
+            {{/if}}
+
+            {{#if isModify}}
+            <li class="fa fa-asterisk"></li>
+            <span class="summary">{{summary}}</span>
+            <section>
+                <div class="toggle toggle-on" class>
+                <span class="change-value {{values.[0].size}}">{{values.[0].text}}
+                    <span class="change-aside {{values.[1].size}}">   (was {{values.[1].text}})</span>
+                </span>
+                    <i class="fa fa-toggle-on"></i>
+                </div>
+                <div class="toggle toggle-off">
+                <span class="change-value {{values.[1].size}}">{{values.[1].text}}
+                    <span class="change-aside sm"> (change ignored)</span>
+                </span>
+                    <i class="fa fa-toggle-off"></i>
+                </div>
+                <div class="toggle toggle-override">
+                <span class="change-value">
+                    <span class="change-aside sm">   (overriden by user)</span>
+                </span>
+                    <i class="fa fa-exclamation-triangle"></i>
+                </div>
+            </section>
+            {{/if}}
+
+            {{#if isDelete}}
+            <li class="fa fa-minus-circle"></li>
+            <span class="summary">{{summary}}</span>
+            <section>
+                <div>
+                <span class="change-value {{values.[1].size}}"> {{desc}} : <span>{{values.[1].text}}</span>
+                    <span class="change-aside sm">  (deleted)</span>
+                </span>
+                </div>
+            </section>
+            {{/if}}
+
+            {{#if isAdd}}
+            <li class="fa fa-plus-circle"></li>
+            <span class="summary">{{summary}}</span>
+            <section>
+                <div>
+                <span class="change-value {{values.[0].size}}"> {{values.[0].text}}
+                    <span class="change-aside sm">  (added)</span>
+                </span>
+                </div>
+            </section>
+            {{/if}}
+        </a>
+    </script>
+
+    <script id="changeInputTitle" type="text/x-handlebars-template">
+        <li class="fa fa-copy"></li> "<span>{{summary}}</span>" was changed.
+    </script>
+
+    <script id="changeInputContent" type="text/x-handlebars-template">
+        {{#if isModify}}
+        <div class="list-group change-values change-input-{{type}}">
+            <a class="change-value list-group-item">
+                <i class="change-input-accept fa fa-check"/></i>
+                <label>{{values.[0].label}}</label> : <span class="change-input-value">{{values.[0].text}}</span>
+            </a>
+            <a class="change-value list-group-item">
+                <i class="change-input-accept fa fa-check"/></i>
+                <label>{{values.[1].label}}</label> : <span class="change-input-value">{{values.[1].text}}</span>
+            </a>
+        </div>
+        {{/if}}
+        {{#if isAdd}}
+        <div><span>{{values.[0].text}}</span><span> was added</span></div>
+        {{/if}}
+        {{#if isDelete}}
+        <div><span>{{values.[1].text}}</span><span> was deleted</span></div>
+        {{/if}}
+        <div class="btn-group btn-group-xxs pull-right">
+            <button type="button" class="btn btn-default prev-change"> <i class="fa fa-arrow-up fa-2x"></i> </button>
+            <button type="button" class="btn btn-default next-change"> <i class="fa fa-arrow-down fa-2x"></i> </button>
+        </div>
+    </script>
+
+    <script id="changeDelete" type="text/x-handlebars-template">
+        <div class="change-delete panel">
+            <div class="panel-body">
+                <i class="fa fa-minus-circle"/><summary> {{desc}} {{values.[1].text}}</summary><span> was deleted</span>
+            </div>
+        </div>
+        </div>
+    </script>
+
+    <script id="changeAdd" type="text/x-handlebars-template">
+        <div class="change-add panel">
+            <div class="panel-body">
+                <i class="fa fa-plus-circle"/><summary> {{desc}} {{values.[0].text}}</summary><span> was added</span>
+                <i class="fa fa-level-down"/>
+            </div>
+        </div>
+    </script>
+
+
+  <link rel="stylesheet" href="./assets/changeEditor/policyChange.css" >
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="./assets/changeEditor/handlebars-v4.0.5.js"></script>
+  <script src="./assets/changeEditor/valHook.js"></script>
+  <script src="./assets/changeEditor/Utils.js"></script>
+  <script src="./assets/changeEditor/changePanel.js"></script>
+  <script src="./assets/changeEditor/changeInput.js"></script>
+  <script src="./assets/changeEditor/changeEditor.js"></script>
 
   <script>
       <!--HACK : this is exactly NOT how to do this when using angular, but hey its just a demo -->

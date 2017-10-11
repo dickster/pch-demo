@@ -5,6 +5,7 @@ import {RatingComponent} from "./rating.component";
 import {ConfirmationComponent} from "./confirmation.component";
 import {PolicyDetailsComponent} from "./policydetails/policyDetails.component";
 import {DynamicAiComponent} from "./ai/dynamic-ai.component";
+import {PCHComponent} from "./pch.component";
 
 export const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -12,5 +13,6 @@ export const routes: Routes = [
   {path: 'rating', component: RatingComponent},
   {path: 'confirmation', component: ConfirmationComponent},
   {path: 'policyDetails', component: PolicyDetailsComponent},
+  {path: 'pch', component: PCHComponent},
   {path: 'ai', component: DynamicAiComponent}
 ]

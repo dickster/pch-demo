@@ -1,0 +1,25 @@
+{
+  "policyNum": "HB-12789XF",
+  "valueLabels": [
+    "Broker",
+    "Carrier"
+  ],
+  "idLabels": {
+    "1": "Company Name",
+    "2": "Address",
+    "3": "Birthday",
+    "4": "Drivers License Class",
+    "5": "TPDC",
+    "7": "Gender",
+    "10": "Vehicle",
+    "44": "Address 2",
+    "100": "City",
+    "101": "Province",
+    "103": "Postal Code",
+    "500": "Vehicle",
+    "5343": "Vehicle",
+    "4321": "Driver"
+
+  },
+  "template":{"source":"templates"}
+}
