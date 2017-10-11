@@ -1,5 +1,5 @@
 import { Insured } from "../model";
-import { Component, Injectable } from "@angular/core";
+import { Component, Injectable, OnInit } from "@angular/core";
 import { DynamicItem } from "./dynamicItem";
 import { FormBuilder } from "@angular/forms";
 
@@ -8,26 +8,31 @@ import { FormBuilder } from "@angular/forms";
   selector: 'insured',
   templateUrl: 'insured.component.html'
 } )
-export class InsuredComponent extends DynamicItem {
+export class InsuredComponent extends DynamicItem implements OnInit {
+
+  private insured: Insured;
 
   constructor( private fb: FormBuilder ) {
     super();
   }
 
-  ngOnInit(): void {
-    this.ownForm = this.toFormGroup( this.child );
+  ngOnInit() {
+    this.insured = this.child;
+    this.ownForm = this.toFormGroup();
+    this.ownForm.patchValue( this.insured );
   }
 
-  toFormGroup( insured: Insured ) {
+  toFormGroup() {
     const formGroup = this.fb.group( {
-      givenName: [ insured.nameInfo.personName.givenName || '' ],
-      surname: [ insured.nameInfo.personName.surname || '' ],
-      addr1: [ insured.addr.addr1 || '' ],
-      addr2: [ insured.addr.addr2 || '' ],
-      city: [ insured.addr.city || '' ],
-      stateProv: [ insured.addr.stateProv ],
-      postalCode: [ insured.addr.postalCode ],
-      country: [ insured.addr.country ]
+      givenName: '',
+      surname: '',
+      addr1: '',
+      addr2: '',
+      city: '',
+      stateProv: '',
+      postalCode: '',
+      country: '',
+      phoneInfos: []
     } )
 
     return formGroup;

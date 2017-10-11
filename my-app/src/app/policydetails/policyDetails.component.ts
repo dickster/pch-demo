@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from "@angular/router";
 import { Data } from "../data.store";
 import { AutoPolicy } from "../model";
@@ -122,7 +122,7 @@ export class PolicyDetailsComponent implements OnInit {
 
     // this.policy = this.data.get();
     this.policy = JSON.parse( sample );
-    this.form = this.toFormGroup( this.policy );
+    this.form = this.toFormGroup();
     this.form.patchValue( this.policy );
   }
 
@@ -130,15 +130,17 @@ export class PolicyDetailsComponent implements OnInit {
     event.preventDefault();
     this.data.put( this.form.value );
     console.log( 'FORM = ' + JSON.stringify( this.form.value ) );
-    this.router.navigate( [ '/ai' ] );
+    // this.router.navigate( [ '/ai' ] );
   }
 
-  private toFormGroup( policy: AutoPolicy ) {
+  private toFormGroup() {
     const formGroup = this.fb.group( {
-      policyNumber: [ policy.policyNumber ],
-      policyEffectiveDate: [ policy.policyEffectiveDate ],
-      drivers: [ policy.drivers || [] ],
-      locations: [ policy.locations || [] ]
+      policyNumber: '',
+      policyEffectiveDate: '',
+      insureds: [],
+      drivers: [],
+      locations: [],
+      vehicles: []
     } );
     return formGroup;
   }

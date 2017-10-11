@@ -2,51 +2,59 @@
   <div class="form-group row">
     <div class="col-md-3">
       <label>VIN</label>
-      <input formControlName="vin" class="form-control form-control-sm" type="text">
+      <input formControlName="vin" [(ngModel)]="vehicle.vin" class="form-control form-control-sm" type="text">
     </div>
     <div class="col-md-3">
       <label>Year</label>
-      <input formControlName="modelYear" class="form-control form-control-sm" type="number">
+      <input formControlName="modelYear" [(ngModel)]="vehicle.modelYear" class="form-control form-control-sm"
+             type="number">
     </div>
     <div class="col-md-3">
       <label>Make</label>
-      <input formControlName="manufacturer" class="form-control form-control-sm" type="text">
+      <input formControlName="manufacturer" [(ngModel)]="vehicle.manufacturer" class="form-control form-control-sm"
+             type="text">
     </div>
     <div class="col-md-3">
       <label>Model</label>
-      <input formControlName="model" class="form-control form-control-sm" type="text">
+      <input formControlName="model" [(ngModel)]="vehicle.model" class="form-control form-control-sm" type="text">
     </div>
   </div>
   <div class="form-group row">
     <div class="col-md-3">
       <label>Purchase Date</label>
-      <input formControlName="purchaseDate" class="form-control form-control-sm" type="date">
+      <input formControlName="purchaseDate" [(ngModel)]="vehicle.purchaseDate" class="form-control form-control-sm"
+             type="date">
     </div>
     <div class="col-md-3">
       <label>Purchase Price</label>
-      <input formControlName="costNewAmt" class="form-control form-control-sm" type="number">
+      <input formControlName="costNewAmt" [(ngModel)]="vehicle.costNewAmt" class="form-control form-control-sm"
+             type="number">
     </div>
     <div class="col-md-3">
       <label>Body Type</label>
-      <input formControlName="bodyType" class="form-control form-control-sm" type="number">
+      <input formControlName="bodyType" [(ngModel)]="vehicle.bodyType" class="form-control form-control-sm"
+             type="number">
     </div>
     <div class="col-md-3">
       <label>Annual Travel Distance</label>
-      <input formControlName="annualDistance" class="form-control form-control-sm" type="number">
+      <input formControlName="annualDistance" [(ngModel)]="vehicle.annualDistance" class="form-control form-control-sm"
+             type="number">
     </div>
   </div>
   <div class="form-group row">
     <div class="col-md-3">
       <label>Vehicle use</label>
-      <input formControlName="vehUseCd" class="form-control form-control-sm" type="date">
+      <input formControlName="vehUseCd" [(ngModel)]="vehicle.vehUseCd" class="form-control form-control-sm" type="date">
     </div>
     <div class="col-md-3">
       <label>Engine Type</label>
-      <input formControlName="engineType" class="form-control form-control-sm" type="number">
+      <input formControlName="engineType" [(ngModel)]="vehicle.engineType" class="form-control form-control-sm"
+             type="number">
     </div>
     <div class="col-md-3">
       <label>Rate Class</label>
-      <input formControlName="rateClassCd" class="form-control form-control-sm" type="number">
+      <input formControlName="rateClassCd" [(ngModel)]="vehicle.rateClassCd" class="form-control form-control-sm"
+             type="number">
     </div>
   </div>
 
@@ -59,8 +67,8 @@
       <th>Deductible</th>
     </tr>
     </thead>
-    <tbody>
-    <list [parentForm]="ownForm" [childrenData]="child.coverages" [itemType]="'coverage'"></list>
+    <tbody formArrayName="coverages">
+    <list [array]="coverages" [childrenData]="child.coverages" [itemType]="'coverage'"></list>
     </tbody>
   </table>
 
@@ -72,8 +80,8 @@
       <th>Answer</th>
     </tr>
     </thead>
-    <tbody>
-    <list [parentForm]="ownForm" [childrenData]="child.questionAnswers" [itemType]="'questionAnswer'"></list>
+    <tbody formArrayName="questionAnswers">
+    <list [array]="questionAnswers" [childrenData]="child.questionAnswers" [itemType]="'questionAnswer'"></list>
     </tbody>
   </table>
 </div>

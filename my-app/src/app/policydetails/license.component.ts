@@ -9,20 +9,25 @@ import { License } from "../model";
   templateUrl: 'license.component.html'
 } )
 export class LicenseComponent extends DynamicItem {
+
+  private license: License;
+
   constructor( private fb: FormBuilder ) {
     super();
   }
 
   ngOnInit(): void {
-    this.ownForm = this.toFormGroup( this.child );
+    this.license = this.child;
+    this.ownForm = this.toFormGroup();
+    this.ownForm.patchValue( this.license );
   }
 
-  toFormGroup( li: License ) {
+  toFormGroup() {
     const formGroup = this.fb.group( {
-      date: [ li.licensedDate || "" ],
-      class: [ li.licenseClass || "" ],
-      number: [ li.licenseNumber || "" ],
-      stateProv: [ li.stateProv || "" ]
+      licenseDate: '',
+      licenseClass: '',
+      licenseNumber: '',
+      stateProv: ''
     } )
 
     return formGroup;

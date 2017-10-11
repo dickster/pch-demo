@@ -1,9 +1,5 @@
-<div [formGroup]="parentForm">
-  <div formArrayName="childrenArray">
-    <div *ngFor="let child of childrenData">
-      <dynamic-item [itemType]="itemType" [childrenArray]="parentForm.controls.childrenArray"
-                    [child]="child">
-      </dynamic-item>
-    </div>
-  </div>
+<div *ngFor="let child of childrenData">
+  <dynamic-item [itemType]="itemType" [childrenArray]="array"
+                [child]="child">
+  </dynamic-item>
 </div>

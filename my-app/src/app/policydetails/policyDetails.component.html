@@ -4,22 +4,30 @@
   <div class="form-group row">
     <div class="col-md-3">
       <label>Policy Number</label>
-      <input formControlName="policyNumber" class="form-control form-control-sm" type="text">
+      <input formControlName="policyNumber" [(ngModel)]="policy.policyNumber" class="form-control form-control-sm"
+             type="text">
     </div>
     <div class="col-md-2 col-md-offset-5">
       <label>Effective Date</label>
-      <input formControlName="policyEffectiveDate" class="form-control form-control-sm" type="date"/>
+      <input formControlName="policyEffectiveDate" [(ngModel)]="policy.policyEffectiveDate"
+             class="form-control form-control-sm" type="date"/>
     </div>
   </div>
 
   <h5>Insureds</h5>
-  <list [parentForm]="form" [childrenData]="policy.insureds" [itemType]="'insured'"></list>
+  <div formArrayName="insureds">
+    <list [array]="insureds" [childrenData]="policy.insureds" [itemType]="'insured'"></list>
+  </div>
 
   <h5>Vehicle</h5>
-  <list [parentForm]="form" [childrenData]="policy.vehicles" [itemType]="'vehicle'"></list>
+  <div formArrayName="vehicles">
+    <list [array]="vehicles" [childrenData]="policy.vehicles" [itemType]="'vehicle'"></list>
+  </div>
 
   <h5>Drivers</h5>
-  <list [parentForm]="form" [childrenData]="policy.drivers" [itemType]="'driver'"></list>
+  <div formArrayName="drivers">
+    <list [array]="drivers" [childrenData]="policy.drivers" [itemType]="'driver'"></list>
+  </div>
 
   <input class="btn btn-primary" type="submit">
 

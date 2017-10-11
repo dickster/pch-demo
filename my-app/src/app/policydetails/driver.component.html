@@ -3,32 +3,35 @@
   <div class="form-group row">
     <div class="col-md-3">
       <label>Given Name</label>
-      <input formControlName="givenName" class="form-control form-control-sm" type="text">
+      <input formControlName="givenName" [(ngModel)]="driver.nameInfo.personName.givenName"
+             class="form-control form-control-sm" type="text">
     </div>
     <div class="col-md-3">
       <label>Surname</label>
-      <input formControlName="surname" class="form-control form-control-sm" type="text">
+      <input formControlName="surname" [(ngModel)]="driver.nameInfo.personName.surname"
+             class="form-control form-control-sm" type="text">
     </div>
   </div>
   <div class="form-group row">
     <div class="col-md-3">
       <label>Gender</label>
-      <select formControlName="gender" class="custom-select form-control form-control-sm">
+      <select formControlName="gender" [(ngModel)]="driver.gender" class="custom-select form-control form-control-sm">
         <option disabled value="">Choose One</option>
-        <option value="M">Male</option>
-        <option value="F">Female</option>
+        <option value="M" [ngValue]="'M'">Male</option>
+        <option value="F" [ngValue]="'F'">Female</option>
       </select>
     </div>
     <div class="col-md-3">
       <label>Birthday</label>
-      <input formControlName="birthday" class="form-control form-control-sm" type="text">
+      <input formControlName="birthday" [(ngModel)]="driver.birthday" class="form-control form-control-sm" type="text">
     </div>
     <div class="col-md-3">
       <label>Marital Status</label>
-      <select formControlName="maritalStatus" class="custom-select form-control form-control-sm">
+      <select formControlName="maritalStatus" [(ngModel)]="driver.maritalStatus"
+              class="custom-select form-control form-control-sm">
         <option disabled value="">Choose One</option>
-        <option value="M">Married</option>
-        <option value="S">Single</option>
+        <option value="M" [ngValue]="M">Married</option>
+        <option value="S" [ngValue]="S">Single</option>
       </select>
     </div>
   </div>
@@ -43,8 +46,8 @@
       <th>Province</th>
     </tr>
     </thead>
-    <tbody>
-    <list [parentForm]="ownForm" [childrenData]="child.licenses" [itemType]="'license'"></list>
+    <tbody formArrayName="licenses">
+    <list [array]="licenses" [childrenData]="child.licenses" [itemType]="'license'"></list>
     </tbody>
   </table>
 

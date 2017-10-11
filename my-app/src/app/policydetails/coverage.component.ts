@@ -9,19 +9,23 @@ import { Coverage } from "../model";
   templateUrl: 'coverage.component.html'
 } )
 export class CoverageComponent extends DynamicItem {
+  private coverage: Coverage;
+
   constructor( private fb: FormBuilder ) {
     super();
   }
 
   ngOnInit(): void {
-    this.ownForm = this.toFormGroup( this.child );
+    this.coverage = this.child;
+    this.ownForm = this.toFormGroup();
+    this.ownForm.patchValue( this.coverage );
   }
 
-  toFormGroup( cov: Coverage ) {
+  toFormGroup() {
     const formGroup = this.fb.group( {
-      coverageCd: [ cov.coverageCd || '' ],
-      limit: [ cov.limit || 0 ],
-      deductible: [ cov.deductible || 0 ]
+      coverageCd: '',
+      limit: '',
+      deductible: '',
     } )
 
     return formGroup;

@@ -1,10 +1,10 @@
 <div [formGroup]="ownForm">
   <tr>
     <td>
-      <input formControlName="question">
+      <input formControlName="question" [(ngModel)]="qa.question">
     </td>
     <td>
-      <input formControlName="answer">
+      <input formControlName="answer" [(ngModel)]="qa.answer">
     </td>
   </tr>
 </div>

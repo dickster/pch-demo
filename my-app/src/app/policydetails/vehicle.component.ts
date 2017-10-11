@@ -9,27 +9,34 @@ import { Vehicle } from "../model";
   templateUrl: 'vehicle.component.html'
 } )
 export class VehicleComponent extends DynamicItem {
+
+  private vehicle: Vehicle;
+
   constructor( private fb: FormBuilder ) {
     super();
   }
 
   ngOnInit(): void {
-    this.ownForm = this.toFormGroup( this.child );
+    this.vehicle = this.child;
+    this.ownForm = this.toFormGroup();
+    this.ownForm.patchValue( this.vehicle )
   }
 
-  toFormGroup( veh: Vehicle ) {
+  toFormGroup() {
     const formGroup = this.fb.group( {
-      manufacturer: [ veh.manufacturer || '' ],
-      model: [ veh.model || '' ],
-      modelYear: [ veh.modelYear || '' ],
-      bodyType: [ veh.bodyType || '' ],
-      costNewAmt: [ veh.costNewAmt || 0 ],
-      annualDistance: [ veh.annualDistance || 0 ],
-      purchaseDate: [ veh.purchaseDate || new Date() ],
-      vin: [ veh.vin || '' ],
-      vehUseCd: [ veh.vehUseCd || '' ],
-      engineType: [ veh.engineType ],
-      rateClassCd: [ veh.rateClassCd ],
+      manufacturer: '',
+      model: '',
+      modelYear: '',
+      bodyType: '',
+      costNewAmt: '',
+      annualDistance: '',
+      purchaseDate: '',
+      vin: '',
+      vehUseCd: '',
+      engineType: '',
+      rateClassCd: '',
+      coverages: [],
+      questionAnswers: []
     } )
 
     return formGroup;

@@ -1,16 +1,16 @@
 <div [formGroup]="ownForm">
   <tr>
     <td>
-      <input formControlName="date">
+      <input formControlName="licenseDate" [(ngModel)]="license.licensedDate">
     </td>
     <td>
-      <input formControlName="class">
+      <input formControlName="licenseClass" [(ngModel)]="license.licenseClass">
     </td>
     <td>
-      <input formControlName="number">
+      <input formControlName="licenseNumber" [(ngModel)]="license.licenseNumber">
     </td>
     <td>
-      <input formControlName="stateProv">
+      <input formControlName="stateProv" [(ngModel)]="license.stateProv">
     </td>
   </tr>
 </div>

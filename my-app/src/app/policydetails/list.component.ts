@@ -1,28 +1,23 @@
-import {Component, ComponentFactoryResolver, ComponentRef, Input, OnDestroy, OnInit} from "@angular/core";
-import {FormArray, FormGroup} from "@angular/forms";
+import { Component, ComponentFactoryResolver, ComponentRef, Input, OnDestroy, OnInit } from "@angular/core";
+import { FormArray, FormGroup } from "@angular/forms";
 
-@Component({
+@Component( {
   selector: 'list',
   templateUrl: 'list.component.html'
-})
-export class ListComponent implements OnInit {
+} )
+export class ListComponent {
 
-  @Input('itemType')
+  @Input( 'itemType' )
   itemType: string;
 
-  @Input('parentForm')
-  parentForm: FormGroup;
+  @Input( 'array' )
+  array: FormArray;
 
-  @Input('childrenData')
+  @Input( 'childrenData' )
   childrenData: any[];
 
   constructor() {
 
-  }
-
-  ngOnInit() {
-
-    this.parentForm.addControl('childrenArray', new FormArray([]));
   }
 
 }

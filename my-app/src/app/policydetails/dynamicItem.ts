@@ -14,4 +14,5 @@ export abstract class DynamicItem {
     <div>Unknown component</div>`
 } )
 export class UnknownDynamicComponent extends DynamicItem {
+
 }

@@ -24,13 +24,14 @@ import { CoverageComponent } from "./policydetails/coverage.component";
 import { QuestionAnswerComponent } from "./policydetails/questionAnswer.component";
 import { DriverComponent } from "./policydetails/driver.component";
 import { LicenseComponent } from "./policydetails/license.component";
-import {PCHComponent} from "./pch.component";
+import { PCHComponent } from "./pch.component";
 
 @NgModule( {
   declarations: [
     AppComponent, LoginComponent, AdminComponent, RatingComponent, ConfirmationComponent, PolicyDetailsComponent, PCHComponent,
-    DynamicAiFormComponent, DynamicAiFormQuestionComponent, DynamicAiComponent, ListComponent, PhoneInfoComponent, InsuredComponent,
-    ItemComponent, UnknownDynamicComponent, VehicleComponent, CoverageComponent, QuestionAnswerComponent, DriverComponent, LicenseComponent
+    DynamicAiFormComponent, DynamicAiFormQuestionComponent, DynamicAiComponent, ListComponent, InsuredComponent,
+    ItemComponent, UnknownDynamicComponent,
+    PhoneInfoComponent, VehicleComponent, CoverageComponent, QuestionAnswerComponent, DriverComponent, LicenseComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot( routes ),

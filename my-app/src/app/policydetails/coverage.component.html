@@ -1,13 +1,13 @@
 <div [formGroup]="ownForm">
   <tr>
     <td>
-      <input formControlName="coverageCd">
+      <input formControlName="coverageCd" [(ngModel)]="coverage.coverageCd">
     </td>
     <td>
-      <input formControlName="deductible">
+      <input formControlName="deductible" [(ngModel)]="coverage.deductible">
     </td>
     <td>
-      <input formControlName="limit">
+      <input formControlName="limit" [(ngModel)]="coverage.limit">
     </td>
   </tr>
 </div>

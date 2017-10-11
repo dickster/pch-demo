@@ -9,18 +9,23 @@ import { QuestionAnswer } from "../model";
   templateUrl: 'questionAnswer.component.html'
 } )
 export class QuestionAnswerComponent extends DynamicItem {
+
+  private qa: QuestionAnswer;
+
   constructor( private fb: FormBuilder ) {
     super();
   }
 
   ngOnInit(): void {
-    this.ownForm = this.toFormGroup( this.child );
+    this.qa = this.child;
+    this.ownForm = this.toFormGroup();
+    this.ownForm.patchValue( this.qa );
   }
 
-  toFormGroup( qa: QuestionAnswer ) {
+  toFormGroup() {
     const formGroup = this.fb.group( {
-      question: [ qa.question || '' ],
-      answer: [ qa.answer || "" ]
+      question: '',
+      answer: ''
     } )
 
     return formGroup;

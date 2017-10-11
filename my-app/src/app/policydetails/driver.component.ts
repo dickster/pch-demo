@@ -10,21 +10,26 @@ import { FormBuilder } from "@angular/forms";
 } )
 export class DriverComponent extends DynamicItem {
 
+  private driver: Driver;
+
   constructor( private fb: FormBuilder ) {
     super();
   }
 
   ngOnInit(): void {
-    this.ownForm = this.toFormGroup( this.child );
+    this.driver = this.child;
+    this.ownForm = this.toFormGroup();
+    this.ownForm.patchValue( this.driver );
   }
 
-  toFormGroup( driver: Driver ) {
+  toFormGroup() {
     const formGroup = this.fb.group( {
-      givenName: [ driver.nameInfo.personName.givenName || '' ],
-      surname: [ driver.nameInfo.personName.surname || '' ],
-      gender: [ driver.gender || "" ],
-      birthday: [ driver.birthday || new Date() ],
-      maritalStatus: [ driver.maritalStatus || "" ]
+      givenName: '',
+      surname: '',
+      gender: '',
+      birthday: '',
+      maritalStatus: '',
+      licenses: []
     } )
 
     return formGroup;

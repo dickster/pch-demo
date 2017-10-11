@@ -10,17 +10,21 @@ import { PhoneInfo } from "../model";
 } )
 export class PhoneInfoComponent extends DynamicItem {
 
+  private pi: PhoneInfo;
+
   constructor( private fb: FormBuilder ) {
     super();
   }
 
   ngOnInit(): void {
-    this.ownForm = this.toFormGroup( this.child );
+    this.pi = this.child;
+    this.ownForm = this.toFormGroup();
+    this.ownForm.patchValue( this.pi );
   }
 
-  toFormGroup( phoneInfo: PhoneInfo ) {
+  toFormGroup() {
     const formGroup = this.fb.group( {
-      phoneNumber: [ phoneInfo.phoneNumber || '' ]
+      phoneNumber: ''
     } )
 
     return formGroup;
