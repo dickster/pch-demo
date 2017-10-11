@@ -6,7 +6,7 @@
         <addr>
             <addr1>123 Main Street</addr1>
             <city>Toronto</city>
-            <country>Canada</country>
+            <country>CA</country>
             <postalCode>A1A1A1</postalCode>
             <stateProv>ON</stateProv>
         </addr>

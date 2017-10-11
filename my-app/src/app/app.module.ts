@@ -11,15 +11,19 @@ import {ConfirmationComponent} from "./confirmation.component";
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {Data} from './data.store';
-import {PolicyDetailsComponent} from "./policyDetails.component";
-import {DynamicAiFormQuestionComponent} from "./dynamicquestion/dynamic-question.component";
-import {DynamicAiFormComponent} from "./dynamicquestion/dynamic-form.component";
-import {DynamicAiComponent} from "./dynamicquestion/dynamic-ai.component";
+import {PolicyDetailsComponent} from "./policydetails/policyDetails.component";
+import {DynamicAiFormQuestionComponent} from "./ai/dynamic-question.component";
+import {DynamicAiFormComponent} from "./ai/dynamic-form.component";
+import {DynamicAiComponent} from "./ai/dynamic-ai.component";
+import {ListComponent} from "./policydetails/list.component";
+import {InsuredComponent} from "./policydetails/insured.component";
+import {ItemComponent, UnknownDynamicComponent} from "./policydetails/item.component";
 
 @NgModule({
   declarations: [
     AppComponent, LoginComponent, AdminComponent, RatingComponent, ConfirmationComponent, PolicyDetailsComponent,
-    DynamicAiFormComponent, DynamicAiFormQuestionComponent, DynamicAiComponent
+    DynamicAiFormComponent, DynamicAiFormQuestionComponent, DynamicAiComponent, ListComponent, InsuredComponent,
+    ItemComponent, UnknownDynamicComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes),
@@ -29,7 +33,11 @@ import {DynamicAiComponent} from "./dynamicquestion/dynamic-ai.component";
   ],
   exports: [RouterModule],
   providers: [Data],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    InsuredComponent,
+    UnknownDynamicComponent
+  ],
 })
 export class AppModule {
 }
