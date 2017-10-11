@@ -1,4 +1,4 @@
-<div [formGroup]="childForm">
+<div [formGroup]="ownForm">
   <!-- names -->
   <div class="form-group row">
     <div class="col-md-3">
@@ -304,5 +304,5 @@
     </div>
   </div>
 
-
+  <list [parentForm]="ownForm" [childrenData]="child.phoneInfos" [itemType]="'phoneInfo'"></list>
 </div>

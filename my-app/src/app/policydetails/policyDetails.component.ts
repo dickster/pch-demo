@@ -1,69 +1,47 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {FormBuilder, FormGroup} from '@angular/forms';
-import {Router} from "@angular/router";
-import {Data} from "../data.store";
-import {AutoPolicy} from "../model";
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from "@angular/router";
+import { Data } from "../data.store";
+import { AutoPolicy } from "../model";
 
-const USER = 'user';
-const PASSWORDS = 'passwords';
-const PASSWORD = 'password';
-const CONFIRM = 'confirm';
-
-// <ol class="breadcrumb">
-// <li class="breadcrumb-item active"><a href="#">Policy Details</a></li>
-// <!--<li class="breadcrumb-item">Additional Information</a></li>-->
-// <!--<li class="breadcrumb-item ">Rating</a></li>-->
-// <!--<li class="breadcrumb-item ">Billing</a></li>-->
-// <!--<li class="breadcrumb-item ">Confirmation</li>-->
-//     </ol>
-//
-
-declare var jQuery: any;
-
-@Component({
+@Component( {
   selector: 'policy-details',
   templateUrl: 'policyDetails.component.html',
   providers: []
-})
+} )
 export class PolicyDetailsComponent implements OnInit {
 
   form: FormGroup;
   private policy: AutoPolicy;
 
-  constructor(private data: Data<AutoPolicy>,
-              private router: Router,
-              private fb: FormBuilder,
-              private elementRef: ElementRef) {
+  constructor( private data: Data<AutoPolicy>,
+               private router: Router,
+               private fb: FormBuilder ) {
   }
 
   ngOnInit() {
 
     this.policy = this.data.get();
-    this.form = this.toFormGroup(this.policy);
-    this.form.patchValue(this.policy);
+    this.form = this.toFormGroup( this.policy );
+    this.form.patchValue( this.policy );
   }
 
-  handleSubmit(event: any) {
+  handleSubmit( event: any ) {
     event.preventDefault();
-    this.data.put(this.form.value);
-    console.log('FORM = ' + JSON.stringify(this.form.value));
-    this.router.navigate(['/ai']);
+    this.data.put( this.form.value );
+    console.log( 'FORM = ' + JSON.stringify( this.form.value ) );
+    this.router.navigate( [ '/ai' ] );
   }
 
-  private toFormGroup(policy: AutoPolicy) {
-    const formGroup = this.fb.group({
-      policyNumber: [policy.policyNumber],
-      policyEffectiveDate: [policy.policyEffectiveDate],
-      drivers: [policy.drivers || []],
-      locations: [policy.locations || []],
-      vehicles: [policy.vehicles || []]
-    });
+  private toFormGroup( policy: AutoPolicy ) {
+    const formGroup = this.fb.group( {
+      policyNumber: [ policy.policyNumber ],
+      policyEffectiveDate: [ policy.policyEffectiveDate ],
+      drivers: [ policy.drivers || [] ],
+      locations: [ policy.locations || [] ],
+      vehicles: [ policy.vehicles || [] ]
+    } );
     return formGroup;
   }
-
-  ngAfterContentChecked() {
-    // jQuery(this.elementRef.nativeElement).find('.completer-input').addClass('form-control');
-  }
-
 }
