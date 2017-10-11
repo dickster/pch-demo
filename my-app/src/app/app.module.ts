@@ -19,10 +19,11 @@ import { ItemComponent, } from "./policydetails/item.component";
 import { InsuredComponent } from "./policydetails/insured.component";
 import { UnknownDynamicComponent } from "./policydetails/dynamicItem";
 import { PhoneInfoComponent } from "./policydetails/phoneInfo.component";
+import {PCHComponent} from "./pch.component";
 
 @NgModule( {
   declarations: [
-    AppComponent, LoginComponent, AdminComponent, RatingComponent, ConfirmationComponent, PolicyDetailsComponent,
+    AppComponent, LoginComponent, AdminComponent, RatingComponent, ConfirmationComponent, PolicyDetailsComponent, PCHComponent,
     DynamicAiFormComponent, DynamicAiFormQuestionComponent, DynamicAiComponent, ListComponent, PhoneInfoComponent, InsuredComponent,
     ItemComponent, UnknownDynamicComponent
   ],
