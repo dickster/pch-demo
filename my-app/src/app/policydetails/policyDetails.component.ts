@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from "@angular/router";
 import { Data } from "../data.store";
 import { AutoPolicy } from "../model";
@@ -130,7 +130,7 @@ export class PolicyDetailsComponent implements OnInit {
     event.preventDefault();
     this.data.put( this.form.value );
     console.log( 'FORM = ' + JSON.stringify( this.form.value ) );
-    // this.router.navigate( [ '/ai' ] );
+    this.router.navigate( [ '/ai' ] );
   }
 
   private toFormGroup() {
