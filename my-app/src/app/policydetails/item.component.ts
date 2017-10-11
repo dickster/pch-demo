@@ -8,69 +8,62 @@ import {
   ViewChild,
   ViewContainerRef
 } from "@angular/core";
-import {FormArray, FormBuilder, FormGroup} from "@angular/forms";
-import {InsuredComponent} from "./insured.component";
+import { FormArray } from "@angular/forms";
+import { DynamicItem, UnknownDynamicComponent } from "./dynamicItem";
+import { PhoneInfoComponent } from "./phoneInfo.component";
+import { InsuredComponent } from "./insured.component";
 
-@Component({
+@Component( {
   selector: 'dynamic-item',
   template: `
     <div>
       <div #container></div>
     </div>
   `
-})
+} )
 export class ItemComponent implements OnInit, OnDestroy {
 
-  @ViewChild('container', {read: ViewContainerRef})
+  @ViewChild( 'container', { read: ViewContainerRef } )
   container: ViewContainerRef;
-  @Input('childrenArray')
+  @Input( 'childrenArray' )
   childrenArray: FormArray;
-  @Input('child')
+  @Input( 'child' )
   child: any;
-  @Input('itemType')
+  @Input( 'itemType' )
   type: string;
-  childForm: FormGroup;
+
   private componentRef: ComponentRef<{}>;
   private mappings = {
     'insured': InsuredComponent,
+    'phoneInfo': PhoneInfoComponent
   }
 
-  constructor(public fb: FormBuilder,
-              private componentFactoryResolver: ComponentFactoryResolver) {
-
+  constructor( private componentFactoryResolver: ComponentFactoryResolver ) {
   }
 
-  getComponentType(typeName: string) {
-    let type = this.mappings[typeName];
+  getComponentType( typeName: string ) {
+    let type = this.mappings[ typeName ];
     return type || UnknownDynamicComponent;
   }
 
-  toFormGroup(child: any) {
-    const formGroup = this.fb.group({});
-
-    return formGroup;
-  }
-
   ngOnInit(): void {
-    this.childForm = this.toFormGroup(this.child);
 
-    if (this.type) {
-      let componentType = this.getComponentType(this.type);
+    if ( this.type ) {
+      let componentType = this.getComponentType( this.type );
 
       // note: componentType must be declared within module.entryComponents
-      let factory = this.componentFactoryResolver.resolveComponentFactory(componentType);
-      this.componentRef = this.container.createComponent(factory);
+      let factory = this.componentFactoryResolver.resolveComponentFactory( componentType );
+      this.componentRef = this.container.createComponent( factory );
 
       // set component context
-      let instance = <ItemComponent> this.componentRef.instance;
+      let instance = <DynamicItem> this.componentRef.instance;
       instance.childrenArray = this.childrenArray;
       instance.child = this.child;
-      instance.childForm = this.childForm;
     }
   }
 
   ngOnDestroy() {
-    if (this.componentRef) {
+    if ( this.componentRef ) {
       this.componentRef.destroy();
       this.componentRef = null;
     }
@@ -78,10 +71,3 @@ export class ItemComponent implements OnInit, OnDestroy {
 
 }
 
-@Component({
-  selector: 'unknown-component',
-  template: `
-    <div>Unknown component</div>`
-})
-export class UnknownDynamicComponent extends ItemComponent {
-}

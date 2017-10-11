@@ -8,13 +8,13 @@ import {FormArray, FormGroup} from "@angular/forms";
 export class ListComponent implements OnInit {
 
   @Input('itemType')
-  public itemType: string;
+  itemType: string;
 
   @Input('parentForm')
-  public parentForm: FormGroup;
+  parentForm: FormGroup;
 
   @Input('childrenData')
-  public childrenData: any[];
+  childrenData: any[];
 
   constructor() {
 
