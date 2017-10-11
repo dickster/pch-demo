@@ -1,10 +1,9 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
 
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {Router} from "@angular/router";
-import {Data} from "./data.store";
-import {AutoPolicy} from "./model";
-
+import {Data} from "../data.store";
+import {AutoPolicy} from "../model";
 
 const USER = 'user';
 const PASSWORDS = 'passwords';
@@ -34,20 +33,14 @@ export class PolicyDetailsComponent implements OnInit {
 
   constructor(private data: Data<AutoPolicy>,
               private router: Router,
-              private formBuilder: FormBuilder,
+              private fb: FormBuilder,
               private elementRef: ElementRef) {
   }
 
   ngOnInit() {
 
     this.policy = this.data.get();
-    this.form = this.formBuilder.group({
-        number: ['', Validators.required],
-        name: ['', Validators.required],
-        effectiveDate: ['', Validators.required],
-        expirationDate: ['', Validators.required]
-      }
-    );
+    this.form = this.toFormGroup(this.policy);
     this.form.patchValue(this.policy);
   }
 
@@ -58,9 +51,19 @@ export class PolicyDetailsComponent implements OnInit {
     this.router.navigate(['/ai']);
   }
 
+  private toFormGroup(policy: AutoPolicy) {
+    const formGroup = this.fb.group({
+      policyNumber: [policy.policyNumber],
+      policyEffectiveDate: [policy.policyEffectiveDate],
+      drivers: [policy.drivers || []],
+      locations: [policy.locations || []],
+      vehicles: [policy.vehicles || []]
+    });
+    return formGroup;
+  }
+
   ngAfterContentChecked() {
     // jQuery(this.elementRef.nativeElement).find('.completer-input').addClass('form-control');
   }
-
 
 }
