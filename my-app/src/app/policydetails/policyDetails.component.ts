@@ -120,8 +120,8 @@ export class PolicyDetailsComponent implements OnInit {
 
   ngOnInit() {
 
-    // this.policy = this.data.get();
-    this.policy = JSON.parse( sample );
+    this.policy = this.data.get();
+    // this.policy = JSON.parse( sample );
     this.form = this.toFormGroup();
     this.form.patchValue( this.policy );
   }

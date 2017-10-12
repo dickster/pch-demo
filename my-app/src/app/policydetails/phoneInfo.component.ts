@@ -24,7 +24,8 @@ export class PhoneInfoComponent extends DynamicItem {
 
   toFormGroup() {
     const formGroup = this.fb.group( {
-      phoneNumber: ''
+      phoneNumber: '',
+      phoneType: ''
     } )
 
     return formGroup;
