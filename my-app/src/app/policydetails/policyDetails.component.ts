@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, AfterViewChecked, AfterContentInit} from '@angular/core';
 
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from "@angular/router";
 import { Data } from "../data.store";
 import { AutoPolicy } from "../model";
+import {PolicyChangeService} from "../pch.service";
 
 const sample = "{\n" +
   "    \"policyNumber\": \"test1\",\n" +
@@ -103,35 +104,48 @@ const sample = "{\n" +
   "    ]\n" +
   "}"
 
+
+declare var wtw: any;
+
 @Component( {
   selector: 'policy-details',
   templateUrl: 'policyDetails.component.html',
-  providers: []
+  providers: [PolicyChangeService]
 } )
-export class PolicyDetailsComponent implements OnInit {
+export class PolicyDetailsComponent implements OnInit, AfterContentInit {
 
   form: FormGroup;
   private policy: AutoPolicy;
 
-  constructor( private data: Data<AutoPolicy>,
+    constructor( private data: Data<AutoPolicy>,
                private router: Router,
+               private pchService:PolicyChangeService,
                private fb: FormBuilder ) {
-  }
+    }
 
-  ngOnInit() {
+    ngAfterContentInit() {
+      console.log('after view checked');
+        let options = this.pchService.compare(1,new AutoPolicy()).subscribe(options=>{
+            // blargh...i need a timeout to make sure finished rendering child components first.
+            setTimeout(function() {
+                wtw.changeEditor.init(options);
+            }, 800);
+        });
+    }
 
-    this.policy = this.data.get();
-    // this.policy = JSON.parse( sample );
-    this.form = this.toFormGroup();
-    this.form.patchValue( this.policy );
-  }
+    ngOnInit() {
+        this.policy = this.data.get();
+        // this.policy = JSON.parse( sample );
+        this.form = this.toFormGroup();
+        this.form.patchValue( this.policy );
+    }
 
-  handleSubmit( event: any ) {
-    event.preventDefault();
-    this.data.put( this.form.value );
-    console.log( 'FORM = ' + JSON.stringify( this.form.value ) );
-    this.router.navigate( [ '/ai' ] );
-  }
+    handleSubmit( event: any ) {
+        event.preventDefault();
+        this.data.put( this.form.value );
+        console.log( 'FORM = ' + JSON.stringify( this.form.value ) );
+        this.router.navigate( [ '/ai' ] );
+    }
 
   private toFormGroup() {
     const formGroup = this.fb.group( {

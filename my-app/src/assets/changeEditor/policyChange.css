@@ -221,8 +221,8 @@
  need to put those hacks in a separate .css file specific to your implementation.
  */
 li.change-input-icon {
-    position:absolute;
-    top:0;
+     position:absolute;
+    top: 40px;
     right: 6px;
     color: #759ee8;
     padding:2px 0;
@@ -276,7 +276,7 @@ li.change-delete-icon {
 
 .change-item .summary {
     display: inline-block;
-    margin-left: 20px;
+    margin-left: 0px;
 }
 
 .change-summary .change-value {

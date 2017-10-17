@@ -32,13 +32,13 @@ export class RestService<T> {
       .catch(this.handleError);
   }
 
-  public post(path: string, body: T): Observable<T> {
+  public post(path: string, body: any): Observable<T> {
     return this.http.post(path, body, {headers: this.headers})
       .map((response: Response) => <T>response.json())
       .catch(this.handleError);
   }
 
-  public put(path: string, body: T): Observable<T> {
+  public put(path: string, body: any): Observable<T> {
     return this.http.put(path, body, {headers: this.headers})
       .map((res: Response) => <T>res.json())
       .catch(this.handleError);

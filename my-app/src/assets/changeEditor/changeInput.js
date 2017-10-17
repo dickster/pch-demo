@@ -51,7 +51,7 @@
             if (!templateCache[type]) {
                 var $el = $(this.options.config.template[type]);
                 var template = ($el.length==0) ?
-                    '<span>cant find template in DOM :' + this.options.config.template[type] +'</span>' :
+                    '<span>cant find template in DOM [:' + this.options.config.template[type] +']</span>' :
                     $el.html();
                 templateCache[type]= Handlebars.compile(template);
             }

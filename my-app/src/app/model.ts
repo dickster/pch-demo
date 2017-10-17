@@ -9,7 +9,7 @@ export interface Addr {
   country: string;
 }
 
-export interface AutoPolicy {
+export class AutoPolicy {
   policyNumber: string;
   policyEffectiveDate: string;
   insureds: Insured[];
