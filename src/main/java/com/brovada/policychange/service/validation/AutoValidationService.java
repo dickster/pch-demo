@@ -14,11 +14,9 @@ import com.brovada.policychange.model.AutoPolicy;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AutoValidationService implements ValidationService<AutoPolicy, ReturnCodes> {
+public class AutoValidationService {
 
-    @Override
-    public ReturnCodes validate(String type, AutoPolicy policy) {
-        return policy.getDrivers().get(0).getNameInfo().getPersonName().getGivenName().equalsIgnoreCase("derek") ?
-                ReturnCodes._200 : ReturnCodes._300;
+    public ValidationResult validateCmf(AutoPolicy autoPolicy) {
+        return ValidationResult.SUCCESS;
     }
 }

@@ -10,28 +10,44 @@
 package com.brovada.policychange.controller;
 
 import com.brovada.policychange.model.AutoPolicy;
-import com.brovada.policychange.service.validation.ValidationService;
+import com.brovada.policychange.service.validation.AutoValidationService;
+import com.brovada.policychange.service.validation.ValidationResult;
+import com.google.common.base.Joiner;
+import com.google.common.collect.Lists;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.inject.Inject;
+import java.lang.reflect.Method;
+import java.util.List;
 
-/**
- * The type Policy controller.
- */
 @RestController
-@RequestMapping("/validation")
+@RequestMapping("/validate")
 public class ValidationController {
 
     @Inject
-    private ValidationService validationService;
+    private AutoValidationService validationService;
 
-
-    @RequestMapping(method = RequestMethod.POST)
-    ResponseEntity<?> doValidation(@PathVariable("type") String validationType, @RequestBody AutoPolicy autoPolicy) {
-        Enum result = validationService.validate(validationType, autoPolicy);
+    @RequestMapping(path="/cmf", method = RequestMethod.POST)
+    ResponseEntity<ValidationResult> validate(@RequestBody AutoPolicy autoPolicy) {
+        ValidationResult result = validationService.validateCmf(autoPolicy);
         return ResponseEntity.ok(result);
     }
 
+    // TODO : put this in abstract controller.
+    @RequestMapping(path="/query", method=RequestMethod.GET)
+    ResponseEntity<List<String>> query() {
+        List<String> result = Lists.newArrayList();
+        for (Method method:this.getClass().getDeclaredMethods()) {
+            RequestMapping mapping = method.getDeclaredAnnotation(RequestMapping.class);
+            if (mapping!=null) {
+                result.add(Joiner.on('/').join(mapping.path()) + " : " + Joiner.on(',').join(mapping.method()));
+            }
+        }
+        return ResponseEntity.ok(result);
+    }
 
 }

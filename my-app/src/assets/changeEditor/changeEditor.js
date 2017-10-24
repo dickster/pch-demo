@@ -52,7 +52,7 @@ wtw.changeEditor = (function() {
         options.changesById = {};
         options.changesCount = function() { return changeCount(); };
 
-        var source = options.config.template.source;
+        var source = options.config.template ? options.config.template.source : null;
         if (source) {
             console.log('loading template from ' + options.config.template.source)
             if (source.indexOf('.html')==-1) source = source + '.html';
@@ -70,6 +70,9 @@ wtw.changeEditor = (function() {
     };
 
     function _init() {
+        if (!$('.change-editor').length) {
+            console.log('you have called the changeEditor widget but dont have an [<div class=".change-editor">] element'  );
+        }
         formatChanges(options.changes);
 
         createLookup(options.changes);

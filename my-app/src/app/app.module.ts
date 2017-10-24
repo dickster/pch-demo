@@ -15,7 +15,7 @@ import { DynamicAiFormQuestionComponent } from "./ai/dynamic-question.component"
 import { DynamicAiFormComponent } from "./ai/dynamic-form.component";
 import { DynamicAiComponent } from "./ai/dynamic-ai.component";
 import { ListComponent } from "./policydetails/list.component";
-import { ItemComponent, } from "./policydetails/item.component";
+import { ItemComponent } from "./policydetails/item.component";
 import { InsuredComponent } from "./policydetails/insured.component";
 import { UnknownDynamicComponent } from "./policydetails/dynamicItem";
 import { PhoneInfoComponent } from "./policydetails/phoneInfo.component";
