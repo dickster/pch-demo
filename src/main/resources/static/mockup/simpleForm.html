@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<!-- saved from url=(0070)http://localhost:8080/b1-insurance/ui/?action=PersAutoPolicyAddRq:form -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+    <script src="https://use.fontawesome.com/1f0e50ab99.js"></script>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js"
+                crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
+        <link rel="stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+                integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+                crossorigin="anonymous"></script>
+
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+              integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+              crossorigin="anonymous">
+    </head>
+
+    <style>
+        .dropdown-menu {
+            min-width: 70px;
+        }
+
+        input[type='number'] {
+            text-align: right;
+        }
+
+        body table { font-size:13px;}
+        .dropdown-item {
+            display: block;
+            color: #666;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-top: 5px;
+        }
+
+
+        .dropdown-menu {
+            min-width: 70px;
+        }
+
+        .dropdown-item {
+            display: block;
+            color: #666;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-top: 5px;
+        }
+
+        h5 {
+            background: #666;
+            background: -webkit-linear-gradient(left, #dbe1f5, #6ca6c4);
+            background: -o-linear-gradient(right, #dbe1f5, #6ca6c4);
+            background: -moz-linear-gradient(right, #dbe1f5, #6ca6c4);
+            background: linear-gradient(to right, #dbe1f5, #6ca6c4);
+            padding: 7px;
+            margin-bottom: 0;
+            margin-top: 30px;
+        }
+
+        . h5 {
+            background: #666;
+            background: -webkit-linear-gradient(left, #dbe1f5, #6ca6c4);
+            background: -o-linear-gradient(right, #dbe1f5, #6ca6c4);
+            background: -moz-linear-gradient(right, #dbe1f5, #6ca6c4);
+            background: linear-gradient(to right, #dbe1f5, #6ca6c4);
+            padding: 7px;
+            margin-bottom: 0;
+            margin-top: 30px;
+        }
+
+        .input-group-btn .btn.dropdown-toggle {
+            box-shadow: none;
+            border: 1px solid #eee;
+        }
+
+        .input-group-btn + .form-control {
+            padding-left: 10px;
+        }
+
+        h6 {
+            padding-top: 6px;
+        }
+
+        /*label { margin-bottom:3px;font-size:xx-small;}*/
+
+        select. {
+            font-size: 13px;
+        }
+
+        .input-group-btn.show {
+            display: table-cell !important;
+        }
+
+        .company {
+            display: none;
+        }
+
+        .input-group-addon.person, .input-group-addon.company {
+            border: 1px solid #bbb;
+            background: #eee;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+    <h3 class="card-title"><i class="fa fa-grav"></i>Simple Layout Demo</h3>
+
+    <form class="form">
+
+        <h5>Policy Details</h5>
+        <div class="form-group row">
+            <div class="col-md-3">
+                <label>Policy Number</label>
+                <input class="form-control " type="text">
+            </div>
+            <div class="col-md-2 col-md-offset-5">
+                <label>Effective Date</label>
+                <input class="form-control" type="date"/>
+            </div>
+            <div class="col-md-2">
+                <label>Expiration Date</label>
+                <input class="form-control" type="date"/>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-6">
+                <label>Name</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Person</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-industry"></i>Company</a>
+                        </div>
+                    </div>
+                    <input class="form-control " type="text">
+                </div>
+                <p class="form-text text-muted person">
+                    This is a person.
+                </p>
+                <p class="form-text text-muted company">
+                    This is a company.
+                </p>
+            </div>
+            <div class="col-md-4 col-md-offset-2">
+                <label>Amount</label>
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input class="form-control" placeholder="amount" type="number" min="5000" max="10000" step="1000">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Tab panes -->
+        <div class="form-group row">
+            <div class="col-md-4">
+                <label>Username</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="username">
+                    <span class="input-group-addon">@gmail.com</span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="form-group row">
+            <div class="col-md-5">
+                <label>City</label>
+                <input class="form-control " type="text">
+            </div>
+            <div class="col-md-3">
+                <label>Province</label>
+                <select class="custom-select form-control ">
+                    <option disabled value="">Choose One</option>
+                    <option value="AB">Alberta</option>
+                    <option value="YT">Yukon</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label>Country</label>
+                <select class="custom-select form-control ">
+                    <option disabled value="">Pick a country</option>
+                    <option value="AF">AFGHANISTAN</option>
+                    <option value="AX">ALAND ISLANDS</option>
+                    <option value="ZW">ZIMBABWE</option>
+                </select>
+            </div>
+
+
+        </div>
+
+
+        <h5>Drivers</h5>
+        <div class="form-group row">
+            <div class="col-md-2">
+                <div><label>Company Name</label></div>
+                <input type="text" class="form-control ">
+            </div>
+            <div class="col-md-2">
+                <div><label>First Name</label></div>
+                <input type="text" class="form-control ">
+            </div>
+            <div class="col-md-2">
+                <div><label>Last Name</label></div>
+                <input type="text" class="form-control ">
+            </div>
+            <div class="col-md-2">
+                <div><label>Birth Date</label></div>
+                <input type="date" class="form-control ">
+            </div>
+            <div class="col-md-2">
+                <div><label>Gender</label></div>
+                <select class="form-control ">
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Unknown</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-2">
+                <label>Marital Status</label>
+                <select class="form-control ">
+                    <option value="csio:C">Common-law</option>
+                    <option value="csio:W">Widowed</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label>Relationship</label>
+                <select class="form-control ">
+                    <option value="csio:B">Brother/Sister</option>
+                    <option value="csio:2">Common Law Spouse</option>
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <label>Driver Training</label>
+                <input type="text" class="form-control ">
+            </div>
+            <div class="col-md-2">
+                <label>Driver Training Date</label>
+                <input type="date" class="form-control ">
+            </div>
+            <div class="col-md-2">
+                <label>&nbsp;</label>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="">
+                        Good Driver
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label>MVR Date</label>
+                <input type="date" class="form-control ">
+            </div>
+        </div>
+
+        <h6>Licenses</h6>
+        <div class="form-group row">
+            <div class="col-md-2">
+                <label>License Number</label>
+                <input type="text" class="form-control " autocomplete="off">
+            </div>
+            <div class="col-md-2">
+                <label>Province</label>
+                <select class="custom-select form-control ">
+                    <option disabled value="">Choose One</option>
+                    <option value="AB">Alberta</option>
+                    <option value="YT">Yukon</option>
+                </select>
+
+            </div>
+
+        </div>
+        <div class="form-group row">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Date Licensed</th>
+                    <th>License Class Code</th>
+                    <th style="width:50%"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="date" class="form-control "></td>
+                    <td>
+                        <select class="form-control ">
+                            <option>G</option>
+                            <option>M2</option>
+                        </select>
+                    </td>
+                    <td></td>
+                </tr>
+
+
+                </tbody>
+            </table>
+
+            <a class="btn btn-default col-md-2">Add Driver</a>
+        </div>
+
+
+        <h5>Additional Information</h5>
+        <div class="form-group row">
+            <div class="col-md-4">
+                <div><label>Have you been in an accident in the last year?</label></div>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default ">
+                        <input type="radio">Yes
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio">No
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <textarea class="form-control" rows="2" placeholder="describe accident"></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-4">
+                <div><label>Have you been convicted in the last 5 years?</label></div>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default ">
+                        <input type="radio">Yes
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio">No
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <input type="text" class="form-control" placeholder="describe conviction"></input>
+            </div>
+        </div>
+
+        <input class="btn btn-primary" type="submit">
+
+
+    </form>
+
+
+</div>
+
+
+</body>
+</html>
